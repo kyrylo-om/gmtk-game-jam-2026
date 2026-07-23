@@ -33,7 +33,8 @@ func pickup(item: RigidBody3D):
 func throw():
 	var throwed: RigidBody3D = inventory.throw()
 
-	throwed.freeze = false
-	var forward_vector: Vector3 = -global_transform.basis.z + global_transform.basis.x * 0.2
-	
-	throwed.apply_central_impulse(forward_vector * throw_speed)
+	if throwed:
+		throwed.freeze = false
+		var forward_vector: Vector3 = -global_transform.basis.z + global_transform.basis.x * 0.2
+		
+		throwed.apply_central_impulse(forward_vector * throw_speed)
