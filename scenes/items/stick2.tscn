@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d01s1e40ngqn6"]
+
+[ext_resource type="PackedScene" uid="uid://cv50lkv3bi8lr" path="res://scenes/items/collectible.tscn" id="1_4ycga"]
+[ext_resource type="Resource" uid="uid://fnxtbmahvsp4" path="res://items/stick2.tres" id="2_4ycga"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro5b3"]
+albedo_color = Color(0.13044167, 0.42023435, 0.5056095, 1)
+
+[node name="Collectible" unique_id=1934788532 instance=ExtResource("1_4ycga")]
+freeze = true
+item_data = ExtResource("2_4ycga")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=254427704]
+mesh = SubResource("BoxMesh_ehsp5")
+surface_material_override/0 = SubResource("StandardMaterial3D_ro5b3")

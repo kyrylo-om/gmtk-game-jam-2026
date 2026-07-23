@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cnivumrrmfl6u" path="res://scripts/player/inventory.gd" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://brjvuyg1k18hv" path="res://scripts/player/hud.gd" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://bsoxxfo1fmnwp" path="res://scripts/player/interactions.gd" id="2_rji43"]
+[ext_resource type="PackedScene" uid="uid://dxmwyw21uty23" path="res://scenes/inventory_item.tscn" id="4_qlg0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -28,10 +29,29 @@ script = ExtResource("2_qhqgy")
 
 [node name="Control" type="Control" parent="Canvas" unique_id=117146400]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+
+[node name="Inventory" type="HBoxContainer" parent="Canvas/Control" unique_id=1794391816]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 42.0
+offset_right = 1094.0
+offset_bottom = 102.0
+alignment = 1
+
+[node name="Item" parent="Canvas/Control/Inventory" unique_id=1461160102 instance=ExtResource("4_qlg0r")]
+layout_mode = 2
+
+[node name="Item2" parent="Canvas/Control/Inventory" unique_id=1639319393 instance=ExtResource("4_qlg0r")]
+layout_mode = 2
+
+[node name="Item3" parent="Canvas/Control/Inventory" unique_id=1638787308 instance=ExtResource("4_qlg0r")]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=398378541]
 layout_mode = 1
@@ -40,12 +60,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 483.0
-offset_top = 292.5
-offset_right = 629.0
-offset_bottom = 315.5
+offset_left = -73.0
+offset_top = -11.5
+offset_right = 73.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Control" unique_id=158452444]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Dialogue" type="Label" parent="Canvas/Control/VBoxContainer" unique_id=488172163]
+layout_mode = 2
+text = "Ever since I was born, I was afraid of cheese."
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=98959929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
