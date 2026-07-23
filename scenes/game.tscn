@@ -1,3 +1,73 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
-[node name="Root" type="Node2D" unique_id=585329099]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/proto_controller.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://b2w1kmtccwb3q" path="res://hdri/qwantani_night_puresky_4k.exr" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bxsksvi17rei0" path="res://models/Tree test.glb" id="3_lbhrr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
+panorama = ExtResource("2_lnu2h")
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_uwrxv"]
+sky_material = SubResource("PanoramaSkyMaterial_uwrxv")
+
+[sub_resource type="Environment" id="Environment_ehsp5"]
+background_mode = 2
+sky = SubResource("Sky_uwrxv")
+ambient_light_source = 1
+
+[node name="Game" type="Node3D" unique_id=861187367]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1222683664]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 11.54491, 0)
+visible = false
+shadow_enabled = true
+
+[node name="ProtoController" parent="." unique_id=1674435093 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6149998, 0.72209024, -0.81708074)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ProtoController" unique_id=1489021978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.367954, 0)
+light_color = Color(1, 0.74903643, 0.48577863, 1)
+light_energy = 0.842
+light_volumetric_fog_energy = 0.683
+light_size = 0.119
+shadow_enabled = true
+omni_range = 5.741233
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1670689461]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1040101533]
+transform = Transform3D(18.65314, 0, 0, 0, 1, 0, 0, 0, 18.65314, 0, -0.2018218, 0)
+use_collision = true
+size = Vector3(1, 0.59521484, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=848462432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.54659843, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1649620210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.731701, 0.54659843, -5.896104)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1594020824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6206827, 0.5465975, 0.3587532)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
+environment = SubResource("Environment_ehsp5")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1425102174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96220255, 1.9223163, -6.320772)
+visible = false
+light_color = Color(1, 0.74903643, 0.48577863, 1)
+light_energy = 14.416
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 10.572079
+
+[node name="Tree test" parent="." unique_id=1685017744 instance=ExtResource("3_lbhrr")]
+transform = Transform3D(0.53002083, 0, 0, 0, 0.53002083, 0, 0, 0, 0.53002083, -4.354384, 0.09578705, 1.3073399)
+
+[node name="Tree test2" parent="." unique_id=545424710 instance=ExtResource("3_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6935267, 0.09578705, -3.006649)
