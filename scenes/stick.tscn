@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://chgbwq3y3eoui"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i3vek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvdot"]
+albedo_color = Color(0.9784668, 0.4002607, 0.34666935, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
+[node name="Stick" type="StaticBody3D" unique_id=1675888804]
+collision_layer = 8
+input_ray_pickable = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903704379]
+mesh = SubResource("BoxMesh_i3vek")
+surface_material_override/0 = SubResource("StandardMaterial3D_mvdot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1281690719]
+shape = SubResource("BoxShape3D_ehsp5")

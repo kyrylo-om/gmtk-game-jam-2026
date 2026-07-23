@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://bsc3qlnwmew4b" path="res://scripts/player/move_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://brjvuyg1k18hv" path="res://scripts/player/hud.gd" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://bsoxxfo1fmnwp" path="res://scripts/player/interactions.gd" id="2_rji43"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=549697417]
+script = ExtResource("1_ucva2")
+can_sprint = true
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1618418279]
+script = ExtResource("2_qhqgy")
+
+[node name="Control" type="Control" parent="Canvas" unique_id=117146400]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Canvas/Control" unique_id=398378541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 292.5
+offset_right = 629.0
+offset_bottom = 315.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kill 7 billion people"
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=98959929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_iof21")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=122640786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="." unique_id=698233127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=44698183]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1137652244]
+target_position = Vector3(0, 0, -4.165)
+collision_mask = 8
+script = ExtResource("2_rji43")

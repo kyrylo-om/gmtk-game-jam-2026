@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ca8hiupftyymk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
+
+[node name="Campfire" type="Node3D" unique_id=1111947644]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=768422826]
+mesh = SubResource("BoxMesh_ehsp5")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=355294280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.922, 0)
+light_color = Color(1, 0.74903643, 0.48577863, 1)
+light_energy = 14.416
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 42.32593

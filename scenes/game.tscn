@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/proto_controller.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://b2w1kmtccwb3q" path="res://hdri/qwantani_night_puresky_4k.exr" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bxsksvi17rei0" path="res://models/Tree test.glb" id="3_lbhrr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("2_lnu2h")
@@ -65,9 +64,3 @@ light_volumetric_fog_energy = 16.0
 light_size = 1.0
 shadow_enabled = true
 omni_range = 10.572079
-
-[node name="Tree test" parent="." unique_id=1685017744 instance=ExtResource("3_lbhrr")]
-transform = Transform3D(0.53002083, 0, 0, 0, 0.53002083, 0, 0, 0, 0.53002083, -4.354384, 0.09578705, 1.3073399)
-
-[node name="Tree test2" parent="." unique_id=545424710 instance=ExtResource("3_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6935267, 0.09578705, -3.006649)
