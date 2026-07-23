@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4v3hpn8ubchh"]
+
+[ext_resource type="Texture2D" uid="uid://dqmujdb5mk1sm" path="res://Materials/textures/forest floor 2/burned_ground_01_diff_2k.jpg" id="1_cqqol"]
+[ext_resource type="Texture2D" uid="uid://boiw0j7pgg81g" path="res://Materials/textures/forest floor 2/burned_ground_01_nor_gl_2k.jpg" id="2_7rfd1"]
+[ext_resource type="Texture2D" uid="uid://dguk0oxaitmwp" path="res://Materials/textures/forest floor 2/burned_ground_01_rough_2k.jpg" id="3_36q4i"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_cqqol")
+roughness_texture = ExtResource("3_36q4i")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("2_7rfd1")
+uv1_scale = Vector3(5, 5, 5)

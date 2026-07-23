@@ -2,16 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cv50lkv3bi8lr" path="res://scenes/items/collectible.tscn" id="1_ibmtb"]
 [ext_resource type="Resource" uid="uid://cb8553t5m5gqk" path="res://items/stick.tres" id="2_ld7er"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro5b3"]
-albedo_color = Color(0.53209704, 0.33098122, 0.01846931, 1)
+[ext_resource type="PackedScene" uid="uid://da1hqbmw6ktck" path="res://models/Branch 1.fbx" id="3_7rqfo"]
 
 [node name="Collectible" unique_id=1934788532 instance=ExtResource("1_ibmtb")]
+mass = 8.1
 freeze = true
 item_data = ExtResource("2_ld7er")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=254427704]
-mesh = SubResource("BoxMesh_ehsp5")
-surface_material_override/0 = SubResource("StandardMaterial3D_ro5b3")
+[node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
+transform = Transform3D(5.223744, 0, 0, 0, 0.41391534, 0, 0, 0, 1.1331886, 0, 0, 0)
+
+[node name="Branch 1" parent="." index="1" unique_id=138089556 instance=ExtResource("3_7rqfo")]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -0.031711936, 0.011746645, -0.050020814)

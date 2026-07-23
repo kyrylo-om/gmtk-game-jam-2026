@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Material" uid="uid://8sl4788xkkq8" path="res://Materials/Forest_floor.tres" id="2_iywne"]
+[ext_resource type="Material" uid="uid://8sl4788xkkq8" path="res://Materials/forest_leaves.tres" id="2_dinhu"]
 [ext_resource type="Texture2D" uid="uid://b2w1kmtccwb3q" path="res://hdri/qwantani_night_puresky_4k.exr" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/fire.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/tree.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d01s1e40ngqn6" path="res://scenes/items/stick2.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bsjn0hgve10id" path="res://scenes/firewood.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://drdrkc2lp7aap" path="res://models/Black rock 1.fbx" id="9_dinhu"]
+[ext_resource type="PackedScene" uid="uid://dh6qqga4e4wnb" path="res://models/Black rock 2.fbx" id="10_kvuet"]
+[ext_resource type="PackedScene" uid="uid://bgela4ddd60o" path="res://models/Black rock 3.fbx" id="11_trtic"]
+[ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Black rock 4.fbx" id="12_ir15t"]
+[ext_resource type="PackedScene" uid="uid://ckqtyd32cn56k" path="res://models/Branch 3.fbx" id="13_trtic"]
+[ext_resource type="PackedScene" uid="uid://ce1e6cc4gjep6" path="res://models/Branch 4.fbx" id="14_ir15t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("2_lnu2h")
@@ -43,16 +50,16 @@ omni_range = 5.741233
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1040101533]
-transform = Transform3D(18.65314, 0, 0, 0, 1, 0, 0, 0, 18.65314, -0.008432776, -0.2018218, 0.0031776428)
+transform = Transform3D(18.653137, 0, 0, 0, 1, 0, 0, 0, 18.653137, -0.008432776, -0.2018218, 0.0031776428)
 use_collision = true
 size = Vector3(1, 0.59521484, 1)
-material = ExtResource("2_iywne")
+material = ExtResource("2_dinhu")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
 
 [node name="Fire" parent="." unique_id=1964473192 instance=ExtResource("3_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.257704, 0.45, -0.10192512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.257704, 0.58542603, -0.10192512)
 
 [node name="Tree7" parent="." unique_id=1789272305 instance=ExtResource("4_lbhrr")]
 transform = Transform3D(0.9643597, 0, -0.2645962, 0, 1, 0, 0.2645962, 0, 0.9643597, 2.739606, 0, 3.1814325)
@@ -76,10 +83,46 @@ transform = Transform3D(0.19873896, 0, 0.9800525, 0, 1, 0, -0.9800525, 0, 0.1987
 transform = Transform3D(0.13028094, 0, -0.99147713, 0, 1, 0, 0.99147713, 0, 0.13028094, 3.6703591, 0, 0)
 
 [node name="Collectible" parent="." unique_id=1934788532 instance=ExtResource("5_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5411036, 0.5957856, -1.0553927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2484035, 0.5957856, -1.454876)
 
 [node name="Collectible2" parent="." unique_id=901236699 instance=ExtResource("5_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52815104, 0.5957856, 2.009926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6443534, 0.41050816, 2.548679)
 
 [node name="Collectible3" parent="." unique_id=4133468 instance=ExtResource("7_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.300042, 0.5957856, -5.006621)
+
+[node name="Trees#Tree8" parent="." unique_id=883130378 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.722473, 0.6162865, 4.7872286)
+
+[node name="Trees#Tree9" parent="." unique_id=749788624 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9231853, 0.10578978, 4.8734703)
+
+[node name="Trees#Tree10" parent="." unique_id=3582089 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.14035395, 0, -0.99010146, 0, 1, 0, 0.99010146, 0, 0.14035395, -1.9767078, 0.10578978, 7.1565156)
+
+[node name="Firewood" parent="." unique_id=775883092 instance=ExtResource("8_gee14")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -0.66457653, -0.101308405, -0.028593004)
+
+[node name="Firewood3" parent="." unique_id=1412559079 instance=ExtResource("8_gee14")]
+transform = Transform3D(-0.4035762, 0, -0.50314116, 0, 0.6449999, 0, 0.50314116, 0, -0.4035762, -1.6046327, -0.0103061795, 0.5069061)
+
+[node name="Firewood2" parent="." unique_id=731583967 instance=ExtResource("8_gee14")]
+transform = Transform3D(-0.28784478, -0.15442763, -0.5561676, -2.4932014e-09, 0.6214872, -0.17256455, 0.5772091, -0.07701056, -0.2773517, -1.2978336, 0.23002565, -0.34632713)
+
+[node name="Black rock 1" parent="." unique_id=180034113 instance=ExtResource("9_dinhu")]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -3.8817544, 0.11569524, 1.1591446)
+
+[node name="Black rock 2" parent="." unique_id=1077833918 instance=ExtResource("10_kvuet")]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -3.1626515, 0.037037015, -0.726635)
+
+[node name="Black rock 3" parent="." unique_id=222085035 instance=ExtResource("11_trtic")]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0.9314102, -0.10502601, -1.538172)
+
+[node name="Black rock 4" parent="." unique_id=1976938076 instance=ExtResource("12_ir15t")]
+transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, -0.83011794, 0.057142973, 1.7194576)
+
+[node name="Branch 3" parent="." unique_id=892080830 instance=ExtResource("13_trtic")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.22346139, 0.12572265, 4.8708315)
+
+[node name="Branch 4" parent="." unique_id=687851802 instance=ExtResource("14_ir15t")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.4855366, 0.16544212, 2.677195)

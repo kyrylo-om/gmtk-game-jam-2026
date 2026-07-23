@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2ll4smmxwngu"]
+
+[ext_resource type="Texture2D" uid="uid://d12igj77pe8jt" path="res://Materials/textures/black rocks/Black rock 2_dark_rock_diff_2k.jpg" id="1_6pji0"]
+[ext_resource type="Texture2D" uid="uid://ca3h1p4dqkbto" path="res://Materials/textures/black rocks/Black rock 2_dark_rock_nor_gl.png" id="2_rgfng"]
+[ext_resource type="Texture2D" uid="uid://b61jbdvkae2jd" path="res://Materials/textures/black rocks/Black rock 2_dark_rock_rough.png" id="3_1xtum"]
+
+[resource]
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("1_6pji0")
+roughness_texture = ExtResource("3_1xtum")
+normal_enabled = true
+normal_texture = ExtResource("2_rgfng")

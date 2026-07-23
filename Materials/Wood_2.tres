@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c50sqeseq5d84"]
+
+[ext_resource type="Texture2D" uid="uid://d20i0h6q1ilxm" path="res://Materials/textures/wood_2/sakura_bark_diff_2k.jpg" id="1_gfv55"]
+[ext_resource type="Texture2D" uid="uid://cbd4361p6p5yg" path="res://Materials/textures/wood_2/sakura_bark_nor_gl_2k.jpg" id="2_ula23"]
+[ext_resource type="Texture2D" uid="uid://b0kmj1f308gm4" path="res://Materials/textures/wood_2/sakura_bark_rough_2k.jpg" id="3_svpgn"]
+
+[resource]
+albedo_texture = ExtResource("1_gfv55")
+roughness_texture = ExtResource("3_svpgn")
+normal_enabled = true
+normal_texture = ExtResource("2_ula23")

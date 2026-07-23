@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsjn0hgve10id"]
+
+[ext_resource type="PackedScene" uid="uid://dmxb8dwfnib1j" path="res://models/Firewood.glb" id="1_3f71o"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2talo"]
+
+[node name="Firewood" type="StaticBody3D" unique_id=775883092]
+
+[node name="Firewood" parent="." unique_id=1558430120 instance=ExtResource("1_3f71o")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=975810769]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.5173704, 0)
+shape = SubResource("CylinderShape3D_2talo")
