@@ -35,6 +35,7 @@ func throw():
 
 	if throwed:
 		throwed.freeze = false
-		var forward_vector: Vector3 = -global_transform.basis.z + global_transform.basis.x * 0.2
+		var forward_vector: Vector3 = -global_transform.basis.z
 		
-		throwed.apply_central_impulse(forward_vector * throw_speed)
+		throwed.apply_central_impulse((forward_vector + global_transform.basis.x * 0.2) * throw_speed)
+		throwed.apply_torque_impulse(-global_transform.basis.x * throw_speed / 5)
