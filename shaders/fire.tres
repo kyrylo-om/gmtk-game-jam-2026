@@ -1,0 +1,33 @@
+[gd_resource type="VisualShader" format=3 uid="uid://cvp7iufkirpig"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_ux7tm"]
+parameter_name = "MainTexture"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_hxisb"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_v3kif"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ux7tm"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_hxisb"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[resource]
+nodes/fragment/0/position = Vector2(800, 148.57143)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_ux7tm")
+nodes/fragment/2/position = Vector2(-354.2857, 228.57143)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_hxisb")
+nodes/fragment/3/position = Vector2(-57.142857, 217.14285)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorDecompose_v3kif")
+nodes/fragment/4/position = Vector2(297.14285, 388.57144)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_ux7tm")
+nodes/fragment/5/position = Vector2(-182.85715, 0)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_hxisb")
+nodes/fragment/6/position = Vector2(331.42856, 0)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 6, 1, 5, 0, 6, 0, 6, 0, 4, 0, 6, 0, 0, 0, 4, 3, 0, 1)

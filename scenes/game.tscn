@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Material" uid="uid://8sl4788xkkq8" path="res://Materials/Forest_floor.tres" id="2_iywne"]
 [ext_resource type="Texture2D" uid="uid://b2w1kmtccwb3q" path="res://hdri/qwantani_night_puresky_4k.exr" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/fire.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/tree.tscn" id="4_lbhrr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("2_lnu2h")
@@ -38,29 +41,34 @@ omni_range = 5.741233
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1040101533]
-transform = Transform3D(18.65314, 0, 0, 0, 1, 0, 0, 0, 18.65314, 0, -0.2018218, 0)
+transform = Transform3D(18.65314, 0, 0, 0, 1, 0, 0, 0, 18.65314, -0.008432776, -0.2018218, 0.0031776428)
 use_collision = true
 size = Vector3(1, 0.59521484, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=848462432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.54659843, 4)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1649620210]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.731701, 0.54659843, -5.896104)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1594020824]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6206827, 0.5465975, 0.3587532)
+material = ExtResource("2_iywne")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1425102174]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96220255, 1.9223163, -6.320772)
-visible = false
-light_color = Color(1, 0.74903643, 0.48577863, 1)
-light_energy = 14.416
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 16.0
-light_size = 1.0
-shadow_enabled = true
-omni_range = 10.572079
+[node name="Fire" parent="." unique_id=1964473192 instance=ExtResource("3_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.257704, 0.45, -0.10192512)
+
+[node name="Tree7" parent="." unique_id=1789272305 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.9643597, 0, -0.2645962, 0, 1, 0, 0.2645962, 0, 0.9643597, 2.739606, 0, 3.1814325)
+
+[node name="Tree6" parent="." unique_id=1044977466 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.61617386, 0, 0.78761053, 0, 1, 0, -0.78761053, 0, 0.61617386, -2.406003, 0, 4.6493626)
+
+[node name="Tree5" parent="." unique_id=2087416220 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.6965029, 0, -0.71755433, 0, 1, 0, 0.71755433, 0, 0.6965029, -4.9281425, 0, 5.7464514)
+
+[node name="Tree4" parent="." unique_id=1487291046 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.03341654, 0, -0.99944174, 0, 1, 0, 0.99944174, 0, 0.03341654, -6.5781116, 0, 1.4387136)
+
+[node name="Tree3" parent="." unique_id=1923205768 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.7889859, 0, 0.6144114, 0, 1, 0, -0.6144114, 0, 0.7889859, -5.563142, 0, -3.3249993)
+
+[node name="Tree2" parent="." unique_id=1968511858 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.19873896, 0, 0.9800525, 0, 1, 0, -0.9800525, 0, 0.19873896, -0.4385352, 0, -3.576307)
+
+[node name="Tree1" parent="." unique_id=2009173629 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(0.13028094, 0, -0.99147713, 0, 1, 0, 0.99147713, 0, 0.13028094, 3.6703591, 0, 0)
