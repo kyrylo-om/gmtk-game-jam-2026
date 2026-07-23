@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://bsc3qlnwmew4b" path="res://scripts/player/move_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://cnivumrrmfl6u" path="res://scripts/player/inventory.gd" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://brjvuyg1k18hv" path="res://scripts/player/hud.gd" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://bsoxxfo1fmnwp" path="res://scripts/player/interactions.gd" id="2_rji43"]
 
@@ -19,6 +20,9 @@ height = 1.8
 script = ExtResource("1_ucva2")
 can_sprint = true
 
+[node name="Inventory" type="Node3D" parent="." unique_id=1589894720]
+script = ExtResource("2_dqkch")
+
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1618418279]
 script = ExtResource("2_qhqgy")
 
@@ -27,6 +31,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=398378541]
 layout_mode = 1
@@ -41,7 +46,6 @@ offset_right = 629.0
 offset_bottom = 315.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Kill 7 billion people"
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=98959929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -56,10 +60,13 @@ shape = SubResource("CapsuleShape3D_iof21")
 
 [node name="Head" type="Node3D" parent="." unique_id=698233127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+script = ExtResource("2_rji43")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=44698183]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1137652244]
 target_position = Vector3(0, 0, -4.165)
 collision_mask = 8
-script = ExtResource("2_rji43")
+
+[node name="LeftHand" type="Node3D" parent="Head" unique_id=1478509232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, -0.70000005, -1.5)

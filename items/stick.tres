@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cb8553t5m5gqk"]
+
+[ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="1_7mv65"]
+[ext_resource type="Texture2D" uid="uid://w5kafc3luitw" path="res://icon.svg" id="1_30qhw"]
+
+[resource]
+script = ExtResource("1_7mv65")
+name = "Stick"
+icon = ExtResource("1_30qhw")
+prefab_path = "uid://chgbwq3y3eoui"
+metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
