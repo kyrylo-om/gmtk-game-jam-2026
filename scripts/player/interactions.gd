@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		throw_speed = 0
 
 func pickup(item: RigidBody3D):
-	inventory.add_item(item.collect())
+	inventory.add_item(item.delete())
 	
 func throw():
 	var throwed: RigidBody3D = inventory.throw()

@@ -29,6 +29,7 @@ func throw():
 	if held < items.size():
 		var throwed = held_item
 		throwed.reparent(get_tree().current_scene)
+		throwed.unhold()
 
 		items.pop_at(held)
 		update_inventory_ui()
@@ -51,3 +52,4 @@ func set_held(index: int):
 		return
 	held_item = items[index].prefab.instantiate() as RigidBody3D
 	left_hand.add_child(held_item)
+	held_item.hold()

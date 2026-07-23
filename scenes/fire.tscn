@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dvv3vok31dem0"]
 
+[ext_resource type="Script" uid="uid://c2saweo03bvro" path="res://scripts/fire.gd" id="1_g5mbl"]
 [ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/textures/fire/image(6).png" id="1_xqmqg"]
 [ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="2_g5mbl"]
 
@@ -141,7 +142,10 @@ _data = {
 &"RESET": SubResource("Animation_gee14")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
 [node name="Fire" type="Node3D" unique_id=1964473192]
+script = ExtResource("1_g5mbl")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=823998882]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9391477, 0)
@@ -166,3 +170,11 @@ draw_pass_1 = SubResource("QuadMesh_rao50")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977569784]
 libraries/ = SubResource("AnimationLibrary_0tnpc")
 autoplay = &"Init"
+
+[node name="StaticBody3D" type="Area3D" parent="." unique_id=579073057]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=858016525]
+shape = SubResource("BoxShape3D_ehsp5")
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]

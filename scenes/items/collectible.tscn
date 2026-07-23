@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
-[node name="Collectible" type="RigidBody3D" unique_id=1934788532]
+[node name="Collectible" type="RigidBody3D" unique_id=1934788532 groups=["fuel"]]
 collision_layer = 9
 script = ExtResource("1_15c1p")
 
