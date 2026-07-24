@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/fire.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/campfire.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bxt3q644ppbny" path="res://hdri/starfield-night_4K.exr" id="3_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/enviroment/tree.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick1.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d01s1e40ngqn6" path="res://scenes/items/stick2.tscn" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://bsjn0hgve10id" path="res://scenes/fire firewood.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://x6vnnvvav2f5" path="res://Materials/textures/forest floor/forest_leaves_04_diff_2k.jpg" id="15_ca42v"]
 [ext_resource type="Texture2D" uid="uid://dx13tqxx2eoej" path="res://Materials/textures/forest floor/forest_leaves_04_nor_gl_2k.jpg" id="16_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dqmujdb5mk1sm" path="res://Materials/textures/forest floor 2/burned_ground_01_diff_2k.jpg" id="17_ssvqc"]
@@ -132,20 +131,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
 
-[node name="Fire" parent="." unique_id=1964473192 instance=ExtResource("3_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585, 0)
+[node name="Collectible5" parent="." unique_id=1934788532 instance=ExtResource("22_37s47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0150077, 0, -4.536568)
 
-[node name="Firewood" parent="Fire" unique_id=775883092 instance=ExtResource("8_gee14")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0.6476319, -0.6863084, -0.028593004)
-
-[node name="Firewood3" parent="Fire" unique_id=1412559079 instance=ExtResource("8_gee14")]
-transform = Transform3D(-0.4035762, 0, -0.50314116, 0, 0.6449999, 0, 0.50314116, 0, -0.4035762, -0.29242432, -0.59530616, 0.5069061)
-
-[node name="Firewood2" parent="Fire" unique_id=731583967 instance=ExtResource("8_gee14")]
-transform = Transform3D(-0.28784478, -0.15442763, -0.5561676, -2.4932014e-09, 0.6214872, -0.17256455, 0.5772091, -0.07701056, -0.2773517, 0.014374852, -0.35497433, -0.34632713)
-
-[node name="Collectible" parent="Fire" unique_id=1934788532 instance=ExtResource("22_37s47")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0150077, -0.585, -4.536568)
+[node name="Campfire" parent="." unique_id=1964473192 instance=ExtResource("3_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10823637, 0)
 
 [node name="Environment" type="Node3D" parent="." unique_id=482651045]
 
