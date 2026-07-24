@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Material" uid="uid://8sl4788xkkq8" path="res://Materials/forest_leaves.tres" id="2_dinhu"]
-[ext_resource type="Texture2D" uid="uid://b2w1kmtccwb3q" path="res://hdri/qwantani_night_puresky_4k.exr" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/fire.tscn" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bxt3q644ppbny" path="res://hdri/starfield-night_4K.exr" id="3_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/tree.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d01s1e40ngqn6" path="res://scenes/items/stick2.tscn" id="7_u5sy4"]
@@ -20,8 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://boiw0j7pgg81g" path="res://Materials/textures/forest floor 2/burned_ground_01_nor_gl_2k.jpg" id="18_264po"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
-panorama = ExtResource("2_lnu2h")
-energy_multiplier = 0.0
+panorama = ExtResource("3_ssvqc")
 
 [sub_resource type="Sky" id="Sky_uwrxv"]
 sky_material = SubResource("PanoramaSkyMaterial_uwrxv")
@@ -134,16 +132,6 @@ light_volumetric_fog_energy = 0.683
 light_size = 0.119
 shadow_enabled = true
 omni_range = 5.741233
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1670689461]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1040101533]
-transform = Transform3D(18.653137, 0, 0, 0, 1, 0, 0, 0, 18.653137, -0.008432776, -0.2018218, 0.0031776428)
-visible = false
-use_collision = true
-size = Vector3(1, 0.59521484, 1)
-material = ExtResource("2_dinhu")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
