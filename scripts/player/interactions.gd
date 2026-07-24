@@ -3,26 +3,35 @@ extends Node3D
 @onready var canvas: CanvasLayer = $"../Canvas"
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 @onready var inventory: Node3D = $"../Inventory"
-var looking_at_stick = false
+@onready var player: CharacterBody3D = $".."
+var collider = null
 
 @export var max_throw_speed: int = 10
 var throw_speed: float = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not looking_at_stick and ray_cast_3d.is_colliding():
-		canvas.show_tooltip("Press E to admire this cube.")
-		looking_at_stick = true
-	elif looking_at_stick and not ray_cast_3d.is_colliding():
-		canvas.hide_tooltip()
-		looking_at_stick = false
+	var current_collider = ray_cast_3d.get_collider()
+	
+	if collider != current_collider: # something new
+		if collider:
+			collider.unglow()
+			canvas.hide_tooltip()
 		
-	if looking_at_stick and Input.is_action_just_pressed("pickup"):
-		pickup(ray_cast_3d.get_collider())
-		
+		collider = current_collider
+		if collider:
+			canvas.show_tooltip("Press E to pick up " + collider.item_data.name + ".")
+			collider.glow()
+
+	if collider: # looking at collectible
+			if Input.is_action_just_pressed("pickup"):
+				pickup(collider)
+				canvas.hide_tooltip()
+				collider = null
+
 	if Input.is_action_pressed("throw"):
 		throw_speed = clamp(throw_speed + 10 * delta, 0, max_throw_speed)
-		print(throw_speed)
+		
 	if Input.is_action_just_released("throw"):
 		throw()
 		throw_speed = 0

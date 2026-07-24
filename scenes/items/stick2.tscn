@@ -8,9 +8,10 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro5b3"]
 albedo_color = Color(0.13044167, 0.42023435, 0.5056095, 1)
 
-[node name="Collectible" unique_id=1934788532 instance=ExtResource("1_4ycga")]
+[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_4ycga")]
 freeze = true
 item_data = ExtResource("2_4ycga")
+mesh = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=254427704]
 mesh = SubResource("BoxMesh_ehsp5")

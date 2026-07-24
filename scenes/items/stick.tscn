@@ -4,13 +4,16 @@
 [ext_resource type="Resource" uid="uid://cb8553t5m5gqk" path="res://items/stick.tres" id="2_ld7er"]
 [ext_resource type="PackedScene" uid="uid://da1hqbmw6ktck" path="res://models/Branches/Branch 1.fbx" id="3_7rqfo"]
 
-[node name="Collectible" unique_id=1934788532 instance=ExtResource("1_ibmtb")]
+[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_ibmtb")]
 mass = 8.1
 freeze = true
 item_data = ExtResource("2_ld7er")
+mesh = NodePath("Branch 1/Plane")
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
 transform = Transform3D(5.223744, 0, 0, 0, 0.41391534, 0, 0, 0, 1.1331886, 0, 0, 0)
 
-[node name="Branch 1" parent="." index="1" unique_id=138089556 instance=ExtResource("3_7rqfo")]
-transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -0.031711936, 0.011746645, -0.050020814)
+[node name="Branch 1" parent="." index="1" unique_id=772268168 instance=ExtResource("3_7rqfo")]
+transform = Transform3D(0.37073827, 0, 0, 0, 0.37073827, 0, 0, 0, 0.37073827, 0, 0, 0)
+
+[editable path="Branch 1"]

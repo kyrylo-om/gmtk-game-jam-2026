@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://cv50lkv3bi8lr"]
 
 [ext_resource type="Script" uid="uid://cqqc420se8c1f" path="res://scripts/items/collectible.gd" id="1_15c1p"]
+[ext_resource type="Material" uid="uid://bnvn4m1cum8ij" path="res://Materials/outline.tres" id="2_j4in7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
 [node name="Collectible" type="RigidBody3D" unique_id=1934788532 groups=["fuel"]]
 collision_layer = 9
 script = ExtResource("1_15c1p")
+outline_material = ExtResource("2_j4in7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=753305388]
 shape = SubResource("BoxShape3D_ehsp5")
