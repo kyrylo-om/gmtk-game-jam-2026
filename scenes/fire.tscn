@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://c2saweo03bvro" path="res://scripts/fire.gd" id="1_g5mbl"]
 [ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/textures/fire/image(6).png" id="1_xqmqg"]
 [ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="2_g5mbl"]
+[ext_resource type="Texture2D" uid="uid://cas72yd6ogfol" path="res://Materials/textures/fire/MedumFlame02.png" id="4_rach5"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="5_4l61p"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="6_10wrr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
 transparency = 1
@@ -12,6 +15,7 @@ vertex_color_is_srgb = true
 albedo_texture = ExtResource("1_xqmqg")
 albedo_texture_force_srgb = true
 billboard_mode = 3
+billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
@@ -25,7 +29,7 @@ texture_mode = 1
 curve = SubResource("Curve_tbk4o")
 
 [sub_resource type="Gradient" id="Gradient_lbhrr"]
-offsets = PackedFloat32Array(0, 0.3667791, 0.5683507)
+offsets = PackedFloat32Array(0, 0.3667791, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.75, 0.585, 0.585, 1, 0.012617188, 0.012617188, 0.012617188, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ynbbn"]
@@ -44,9 +48,9 @@ particle_flag_rotate_y = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.5
-emission_ring_radius = 0.5
+emission_ring_radius = 4.0
 emission_ring_inner_radius = 0.0
-emission_ring_cone_angle = 44.84
+emission_ring_cone_angle = 90.0
 angle_min = -179.99998
 angle_max = 180.00002
 direction = Vector3(0, 1, 0)
@@ -62,8 +66,8 @@ scale_curve = SubResource("CurveTexture_ux44r")
 color = Color(1.8659585, 1.2763183, 0.6460132, 1)
 color_ramp = SubResource("GradientTexture1D_ynbbn")
 alpha_curve = SubResource("CurveTexture_hl70x")
-hue_variation_min = -0.100000024
-hue_variation_max = 0.049999975
+hue_variation_min = -0.010000022
+hue_variation_max = 0.009999977
 
 [sub_resource type="QuadMesh" id="QuadMesh_ap7ik"]
 
@@ -86,117 +90,210 @@ point_count = 11
 [sub_resource type="CurveTexture" id="CurveTexture_tbk4o"]
 curve = SubResource("Curve_p57ef")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ux44r"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4l61p"]
 lifetime_randomness = 0.1
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.8
-emission_ring_radius = 0.6
+emission_ring_radius = 4.2
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 direction = Vector3(0, 1, 0)
 spread = 25.0
-initial_velocity_min = 0.5
-initial_velocity_max = 2.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
 gravity = Vector3(0, 1, 0)
 scale_min = 0.04
 scale_max = 0.08
 scale_curve = SubResource("CurveTexture_tbk4o")
-color = Color(1.9961169, 1.9961169, 1.9961169, 1)
+color = Color(1.8247963, 1.3882558, 1.2902569, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rao50"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ux44r"]
+lifetime_randomness = 0.35
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.8
+emission_ring_radius = 0.6
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 25.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_min = 0.04
+scale_max = 0.08
+scale_curve = SubResource("CurveTexture_tbk4o")
+color = Color(1.8247963, 0.9371641, 0.7378998, 1)
 
 [sub_resource type="Animation" id="Animation_g5mbl"]
 resource_name = "Intensity"
 length = 100.0
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fire:process_material:emission_ring_radius")
+tracks/0/path = NodePath("Sparks:process_material:emission_ring_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 100),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 2.0]
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 4.2, -16.666668, -0.6, 0, 0),
+"times": PackedFloat32Array(0, 100)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sparks:process_material:emission_ring_radius")
+tracks/1/path = NodePath("Fire:lifetime")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 2.6, -16.666668, -0.33333334, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.5, -16.666668, -0.049999997, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Fire:amount")
+tracks/2/path = NodePath("Fire:process_material:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0, 400, -16.666668, -58.333336, 0, 0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0, 1, -16.666668, -0.016666673, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Fire:lifetime")
+tracks/3/path = NodePath("Fire:process_material:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.8, -16.666668, -0.099999994, 0, 0),
+"points": PackedFloat32Array(1.4, -0.25, 0, 0.25, 0, 3, -16.666668, -0.2666667, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Fire:process_material:scale:x")
+tracks/4/path = NodePath("Sparks:lifetime")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0, 3, -16.666668, -0.35000002, 0, 0),
-"times": PackedFloat32Array(0, 100)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Fire:process_material:scale:y")
+tracks/5/path = NodePath("Sparks:process_material:emission_ring_inner_radius")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1.4, -0.25, 0, 0.25, 0, 20, -16.666668, -3.1000004, 0, 0),
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.5, 0, 0, 16.666668, 0.33333334, 4, -16.666668, -0.5833334, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sparks:amount")
+tracks/6/path = NodePath("Smoke:process_material:emission_ring_radius")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.5, 0, 0, 16.666668, 0.5833334, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 100)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sparks:lifetime")
+tracks/7/path = NodePath("Smoke:process_material:spread")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0, 45, -16.666668, -4.166667, 0, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Smoke:lifetime")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 3, -16.666668, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sparks2:process_material:emission_ring_radius")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 4.2, -16.666668, -0.6, 0, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fire:amount_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.05, 0, 0, 16.666668, 0.15833335, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Fire:process_material:emission_ring_radius")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 4, -16.666668, -0.65000004, 0, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sparks:amount_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.35, 0, 0, 16.666668, 0.108333334, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sparks2:amount_ratio")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.1, 0, 0, 16.666668, 0.15, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 100)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Smoke:amount_ratio")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.1, 0, 0, 16.666668, 0.15, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 100)
 }
 
 [sub_resource type="Animation" id="Animation_u5sy4"]
@@ -230,71 +327,158 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
-tracks/1/type = "value"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Fire:process_material:emission_ring_radius")
+tracks/1/path = NodePath("Sparks:process_material:emission_ring_radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.5]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sparks:process_material:emission_ring_radius")
+tracks/2/path = NodePath("Fire:process_material:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Fire:process_material:scale:x")
+tracks/3/path = NodePath("Fire:process_material:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Fire:process_material:scale:y")
+tracks/4/path = NodePath("Fire:lifetime")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1.8, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Fire:amount")
+tracks/5/path = NodePath("Sparks:process_material:emission_ring_inner_radius")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(400, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Fire:lifetime")
+tracks/6/path = NodePath("Smoke:process_material:emission_ring_radius")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.8, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Smoke:process_material:spread")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(45, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Smoke:lifetime")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sparks2:process_material:emission_ring_radius")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fire:amount_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Fire:process_material:emission_ring_radius")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sparks:amount_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sparks2:amount_ratio")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Smoke:amount_ratio")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -335,6 +519,95 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_txieb")
 nodes/TimeScale/position = Vector2(-500, 240)
 node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"TimeSeek", &"Add2", 1, &"Animation", &"TimeSeek", 0, &"TimeScale", &"TimeScale", 0, &"Animation 2"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynbbn"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1.1085175, 1.1085175, 1.1085175, 1)
+albedo_texture = ExtResource("4_rach5")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ap7ik"]
+lifetime_randomness = 0.16
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
+gravity = Vector3(0, 0, 0)
+scale_max = 1.1999999
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_2talo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbk4o"]
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.64, 0.64, 0.64, 1)
+albedo_texture = ExtResource("5_4l61p")
+normal_enabled = true
+normal_texture = ExtResource("6_10wrr")
+subsurf_scatter_strength = 1.0
+backlight_enabled = true
+backlight_texture = ExtResource("5_4l61p")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_4l61p"]
+offsets = PackedFloat32Array(0.08046683, 0.50307125, 1)
+colors = PackedColorArray(0.34, 0.15549333, 0.0408, 1, 0.9754941, 0.9754941, 0.9754941, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4l61p"]
+gradient = SubResource("Gradient_4l61p")
+
+[sub_resource type="Curve" id="Curve_4l61p"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4l61p"]
+curve = SubResource("Curve_4l61p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rao50"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.5
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 80.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_4l61p")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.009999977
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.10300001
+turbulence_influence_over_life = SubResource("CurveTexture_4l61p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hl70x"]
+
 [node name="Fire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
 
@@ -347,14 +620,24 @@ omni_range = 10.572079
 
 [node name="Fire" type="GPUParticles3D" parent="." unique_id=653983407]
 material_override = SubResource("StandardMaterial3D_rao50")
-amount = 400
+amount = 1000
+amount_ratio = 0.05
 lifetime = 1.8
 process_material = SubResource("ParticleProcessMaterial_2talo")
 draw_pass_1 = SubResource("QuadMesh_ap7ik")
 
+[node name="Sparks2" type="GPUParticles3D" parent="." unique_id=1229063230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020256996, 0, 0)
+material_override = SubResource("StandardMaterial3D_m3qdq")
+amount = 200
+amount_ratio = 0.1
+process_material = SubResource("ParticleProcessMaterial_4l61p")
+draw_pass_1 = SubResource("QuadMesh_rao50")
+
 [node name="Sparks" type="GPUParticles3D" parent="." unique_id=935501814]
 material_override = SubResource("StandardMaterial3D_m3qdq")
-amount = 35
+amount = 100
+amount_ratio = 0.35
 process_material = SubResource("ParticleProcessMaterial_ux44r")
 draw_pass_1 = SubResource("QuadMesh_rao50")
 
@@ -373,5 +656,22 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 0.0
 parameters/TimeSeek/seek_request = -1.0
 parameters/TimeScale/scale = 0.0
+
+[node name="New fire" type="GPUParticles3D" parent="." unique_id=1588383874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.070399374, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_ynbbn")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_ap7ik")
+draw_pass_1 = SubResource("QuadMesh_2talo")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1302015300]
+transform = Transform3D(0.11241011, 0, -0.9936619, 0, 1, 0, 0.9936619, 0, 0.11241011, 0.013212681, 0.29387176, 0)
+material_override = SubResource("StandardMaterial3D_tbk4o")
+amount = 1000
+amount_ratio = 0.1
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_rao50")
+draw_pass_1 = SubResource("QuadMesh_hl70x")
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
