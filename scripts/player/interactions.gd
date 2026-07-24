@@ -23,14 +23,18 @@ func _process(delta: float) -> void:
 		
 		collider = current_collider
 		if collider:
-			canvas.show_tooltip("Press E to pick up " + collider.item_data.name + ".")
+			if inventory.items.size() < 3:
+				canvas.show_tooltip("Press E to pick up " + collider.item_data.name + ".")
+			else:
+				canvas.show_tooltip("Can't hold more.")
 			collider.glow()
 
 	if collider: # looking at collectible
 		if Input.is_action_just_pressed("pickup"):
-			pickup(collider)
-			canvas.hide_tooltip()
-			collider = null
+			if inventory.items.size() < 3:
+				pickup(collider)
+				canvas.hide_tooltip()
+				collider = null
 				
 	if not look_at_fire and ray_cast_fire.is_colliding():
 		look_at_fire = true

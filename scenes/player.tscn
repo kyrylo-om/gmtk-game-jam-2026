@@ -631,6 +631,81 @@ _data = {
 &"walk": SubResource("Animation_d2wvv")
 }
 
+[sub_resource type="Animation" id="Animation_qfm1y"]
+resource_name = "Death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Blink/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -707.99994), Vector2(0, -100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 374), Vector2(0, -100)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Head/RightHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"death_done"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fulsm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Blink/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -707.99994)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 374)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4r5pv"]
+_data = {
+&"Death": SubResource("Animation_qfm1y"),
+&"RESET": SubResource("Animation_fulsm")
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_mb2i2"]
 font = ExtResource("6_d2wvv")
 
@@ -655,7 +730,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.842]
+"values": [0.0]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -874,6 +949,9 @@ script = ExtResource("2_dqkch")
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1618418279]
 script = ExtResource("2_qhqgy")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas" unique_id=523277314]
+libraries/ = SubResource("AnimationLibrary_4r5pv")
+
 [node name="Control" type="Control" parent="Canvas" unique_id=117146400]
 layout_mode = 3
 anchors_preset = 15
@@ -1022,7 +1100,7 @@ mesh = SubResource("CapsuleMesh_ro5b3")
 [node name="OmniLight3D" type="OmniLight3D" parent="Head/RightHand/Torch/MeshInstance3D" unique_id=1434870554]
 transform = Transform3D(1, 0, -9.2983235e-08, 0, 1, 0, 9.2983235e-08, 0, 1, 0.071285725, 0.6716702, 0.09031439)
 light_color = Color(1, 0.74903643, 0.48577863, 1)
-light_energy = 0.842
+light_energy = 0.0
 light_volumetric_fog_energy = 0.683
 light_size = 0.119
 shadow_enabled = true
