@@ -719,6 +719,8 @@ outline_size = 1
 radius = 0.4
 height = 1.8
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
 [sub_resource type="Animation" id="Animation_f1ej7"]
 length = 0.001
 tracks/0/type = "value"
@@ -1104,6 +1106,13 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_iof21")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=955420242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68, 0)
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=210062120]
+shape = SubResource("BoxShape3D_ehsp5")
+
 [node name="Head" type="Node3D" parent="." unique_id=698233127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 script = ExtResource("2_rji43")
@@ -1171,5 +1180,6 @@ mesh = SubResource("BoxMesh_ehsp5")
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Area3D" to="Head/RightHand" method="_on_area_3d_body_entered"]
 
 [editable path="Head/RightHand/Torch/Fire"]

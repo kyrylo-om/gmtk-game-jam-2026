@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dvv3vok31dem0"]
+[gd_scene format=3 uid="uid://eqr1a4diu1e3"]
 
 [ext_resource type="Script" uid="uid://c2saweo03bvro" path="res://scripts/fire.gd" id="1_g5mbl"]
 [ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/textures/fire/image(6).png" id="1_xqmqg"]
