@@ -50,6 +50,8 @@ func set_held(index: int):
 	if index >= items.size():
 		held_item = null
 		return
+	print(items[index].prefab)
 	held_item = items[index].prefab.instantiate() as RigidBody3D
+	print(held_item)
 	left_hand.add_child(held_item)
 	held_item.hold()

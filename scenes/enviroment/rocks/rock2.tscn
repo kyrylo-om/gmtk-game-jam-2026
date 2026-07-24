@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dkp7qrkkpa4fe"]
+
+[ext_resource type="PackedScene" uid="uid://dh6qqga4e4wnb" path="res://models/Rocks/Black rock 2.fbx" id="1_akxqf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k272v"]
+size = Vector3(3.355, 1.12, 1.745)
+
+[node name="rock2" type="StaticBody3D" unique_id=1789272305]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1544538233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061818123, 0.68870103, -0.09879279)
+shape = SubResource("BoxShape3D_k272v")
+
+[node name="Black rock 2" parent="." unique_id=1195144902 instance=ExtResource("1_akxqf")]

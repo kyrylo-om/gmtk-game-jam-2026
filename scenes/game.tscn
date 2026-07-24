@@ -3,24 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/fire.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bxt3q644ppbny" path="res://hdri/starfield-night_4K.exr" id="3_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/tree.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/enviroment/tree.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick1.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d01s1e40ngqn6" path="res://scenes/items/stick2.tscn" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://bsjn0hgve10id" path="res://scenes/firewood.tscn" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://drdrkc2lp7aap" path="res://models/Rocks/Black rock 1.fbx" id="9_dinhu"]
-[ext_resource type="PackedScene" uid="uid://dh6qqga4e4wnb" path="res://models/Rocks/Black rock 2.fbx" id="10_kvuet"]
-[ext_resource type="PackedScene" uid="uid://bgela4ddd60o" path="res://models/Rocks/Black rock 3.fbx" id="11_trtic"]
-[ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Rocks/Black rock 4.fbx" id="12_ir15t"]
-[ext_resource type="PackedScene" uid="uid://ckqtyd32cn56k" path="res://models/Branches/Branch 3.fbx" id="13_trtic"]
-[ext_resource type="PackedScene" uid="uid://ce1e6cc4gjep6" path="res://models/Branches/Branch 4.fbx" id="14_ir15t"]
+[ext_resource type="PackedScene" uid="uid://bsjn0hgve10id" path="res://scenes/fire firewood.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://x6vnnvvav2f5" path="res://Materials/textures/forest floor/forest_leaves_04_diff_2k.jpg" id="15_ca42v"]
 [ext_resource type="Texture2D" uid="uid://dx13tqxx2eoej" path="res://Materials/textures/forest floor/forest_leaves_04_nor_gl_2k.jpg" id="16_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dqmujdb5mk1sm" path="res://Materials/textures/forest floor 2/burned_ground_01_diff_2k.jpg" id="17_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://cpeu6iql72k0w" path="res://scenes/enviroment/stump.tscn" id="18_1kice"]
 [ext_resource type="Texture2D" uid="uid://boiw0j7pgg81g" path="res://Materials/textures/forest floor 2/burned_ground_01_nor_gl_2k.jpg" id="18_264po"]
 [ext_resource type="PackedScene" uid="uid://f6lu2pqisoca" path="res://scenes/monsters/tree_monster.tscn" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://boxrseqoh5e2q" path="res://scenes/enviroment/rocks/rock1.tscn" id="19_37s47"]
 [ext_resource type="PackedScene" uid="uid://bdw4ps4jp5sbf" path="res://scenes/monsters/sitting_monster.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://dx7inx2qmcv5j" path="res://scenes/monsters/gentel_monster.tscn" id="20_5newe"]
+[ext_resource type="PackedScene" uid="uid://dkp7qrkkpa4fe" path="res://scenes/enviroment/rocks/rock2.tscn" id="20_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="21_37s47"]
+[ext_resource type="PackedScene" uid="uid://ci6kwqk5mb1iy" path="res://scenes/enviroment/rocks/rock3.tscn" id="21_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bwrce73lx0ae" path="res://scenes/items/firewood.tscn" id="22_37s47"]
+[ext_resource type="PackedScene" uid="uid://cfxdiw6f38hi1" path="res://scenes/enviroment/rocks/rock4.tscn" id="22_pl11u"]
+[ext_resource type="PackedScene" uid="uid://bcut6xayjsuoo" path="res://scenes/items/stick3.tscn" id="23_bt5mj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("3_ssvqc")
@@ -143,6 +144,9 @@ transform = Transform3D(-0.4035762, 0, -0.50314116, 0, 0.6449999, 0, 0.50314116,
 [node name="Firewood2" parent="Fire" unique_id=731583967 instance=ExtResource("8_gee14")]
 transform = Transform3D(-0.28784478, -0.15442763, -0.5561676, -2.4932014e-09, 0.6214872, -0.17256455, 0.5772091, -0.07701056, -0.2773517, 0.014374852, -0.35497433, -0.34632713)
 
+[node name="Collectible" parent="Fire" unique_id=1934788532 instance=ExtResource("22_37s47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0150077, -0.585, -4.536568)
+
 [node name="Environment" type="Node3D" parent="." unique_id=482651045]
 
 [node name="Tree7" parent="Environment" unique_id=1789272305 instance=ExtResource("4_lbhrr")]
@@ -175,24 +179,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9231853, 0.10578978, 4.8734
 [node name="Trees#Tree10" parent="Environment" unique_id=3582089 instance=ExtResource("4_lbhrr")]
 transform = Transform3D(0.14035395, 0, -0.99010146, 0, 1, 0, 0.99010146, 0, 0.14035395, -1.9767078, 0.10578978, 7.1565156)
 
-[node name="Black rock 1" parent="Environment" unique_id=180034113 instance=ExtResource("9_dinhu")]
-transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -3.8817544, 0.11569524, 1.1591446)
-
-[node name="Black rock 2" parent="Environment" unique_id=1077833918 instance=ExtResource("10_kvuet")]
-transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -3.1626515, 0.037037015, -0.726635)
-
-[node name="Black rock 3" parent="Environment" unique_id=222085035 instance=ExtResource("11_trtic")]
-transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0.9314102, -0.10502601, -1.538172)
-
-[node name="Black rock 4" parent="Environment" unique_id=1976938076 instance=ExtResource("12_ir15t")]
-transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, -2.066765, 0.057142973, 1.7194576)
-
-[node name="Branch 3" parent="Environment" unique_id=892080830 instance=ExtResource("13_trtic")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.979612, 0.12572265, 7.316366)
-
-[node name="Branch 4" parent="Environment" unique_id=687851802 instance=ExtResource("14_ir15t")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.4855366, 0.16544212, 2.677195)
-
 [node name="Terrain3D" type="Terrain3D" parent="Environment" unique_id=256132067]
 data_directory = "res://terrain_data"
 material = SubResource("Terrain3DMaterial_5newe")
@@ -200,8 +186,8 @@ assets = SubResource("Terrain3DAssets_pl11u")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Collectible" parent="." unique_id=1934788532 instance=ExtResource("5_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2145767, 0, -1.4654047)
+[node name="Collectible" parent="." unique_id=978032126 instance=ExtResource("5_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2145767, 0, -5.602683)
 
 [node name="Collectible2" parent="." unique_id=696250224 instance=ExtResource("7_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34997, 0, 4.069932)
@@ -217,3 +203,24 @@ transform = Transform3D(0.9724024, 0, 0.23331028, 0, 1, 0, -0.23331028, 0, 0.972
 
 [node name="Monster4" parent="." unique_id=938046065 instance=ExtResource("21_37s47")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71175957, 0.31946754, 9.06842)
+
+[node name="Collectible3" parent="." unique_id=1112508650 instance=ExtResource("23_bt5mj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1638882, 0, -3.7221065)
+
+[node name="Collectible4" parent="." unique_id=817103507 instance=ExtResource("7_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6098623, -0.12472287, -4.970271)
+
+[node name="Stump" parent="." unique_id=2114167044 instance=ExtResource("18_1kice")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7394543, -2.3841858e-07, -4.5361404)
+
+[node name="rock1" parent="." unique_id=355604059 instance=ExtResource("19_37s47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7465963, 0, -0.8097801)
+
+[node name="rock2" parent="." unique_id=775119150 instance=ExtResource("20_bt5mj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.227943, 0, -4.175548)
+
+[node name="rock3" parent="." unique_id=1950541189 instance=ExtResource("21_e1j6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.416237, 0, 1.5235934)
+
+[node name="rock4" parent="." unique_id=883417986 instance=ExtResource("22_pl11u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.742987, -0.18073392, 7.601918)

@@ -4,16 +4,19 @@
 [ext_resource type="Resource" uid="uid://cb8553t5m5gqk" path="res://items/stick.tres" id="2_ld7er"]
 [ext_resource type="PackedScene" uid="uid://da1hqbmw6ktck" path="res://models/Branches/Branch 1.fbx" id="3_7rqfo"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rqfo"]
+size = Vector3(0.38, 0.065, 2.075)
+
 [node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_ibmtb")]
-mass = 8.1
-freeze = true
+mass = 2.0
 item_data = ExtResource("2_ld7er")
 mesh = NodePath("Branch 1/Plane")
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
-transform = Transform3D(5.223744, 0, 0, 0, 0.41391534, 0, 0, 0, 1.1331886, 0, 0, 0)
+transform = Transform3D(2.325, 0, 0, 0, 1.684, 0, 0, 0, 1, 0.1157639, 0.07230234, 0.49076703)
+shape = SubResource("BoxShape3D_7rqfo")
 
 [node name="Branch 1" parent="." index="1" unique_id=772268168 instance=ExtResource("3_7rqfo")]
-transform = Transform3D(0.37073827, 0, 0, 0, 0.37073827, 0, 0, 0, 0.37073827, 0, 0, 0)
+transform = Transform3D(-8.733958e-09, -3.813328e-10, 0.2, -0.008723877, 0.19980966, 0, -0.19980966, -0.008723877, -8.742278e-09, 0, 0.05066365, 0)
 
 [editable path="Branch 1"]

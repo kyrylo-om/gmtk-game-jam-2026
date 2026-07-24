@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://1erbayvgh7jl"]
+
+[ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="1_euuk0"]
+
+[resource]
+script = ExtResource("1_euuk0")
+name = "Firewood"
+prefab_path = "uid://bwrce73lx0ae"
+fuel = 5.0
+metadata/_custom_type_script = "uid://dtv4bd68p4ulq"

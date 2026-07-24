@@ -7,6 +7,7 @@
 
 [node name="Collectible" type="RigidBody3D" unique_id=1934788532 groups=["fuel"]]
 collision_layer = 9
+freeze = true
 script = ExtResource("1_15c1p")
 outline_material = ExtResource("2_j4in7")
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://fm6nsp7muhpf"]
+
+[ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="1_uo6hb"]
+
+[resource]
+script = ExtResource("1_uo6hb")
+name = "Stick"
+prefab_path = "uid://bcut6xayjsuoo"
+metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
