@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6n6vlmpeqs0w" path="res://models/Branches/Branch 2.fbx" id="2_xqvd4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iuc1q"]
-size = Vector3(1.165, 0.06, 0.415)
+size = Vector3(0.415, 0.06, 1.165)
 
 [node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_7w6n6")]
 item_data = ExtResource("2_iuc1q")
@@ -16,6 +16,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0034737587)
 shape = SubResource("BoxShape3D_iuc1q")
 
 [node name="Branch 2" parent="." index="1" unique_id=1664574026 instance=ExtResource("2_xqvd4")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.086135745)
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 0, 0, -0.086135745)
 
 [editable path="Branch 2"]

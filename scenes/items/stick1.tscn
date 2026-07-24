@@ -13,10 +13,10 @@ item_data = ExtResource("2_ld7er")
 mesh = NodePath("Branch 1/Plane")
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
-transform = Transform3D(2.325, 0, 0, 0, 1.684, 0, 0, 0, 1, 0.1157639, 0.07230234, 0.49076703)
+transform = Transform3D(2.325, 0, 0, 0, 1.684, 0, 0, 0, 1, 0.1157639, 0.07230234, 0.0025850832)
 shape = SubResource("BoxShape3D_7rqfo")
 
 [node name="Branch 1" parent="." index="1" unique_id=772268168 instance=ExtResource("3_7rqfo")]
-transform = Transform3D(-8.733958e-09, -3.813328e-10, 0.2, -0.008723877, 0.19980966, 0, -0.19980966, -0.008723877, -8.742278e-09, 0, 0.05066365, 0)
+transform = Transform3D(-8.733958e-09, -3.8133283e-10, -0.2, -0.008723878, 0.19980967, 0, 0.19980967, 0.008723878, -8.742278e-09, 0.14330602, 0.05066365, 0.50193024)
 
 [editable path="Branch 1"]
