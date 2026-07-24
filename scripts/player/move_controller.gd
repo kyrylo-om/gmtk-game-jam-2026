@@ -4,10 +4,10 @@
 # Happy prototyping!
 
 extends CharacterBody3D
-@onready var ui_animator: AnimationPlayer = $Canvas/Control/AnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
+@onready var canvas: CanvasLayer = $Canvas
 
 func attack() -> void:
 	# Forces the state machine to transition to "Attack" immediately
@@ -186,7 +186,16 @@ func release_mouse():
 	mouse_captured = false
 	
 func respawn():
+	has_jumped = false
 	position = Vector3(0, 0, 8)
 	rotate_look_immediately(Vector2.ZERO)
-	ui_animator.stop()
-	ui_animator.play("wake_up")
+	playback.travel("wake_up")
+	disable_move()
+
+func disable_move():
+	can_move = false
+	velocity = Vector3.ZERO
+
+func respawn_done():
+	canvas.show_dialogue("No. I can't let it go.")
+	can_move = true

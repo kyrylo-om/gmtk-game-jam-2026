@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmwyw21uty23" path="res://scenes/inventory_item.tscn" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://r2e54enshrdi" path="res://sprites/eyelid.png" id="4_tuyoq"]
 [ext_resource type="FontFile" uid="uid://1qivvlyxag5i" path="res://fonts/IMFellEnglishSC-Regular.ttf" id="6_fjrip"]
+[ext_resource type="Script" uid="uid://4an2rmg0sfye" path="res://scripts/animated_text.gd" id="7_smehm"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
 animation = &"idle"
@@ -19,6 +20,9 @@ animation = &"jump_start"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_smehm"]
 animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2wvv"]
+animation = &"wake_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fjrip"]
 animation = &"walk"
@@ -58,6 +62,10 @@ advance_expression = "not is_sprinting"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oprun"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ro5b3"]
 states/Start/position = Vector2(122, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_tuyoq")
@@ -68,9 +76,11 @@ states/jump_start/node = SubResource("AnimationNodeAnimation_y4r1p")
 states/jump_start/position = Vector2(183, -73)
 states/run/node = SubResource("AnimationNodeAnimation_smehm")
 states/run/position = Vector2(320, -18)
+states/wake_up/node = SubResource("AnimationNodeAnimation_d2wvv")
+states/wake_up/position = Vector2(-9, -73)
 states/walk/node = SubResource("AnimationNodeAnimation_fjrip")
 states/walk/position = Vector2(529, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_smehm"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_jej6c"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_f1ej7"), "jump_end", "idle", SubResource("AnimationNodeStateMachineTransition_qfm1y")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_smehm"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_jej6c"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_f1ej7"), "jump_end", "idle", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "wake_up", "idle", SubResource("AnimationNodeStateMachineTransition_oprun")]
 graph_offset = Vector2(-202, -125)
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
@@ -140,6 +150,30 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/Blink/TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -707.99994)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 374)]
 }
 
 [sub_resource type="Animation" id="Animation_tuyoq"]
@@ -413,6 +447,81 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.3251446, 0.7)
 }
 
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "wake_up"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Blink/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Head/Camera3D:rotation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0, 2, 0, 0),
+"points": PackedFloat32Array(-0.6719518, 0, 0, 0.13333334, 0.13336778, -0.5122383, -0.10000001, -0.01756376, 0, 0, -0.5122383, -0.100000024, 0.004390955, 0, 0, -0.16876502, -0.4333334, 0.0024351925, 0, 0, -0.16876502, -0.5588963, -0.0006427318, 0, 0, 0.0012013055, -0.8576989, -1.2665987e-07, 0, 0),
+"times": PackedFloat32Array(0.6666667, 0.9666667, 1.6, 2.2133334, 2.4816668, 3.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Head/Camera3D:rotation:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0, 2, 0, 0),
+"points": PackedFloat32Array(0.31415927, -0.25, 0, 0.25, 0, 0.30886877, -0.16666667, 0, 0, 0, 0.30886877, -0.16666667, 0, 0, 0, -0.3777544, -0.36666656, 0.0030779839, 0.20027605, -0.0016812179, -0.3757064, -0.35672402, 0.0030401647, 0, 0, -0.00084710494, -0.8910322, -0.018435821, 0, 0),
+"times": PackedFloat32Array(0.6666667, 0.96666664, 1.6, 2.175, 2.4666667, 3.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Head/Camera3D:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0, 2, 0, 0),
+"points": PackedFloat32Array(0.15707964, -0.22818747, 0.16856466, 0.13333334, -0.09849484, 0.04541195, -0.16666669, 0.0061696693, 0, 0, 0.04541195, -0.16666669, 0.0061696693, 0, 0, -0.006981317, -0.29372597, -0.0004405356, 0, 0, -0.006981317, -0.3588965, 0.0010985364, 0, 0, 0.003249716, -0.44776964, 0.0018598335, 0, 0),
+"times": PackedFloat32Array(0.6666667, 0.9666667, 1.6, 2.2133334, 2.4816668, 3.5)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"respawn_done"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_d2wvv"]
 resource_name = "walk"
 length = 1.3
@@ -515,68 +624,8 @@ _data = {
 &"jump_end": SubResource("Animation_3v2ag"),
 &"jump_start": SubResource("Animation_jej6c"),
 &"run": SubResource("Animation_y4r1p"),
+&"wake_up": SubResource("Animation_smehm"),
 &"walk": SubResource("Animation_d2wvv")
-}
-
-[sub_resource type="Animation" id="Animation_fjrip"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Canvas/Control/Blink/TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -707.99994)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Canvas/Control/Blink/TextureRect2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 374)]
-}
-
-[sub_resource type="Animation" id="Animation_smehm"]
-resource_name = "wake_up"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Canvas/Control/Blink/TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Canvas/Control/Blink/TextureRect2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ur7pv"]
-_data = {
-&"RESET": SubResource("Animation_fjrip"),
-&"wake_up": SubResource("Animation_smehm")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
@@ -603,8 +652,6 @@ root_node = NodePath("../Canvas")
 tree_root = SubResource("AnimationNodeStateMachine_ro5b3")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/jump_end = false
-parameters/conditions/jump_start = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=820732809]
 root_node = NodePath("../Canvas")
@@ -624,10 +671,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas/Control" unique_id=1436435217]
-root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_ur7pv")
 
 [node name="Blink" type="Control" parent="Canvas/Control" unique_id=348888872]
 anchors_preset = 0
@@ -716,6 +759,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_tuyoq")
 horizontal_alignment = 1
 autowrap_mode = 3
+script = ExtResource("7_smehm")
 
 [node name="Timer" type="Timer" parent="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=82166334]
 wait_time = 0.04
@@ -747,5 +791,5 @@ transform = Transform3D(5.359535, 0, 0, 0, 0.09182894, 0, 0, 0, 5.359535, 0.2369
 visible = false
 mesh = SubResource("BoxMesh_ehsp5")
 
-[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas" method="_on_timer_timeout"]
-[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
+[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
