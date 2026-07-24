@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dx7inx2qmcv5j"]
+
+[ext_resource type="PackedScene" uid="uid://bh5onc1p4djnx" path="res://scenes/monsters/monster.tscn" id="1_c4afb"]
+[ext_resource type="Texture2D" uid="uid://c67k0pmr5ljuf" path="res://sprites/monsters/gentel_monster.PNG" id="4_vbi6j"]
+[ext_resource type="Texture2D" uid="uid://fe27u1rk7lky" path="res://sprites/monsters/gentel_monster_eyes.jpg" id="5_rkl4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkco4"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("4_vbi6j")
+emission_enabled = true
+emission_texture = ExtResource("5_rkl4f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4afb"]
+transparency = 1
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("4_vbi6j")
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("5_rkl4f")
+
+[node name="Monster" unique_id=583574455 instance=ExtResource("1_c4afb")]
+
+[node name="sitting_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
+
+[node name="Sprite3D front" type="Sprite3D" parent="sitting_monster" index="0" unique_id=593479110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063027143, 1.5069906, 0)
+material_override = SubResource("StandardMaterial3D_rkco4")
+pixel_size = 0.0018
+double_sided = false
+texture = ExtResource("4_vbi6j")
+region_enabled = true
+region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
+
+[node name="Sprite3D back" type="Sprite3D" parent="sitting_monster" index="1" unique_id=1218452034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063027143, 1.648084, 0)
+material_override = SubResource("StandardMaterial3D_c4afb")
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("4_vbi6j")
+region_enabled = true
+region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)

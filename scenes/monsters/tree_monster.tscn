@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://f6lu2pqisoca"]
+
+[ext_resource type="PackedScene" uid="uid://bh5onc1p4djnx" path="res://scenes/monsters/monster.tscn" id="1_2bos4"]
+[ext_resource type="Texture2D" uid="uid://cufccpump5s6y" path="res://sprites/monsters/tree_monster.PNG" id="2_ranq0"]
+[ext_resource type="Texture2D" uid="uid://clkw44bmr70vx" path="res://sprites/monsters/tree_monster_eyes.jpg" id="3_csr2h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2talo"]
+transparency = 1
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("2_ranq0")
+emission_enabled = true
+emission_texture = ExtResource("3_csr2h")
+billboard_mode = 2
+
+[node name="Monster" unique_id=583574455 instance=ExtResource("1_2bos4")]
+
+[node name="tree_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
+
+[node name="Sprite3D" type="Sprite3D" parent="tree_monster" index="0" unique_id=21929988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12732255, 1.968249, 0)
+material_override = SubResource("StandardMaterial3D_2talo")
+pixel_size = 0.002
+texture = ExtResource("2_ranq0")
+region_enabled = true
+region_rect = Rect2(393.83105, 0, 1079.163, 2048)

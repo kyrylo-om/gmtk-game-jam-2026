@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c6rqkj6bd1v56"]
+
+[ext_resource type="PackedScene" uid="uid://bh5onc1p4djnx" path="res://scenes/monsters/monster.tscn" id="1_q3rtg"]
+[ext_resource type="Texture2D" uid="uid://bmj0d08eqyw74" path="res://sprites/monsters/baby_monster.png" id="2_hhgoa"]
+[ext_resource type="Texture2D" uid="uid://d4np0cnvkkklw" path="res://sprites/monsters/baby_monster_eyes.jpg" id="3_q3rtg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2talo"]
+transparency = 1
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("2_hhgoa")
+emission_enabled = true
+emission_texture = ExtResource("3_q3rtg")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
+transparency = 1
+albedo_texture = ExtResource("2_hhgoa")
+emission_enabled = true
+emission_texture = ExtResource("3_q3rtg")
+billboard_mode = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3rtg"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ifx4"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6mgr"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li8rw"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux44r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3rtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ifx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6mgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li8rw")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
+
+[node name="Monster" unique_id=583574455 instance=ExtResource("1_q3rtg")]
+
+[node name="tree_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
+
+[node name="Sprite3D" type="Sprite3D" parent="tree_monster" index="0" unique_id=21929988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12732255, 0.28375852, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_2talo")
+pixel_size = 0.002
+texture = ExtResource("2_hhgoa")
+hframes = 2
+vframes = 2
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="tree_monster" index="1" unique_id=593702492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27552652, 0.00910449)
+material_override = SubResource("StandardMaterial3D_rao50")
+pixel_size = 0.0023
+sprite_frames = SubResource("SpriteFrames_ux44r")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.1154416
