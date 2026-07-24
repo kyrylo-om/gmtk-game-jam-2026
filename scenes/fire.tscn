@@ -122,10 +122,39 @@ direction = Vector3(0, 1, 0)
 spread = 25.0
 initial_velocity_min = 5.0
 initial_velocity_max = 5.0
+gravity = Vector3(0, 1, 0)
 scale_min = 0.04
 scale_max = 0.08
 scale_curve = SubResource("CurveTexture_tbk4o")
 color = Color(1.8247963, 0.9371641, 0.7378998, 1)
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_rach5"]
+filter_enabled = true
+filters = ["OmniLight3D2:light_energy"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rach5"]
+animation = &"Intensity"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g5mbl"]
+animation = &"LightFlicker"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_txieb"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_4l61p"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ggib5"]
+graph_offset = Vector2(-550.597, 89.3961)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_g5mbl")
+nodes/Animation/position = Vector2(-220, 480)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_rach5")
+nodes/Add2/position = Vector2(60, 280)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_rach5")
+"nodes/Animation 2/position" = Vector2(-700, 240)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_4l61p")
+nodes/TimeSeek/position = Vector2(-220, 220)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_txieb")
+nodes/TimeScale/position = Vector2(-500, 240)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"TimeSeek", &"Add2", 1, &"Animation", &"TimeSeek", 0, &"TimeScale", &"TimeScale", 0, &"Animation 2"]
 
 [sub_resource type="Animation" id="Animation_g5mbl"]
 resource_name = "Intensity"
@@ -491,34 +520,6 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_rach5"]
-filter_enabled = true
-filters = ["OmniLight3D2:light_energy"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rach5"]
-animation = &"Intensity"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g5mbl"]
-animation = &"LightFlicker"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_txieb"]
-
-[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_4l61p"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ggib5"]
-graph_offset = Vector2(-550.597, 89.3961)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_g5mbl")
-nodes/Animation/position = Vector2(-220, 480)
-nodes/Add2/node = SubResource("AnimationNodeAdd2_rach5")
-nodes/Add2/position = Vector2(60, 280)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_rach5")
-"nodes/Animation 2/position" = Vector2(-700, 240)
-nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_4l61p")
-nodes/TimeSeek/position = Vector2(-220, 220)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_txieb")
-nodes/TimeScale/position = Vector2(-500, 240)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"TimeSeek", &"Add2", 1, &"Animation", &"TimeSeek", 0, &"TimeScale", &"TimeScale", 0, &"Animation 2"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynbbn"]
 transparency = 1
 cull_mode = 2
@@ -641,21 +642,21 @@ amount_ratio = 0.35
 process_material = SubResource("ParticleProcessMaterial_ux44r")
 draw_pass_1 = SubResource("QuadMesh_rao50")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977569784]
-libraries/ = SubResource("AnimationLibrary_0tnpc")
-
-[node name="StaticBody3D" type="Area3D" parent="." unique_id=579073057]
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=858016525]
-shape = SubResource("BoxShape3D_ehsp5")
-
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=435024590]
 tree_root = SubResource("AnimationNodeBlendTree_ggib5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 0.0
 parameters/TimeSeek/seek_request = -1.0
 parameters/TimeScale/scale = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977569784]
+libraries/ = SubResource("AnimationLibrary_0tnpc")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=579073057]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=858016525]
+shape = SubResource("BoxShape3D_ehsp5")
 
 [node name="New fire" type="GPUParticles3D" parent="." unique_id=1588383874]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.070399374, 0)
@@ -674,4 +675,4 @@ lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_rao50")
 draw_pass_1 = SubResource("QuadMesh_hl70x")
 
-[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_static_body_3d_body_entered"]

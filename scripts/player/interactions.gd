@@ -2,9 +2,12 @@ extends Node3D
 
 @onready var canvas: CanvasLayer = $"../Canvas"
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var ray_cast_fire: RayCast3D = $RayCast3D2
 @onready var inventory: Node3D = $"../Inventory"
 @onready var player: CharacterBody3D = $".."
+@onready var torch: Node3D = $RightHand
 var collider = null
+var look_at_fire = false
 
 @export var max_throw_speed: int = 10
 var throw_speed: float = 0
@@ -24,10 +27,20 @@ func _process(delta: float) -> void:
 			collider.glow()
 
 	if collider: # looking at collectible
-			if Input.is_action_just_pressed("pickup"):
-				pickup(collider)
-				canvas.hide_tooltip()
-				collider = null
+		if Input.is_action_just_pressed("pickup"):
+			pickup(collider)
+			canvas.hide_tooltip()
+			collider = null
+				
+	if not look_at_fire and ray_cast_fire.is_colliding():
+		look_at_fire = true
+		canvas.show_tooltip("Press E to light up the torch.")
+	elif look_at_fire and not ray_cast_fire.is_colliding():
+		look_at_fire = false
+		canvas.hide_tooltip()
+	if look_at_fire and Input.is_action_just_pressed("pickup"):
+		player.disable_move()
+		torch.refuel()
 
 	if Input.is_action_pressed("throw"):
 		throw_speed = clamp(throw_speed + 10 * delta, 0, max_throw_speed)
@@ -48,4 +61,4 @@ func throw():
 		var forward_vector: Vector3 = -global_transform.basis.z
 		
 		throwed.apply_central_impulse((forward_vector + global_transform.basis.x * 0.2) * throw_speed)
-		throwed.apply_torque_impulse(-global_transform.basis.x * throw_speed / 5)
+		throwed.apply_torque_impulse(-global_transform.basis.x * throw_speed / 10)

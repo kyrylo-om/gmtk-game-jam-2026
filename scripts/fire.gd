@@ -1,5 +1,5 @@
 extends Node3D
-@onready var static_body: Area3D = $StaticBody3D
+@onready var static_body: Area3D = $Area3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 const ANIM_LENGTH = 100

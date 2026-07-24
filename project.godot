@@ -95,6 +95,10 @@ reset={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_4="Interactibles"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
