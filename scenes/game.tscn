@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://d01s1e40ngqn6" path="res://scenes/items/stick2.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bsjn0hgve10id" path="res://scenes/firewood.tscn" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://drdrkc2lp7aap" path="res://models/Black rock 1.fbx" id="9_dinhu"]
-[ext_resource type="PackedScene" uid="uid://dh6qqga4e4wnb" path="res://models/Black rock 2.fbx" id="10_kvuet"]
-[ext_resource type="PackedScene" uid="uid://bgela4ddd60o" path="res://models/Black rock 3.fbx" id="11_trtic"]
-[ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Black rock 4.fbx" id="12_ir15t"]
-[ext_resource type="PackedScene" uid="uid://ckqtyd32cn56k" path="res://models/Branch 3.fbx" id="13_trtic"]
-[ext_resource type="PackedScene" uid="uid://ce1e6cc4gjep6" path="res://models/Branch 4.fbx" id="14_ir15t"]
+[ext_resource type="PackedScene" uid="uid://drdrkc2lp7aap" path="res://models/Rocks/Black rock 1.fbx" id="9_dinhu"]
+[ext_resource type="PackedScene" uid="uid://dh6qqga4e4wnb" path="res://models/Rocks/Black rock 2.fbx" id="10_kvuet"]
+[ext_resource type="PackedScene" uid="uid://bgela4ddd60o" path="res://models/Rocks/Black rock 3.fbx" id="11_trtic"]
+[ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Rocks/Black rock 4.fbx" id="12_ir15t"]
+[ext_resource type="PackedScene" uid="uid://ckqtyd32cn56k" path="res://models/Branches/Branch 3.fbx" id="13_trtic"]
+[ext_resource type="PackedScene" uid="uid://ce1e6cc4gjep6" path="res://models/Branches/Branch 4.fbx" id="14_ir15t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("2_lnu2h")

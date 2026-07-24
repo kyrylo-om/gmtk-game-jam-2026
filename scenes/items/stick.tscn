@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cv50lkv3bi8lr" path="res://scenes/items/collectible.tscn" id="1_ibmtb"]
 [ext_resource type="Resource" uid="uid://cb8553t5m5gqk" path="res://items/stick.tres" id="2_ld7er"]
-[ext_resource type="PackedScene" uid="uid://da1hqbmw6ktck" path="res://models/Branch 1.fbx" id="3_7rqfo"]
+[ext_resource type="PackedScene" uid="uid://da1hqbmw6ktck" path="res://models/Branches/Branch 1.fbx" id="3_7rqfo"]
 
 [node name="Collectible" unique_id=1934788532 instance=ExtResource("1_ibmtb")]
 mass = 8.1

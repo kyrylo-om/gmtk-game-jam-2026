@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byjx05oxab6vx"]
+
+[ext_resource type="Texture2D" uid="uid://3ddy057petwi" path="res://Materials/textures/firewood/Firewood_Cylinder_Bake1_PBR_Diffuse.png" id="1_rfu4h"]
+[ext_resource type="Texture2D" uid="uid://dvlnttlkbn52k" path="res://Materials/textures/firewood/Firewood_Cylinder_Bake1_PBR_Normal.png" id="2_w081m"]
+
+[resource]
+resource_name = "Cylinder_Baked"
+cull_mode = 2
+albedo_texture = ExtResource("1_rfu4h")
+roughness = 0.8
+normal_enabled = true
+normal_texture = ExtResource("2_w081m")
+metadata/_gltf_primary_texture_coord = 0
