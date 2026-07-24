@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bsoxxfo1fmnwp" path="res://scripts/player/interactions.gd" id="2_rji43"]
 [ext_resource type="PackedScene" uid="uid://dxmwyw21uty23" path="res://scenes/inventory_item.tscn" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://r2e54enshrdi" path="res://sprites/eyelid.png" id="4_tuyoq"]
+[ext_resource type="FontFile" uid="uid://1qivvlyxag5i" path="res://fonts/IMFellEnglishSC-Regular.ttf" id="6_fjrip"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
 animation = &"idle"
@@ -578,6 +579,11 @@ _data = {
 &"wake_up": SubResource("Animation_smehm")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
+font = ExtResource("6_fjrip")
+font_size = 30
+outline_size = 1
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
 height = 1.8
@@ -678,22 +684,46 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Control" unique_id=158452444]
+[node name="VBoxContainer" type="Control" parent="Canvas/Control" unique_id=1777695976]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Dialogue" type="Label" parent="Canvas/Control/VBoxContainer" unique_id=488172163]
-layout_mode = 2
-text = "Ever since I was born, I was afraid of cheese."
+[node name="MarginContainer" type="Control" parent="Canvas/Control/VBoxContainer" unique_id=281308571]
+anchors_preset = 0
+offset_top = -100.0
+offset_right = 1152.0
+offset_bottom = -72.0
+
+[node name="Dialogue" type="Label" parent="Canvas/Control/VBoxContainer/MarginContainer" unique_id=488172163]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -14.0
+offset_right = 500.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_tuyoq")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=82166334]
+wait_time = 0.04
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=1610200216]
+wait_time = 3.5
+one_shot = true
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=122640786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -716,3 +746,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, -0.70000005, -1.5)
 transform = Transform3D(5.359535, 0, 0, 0, 0.09182894, 0, 0, 0, 5.359535, 0.23696041, 0.21614265, -4.318189)
 visible = false
 mesh = SubResource("BoxMesh_ehsp5")
+
+[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas" method="_on_timer_timeout"]
+[connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas" method="_on_timer_2_timeout"]

@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_released("throw"):
 		throw()
+		canvas.show_dialogue("How about you throw yourself instead?")
 		throw_speed = 0
 
 func pickup(item: RigidBody3D):
