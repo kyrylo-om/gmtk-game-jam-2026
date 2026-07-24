@@ -1002,7 +1002,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="LeftHand" type="Node3D" parent="Head" unique_id=1478509232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, -0.70000005, -1.5)
+transform = Transform3D(1, 0, 0, 0, 0.62251467, -0.78260815, 0, 0.78260815, 0.62251467, -1.37, -0.70000005, -1.5)
 
 [node name="RightHand" type="Node3D" parent="Head" unique_id=308871176]
 transform = Transform3D(0.878817, -0.029129848, 0.4762688, 0, 0.9981348, 0.06104854, -0.47715876, -0.053650502, 0.8771779, 0.733, -0.734, -0.67)

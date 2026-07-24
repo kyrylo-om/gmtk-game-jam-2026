@@ -193,6 +193,8 @@ func respawn():
 	disable_move()
 
 func disable_move():
+	is_moving = false
+	is_sprinting = false
 	can_move = false
 	velocity = Vector3.ZERO
 
