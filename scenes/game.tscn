@@ -125,17 +125,8 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 visible = false
 shadow_enabled = true
 
-[node name="ProtoController" parent="." unique_id=1674435093 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=1674435093 instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="ProtoController" unique_id=1489021978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.367954, 0)
-light_color = Color(1, 0.74903643, 0.48577863, 1)
-light_energy = 0.842
-light_volumetric_fog_energy = 0.683
-light_size = 0.119
-shadow_enabled = true
-omni_range = 5.741233
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")

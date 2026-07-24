@@ -637,6 +637,8 @@ outline_size = 1
 radius = 0.4
 height = 1.8
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ro5b3"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
 
 [node name="Player" type="CharacterBody3D" unique_id=549697417]
@@ -786,9 +788,24 @@ collision_mask = 8
 [node name="LeftHand" type="Node3D" parent="Head" unique_id=1478509232]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, -0.70000005, -1.5)
 
+[node name="RightHand" type="Node3D" parent="Head" unique_id=308871176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23, -0.79, -1.165)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/RightHand" unique_id=1037148645]
+transform = Transform3D(0.13, 0, 0, 0, 0.741, 0, 0, 0, 0.13, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ro5b3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head/RightHand/MeshInstance3D" unique_id=1434870554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.215, 0)
+light_color = Color(1, 0.74903643, 0.48577863, 1)
+light_energy = 0.842
+light_volumetric_fog_energy = 0.683
+light_size = 0.119
+shadow_enabled = true
+omni_range = 5.741233
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=964038123]
 transform = Transform3D(5.359535, 0, 0, 0, 0.09182894, 0, 0, 0, 5.359535, 0.23696041, 0.21614265, -4.318189)
-visible = false
 mesh = SubResource("BoxMesh_ehsp5")
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
