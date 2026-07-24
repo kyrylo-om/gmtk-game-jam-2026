@@ -4,7 +4,15 @@
 # Happy prototyping!
 
 extends CharacterBody3D
+@onready var ui_animator: AnimationPlayer = $Canvas/Control/AnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
+
+func attack() -> void:
+	# Forces the state machine to transition to "Attack" immediately
+	# Automatically returns to "Idle" when "Attack" finishes (if set up in graph)
+	playback.travel("Attack")
 
 ## Can we move around?
 @export var can_move : bool = true
@@ -51,6 +59,10 @@ var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
 
+var is_moving = false
+var is_sprinting = false
+var has_jumped = false
+
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
@@ -89,19 +101,26 @@ func _physics_process(delta: float) -> void:
 	# Apply gravity to velocity
 	if has_gravity:
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * delta * 1.1
+		if has_jumped and is_on_floor():
+			playback.travel("jump_end")
+			has_jumped = false
 
 	# Apply jumping
 	if can_jump:
 		if Input.is_action_just_pressed(input_jump) and is_on_floor():
+			has_jumped = true
+			playback.travel("jump_start")
 			velocity.y = jump_velocity
 
 	# Modify speed based on sprinting
 	if can_sprint and Input.is_action_pressed(input_sprint):
 		move_speed = sprint_speed
+		if is_moving: is_sprinting = true
 	elif Input.is_action_pressed("throw"):
 		move_speed = crouch_speed
 	else:
+		is_sprinting = false
 		move_speed = base_speed
 
 	# Apply desired movement to velocity
@@ -109,9 +128,11 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if move_dir:
+			is_moving = true
 			velocity.x = move_dir.x * move_speed
 			velocity.z = move_dir.z * move_speed
 		else:
+			is_moving = false
 			velocity.x = move_toward(velocity.x, 0, move_speed)
 			velocity.z = move_toward(velocity.z, 0, move_speed)
 	else:
@@ -132,6 +153,14 @@ func rotate_look(rot_input : Vector2):
 	look_rotation.x -= rot_input.y * look_speed
 	look_rotation.x = clamp(look_rotation.x, deg_to_rad(-85), deg_to_rad(85))
 	look_rotation.y -= rot_input.x * look_speed
+	transform.basis = Basis()
+	rotate_y(look_rotation.y)
+	head.transform.basis = Basis()
+	head.rotate_x(look_rotation.x)
+
+func rotate_look_immediately(rot_input : Vector2):
+	look_rotation.x = clamp(rot_input.y, deg_to_rad(-85), deg_to_rad(85))
+	look_rotation.y = rot_input.x
 	transform.basis = Basis()
 	rotate_y(look_rotation.y)
 	head.transform.basis = Basis()
@@ -158,7 +187,6 @@ func release_mouse():
 	
 func respawn():
 	position = Vector3(0, 0, 8)
-	rotation = Vector3.ZERO
-	look_rotation = Vector2.ZERO
-	animation_player.stop()
-	animation_player.play("wake_up")
+	rotate_look_immediately(Vector2.ZERO)
+	ui_animator.stop()
+	ui_animator.play("wake_up")
