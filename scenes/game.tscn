@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Rocks/Black rock 4.fbx" id="12_ir15t"]
 [ext_resource type="PackedScene" uid="uid://ckqtyd32cn56k" path="res://models/Branches/Branch 3.fbx" id="13_trtic"]
 [ext_resource type="PackedScene" uid="uid://ce1e6cc4gjep6" path="res://models/Branches/Branch 4.fbx" id="14_ir15t"]
+[ext_resource type="Texture2D" uid="uid://x6vnnvvav2f5" path="res://Materials/textures/forest floor/forest_leaves_04_diff_2k.jpg" id="15_ca42v"]
+[ext_resource type="Texture2D" uid="uid://dx13tqxx2eoej" path="res://Materials/textures/forest floor/forest_leaves_04_nor_gl_2k.jpg" id="16_rysoc"]
+[ext_resource type="Texture2D" uid="uid://dqmujdb5mk1sm" path="res://Materials/textures/forest floor 2/burned_ground_01_diff_2k.jpg" id="17_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://boiw0j7pgg81g" path="res://Materials/textures/forest floor 2/burned_ground_01_nor_gl_2k.jpg" id="18_264po"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("2_lnu2h")
@@ -26,6 +30,91 @@ sky_material = SubResource("PanoramaSkyMaterial_uwrxv")
 background_mode = 2
 sky = SubResource("Sky_uwrxv")
 ambient_light_source = 1
+
+[sub_resource type="Gradient" id="Gradient_ssvqc"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_264po"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1kice"]
+noise = SubResource("FastNoiseLite_264po")
+color_ramp = SubResource("Gradient_ssvqc")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5newe"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": 0.0,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_1kice"),
+&"projection_threshold": null
+}
+world_background = 0
+texture_filtering = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37s47"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_bt5mj"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_37s47")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_e1j6l"]
+name = "forest_leaves_04_diff_2k"
+albedo_texture = ExtResource("15_ca42v")
+normal_texture = ExtResource("16_rysoc")
+normal_depth = 1.0
+roughness = 0.5
+uv_scale = 1.0
+detiling_rotation = 1.0
+detiling_shift = 1.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_1kice"]
+name = "burned_ground_01_diff_2k"
+id = 1
+albedo_texture = ExtResource("17_ssvqc")
+normal_texture = ExtResource("18_264po")
+roughness = 0.5
+uv_scale = 1.0
+detiling_rotation = 1.0
+detiling_shift = 1.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_pl11u"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_bt5mj")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_e1j6l"), SubResource("Terrain3DTextureAsset_1kice")])
 
 [node name="Game" type="Node3D" unique_id=861187367]
 
@@ -51,6 +140,7 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1040101533]
 transform = Transform3D(18.653137, 0, 0, 0, 1, 0, 0, 0, 18.653137, -0.008432776, -0.2018218, 0.0031776428)
+visible = false
 use_collision = true
 size = Vector3(1, 0.59521484, 1)
 material = ExtResource("2_dinhu")
@@ -126,3 +216,10 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.22346139, 0.12572265,
 
 [node name="Branch 4" parent="." unique_id=687851802 instance=ExtResource("14_ir15t")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.4855366, 0.16544212, 2.677195)
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=256132067]
+data_directory = "res://terrain_data"
+material = SubResource("Terrain3DMaterial_5newe")
+assets = SubResource("Terrain3DAssets_pl11u")
+top_level = true
+metadata/_edit_lock_ = true
