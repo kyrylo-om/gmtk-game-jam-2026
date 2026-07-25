@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bol35w6ybdhui"]
+
+[ext_resource type="Texture2D" uid="uid://bbjtvs2cpq2mn" path="res://Materials/textures/comb/comb_Bake1_PBR_Diffuse.jpg" id="1_jwnay"]
+[ext_resource type="Texture2D" uid="uid://2t46gwi5y2ot" path="res://Materials/textures/comb/comb_Bake1_PBR_Normal.jpg" id="2_ryuby"]
+[ext_resource type="Texture2D" uid="uid://daw6o32dmh2g3" path="res://Materials/textures/comb/comb_Bake1_PBR_Roughness.jpg" id="3_tliga"]
+
+[resource]
+albedo_texture = ExtResource("1_jwnay")
+roughness_texture = ExtResource("3_tliga")
+normal_enabled = true
+normal_texture = ExtResource("2_ryuby")
