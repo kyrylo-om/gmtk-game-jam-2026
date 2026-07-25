@@ -25,6 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://eqr1a4diu1e3" path="res://scenes/campfire.tscn" id="21_5newe"]
 [ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="21_37s47"]
 [ext_resource type="Script" uid="uid://cy3hpstulfcff" path="res://addons/proton_scatter/src/modifiers/offset_rotation.gd" id="22_sgl2t"]
+[ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="26_bhx41"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ux7tm"]
+shader = ExtResource("1_pl11u")
+shader_parameter/color_levels = 32
+shader_parameter/dither_strength = 0.30000001425
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uwrxv"]
 panorama = ExtResource("3_ssvqc")
@@ -620,298 +626,10 @@ radius = 60.0
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ux7tm"]
-shader = ExtResource("1_pl11u")
-shader_parameter/color_levels = 32
-shader_parameter/dither_strength = 0.30000001425
+[sub_resource type="LabelSettings" id="LabelSettings_pl11u"]
+font = ExtResource("26_bhx41")
 
 [node name="Game" type="Node3D" unique_id=861187367]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1222683664]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 11.54491, 0)
-visible = false
-shadow_enabled = true
-
-[node name="Player" parent="." unique_id=1674435093 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
-environment = SubResource("Environment_ehsp5")
-
-[node name="Campfire" parent="." unique_id=1964473192 node_paths=PackedStringArray("player") instance=ExtResource("21_5newe")]
-player = NodePath("../Player")
-
-[node name="Environment" type="Node3D" parent="." unique_id=482651045]
-
-[node name="Terrain3D" type="Terrain3D" parent="Environment" unique_id=256132067]
-data_directory = "res://terrain_data"
-material = SubResource("Terrain3DMaterial_5newe")
-assets = SubResource("Terrain3DAssets_pl11u")
-mesh_lods = 10
-vertex_spacing = 0.25
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Collectibles" type="Node3D" parent="Environment" unique_id=510294539]
-
-[node name="Stick1" type="Node3D" parent="Environment/Collectibles" unique_id=1949627555]
-script = ExtResource("11_wljb1")
-global_seed = -13
-render_mode = 1
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_qouja")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/Collectibles/Stick1" unique_id=1278797986]
-script = ExtResource("18_7025r")
-path = "uid://chgbwq3y3eoui"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/Collectibles/Stick1" unique_id=5115553]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_flw08")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/Collectibles/Stick1" unique_id=2146987513]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_84hbc")
-
-[node name="Stick2" type="Node3D" parent="Environment/Collectibles" unique_id=190219307]
-script = ExtResource("11_wljb1")
-global_seed = -560
-render_mode = 1
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_7025r")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/Collectibles/Stick2" unique_id=1048289010]
-script = ExtResource("18_7025r")
-path = "uid://d01s1e40ngqn6"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/Collectibles/Stick2" unique_id=1701121937]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_7gkqi")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/Collectibles/Stick2" unique_id=1839904124]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_753oq")
-
-[node name="Stick3" type="Node3D" parent="Environment/Collectibles" unique_id=1565410950]
-script = ExtResource("11_wljb1")
-global_seed = -639
-render_mode = 1
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_fedci")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/Collectibles/Stick3" unique_id=1687791114]
-script = ExtResource("18_7025r")
-path = "uid://bcut6xayjsuoo"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/Collectibles/Stick3" unique_id=807100687]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_ja1h7")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/Collectibles/Stick3" unique_id=433254255]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_p4npv")
-
-[node name="firewood" type="Node3D" parent="Environment/Collectibles" unique_id=1134818426]
-script = ExtResource("11_wljb1")
-global_seed = -612
-render_mode = 1
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_7ixpq")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/Collectibles/firewood" unique_id=1689846441]
-script = ExtResource("18_7025r")
-path = "uid://bwrce73lx0ae"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/Collectibles/firewood" unique_id=2011932549]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_3hv4c")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/Collectibles/firewood" unique_id=545112303]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_vniw0")
-
-[node name="StaticObjects" type="Node3D" parent="Environment" unique_id=898214398]
-
-[node name="Trees" type="Node3D" parent="Environment/StaticObjects" unique_id=277263375]
-script = ExtResource("11_wljb1")
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_3x28f")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/Trees" unique_id=791227710]
-script = ExtResource("18_7025r")
-path = "uid://camnamx0y6klp"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/Trees" unique_id=225916969]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_g8bsm")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/Trees" unique_id=1715405731]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_v2yb1")
-
-[node name="Stumps" type="Node3D" parent="Environment/StaticObjects" unique_id=1105611144]
-script = ExtResource("11_wljb1")
-global_seed = 127
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_3x338")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/Stumps" unique_id=1761874259]
-script = ExtResource("18_7025r")
-source_scale_multiplier = 0.3
-path = "uid://cpeu6iql72k0w"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/Stumps" unique_id=343360098]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_8tghg")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/Stumps" unique_id=318950076]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_473mq")
-
-[node name="Rocks2" type="Node3D" parent="Environment/StaticObjects" unique_id=756485618]
-visible = false
-script = ExtResource("11_wljb1")
-global_seed = 2
-modifier_stack = SubResource("Resource_fkywm")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/Rocks2" unique_id=565119773]
-script = ExtResource("18_7025r")
-source_scale_multiplier = 0.1
-path = "uid://dkp7qrkkpa4fe"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/Rocks2" unique_id=922549667]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_8ool0")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/Rocks2" unique_id=1428800327]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_h3rex")
-
-[node name="Rocks" type="Node3D" parent="Environment/StaticObjects" unique_id=62743955]
-visible = false
-script = ExtResource("11_wljb1")
-global_seed = 1
-modifier_stack = SubResource("Resource_i1hsc")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/Rocks" unique_id=1807588678]
-script = ExtResource("18_7025r")
-source_scale_multiplier = 0.1
-path = "uid://boxrseqoh5e2q"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/Rocks" unique_id=212912929]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_3hbvx")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/Rocks" unique_id=695228044]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_q8j3a")
-
-[node name="BigRocks" type="Node3D" parent="Environment/StaticObjects" unique_id=957077304]
-script = ExtResource("11_wljb1")
-global_seed = 18
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_h5tdf")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/BigRocks" unique_id=775156809]
-script = ExtResource("18_7025r")
-path = "uid://ci6kwqk5mb1iy"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/BigRocks" unique_id=1283098519]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_bk1p3")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/BigRocks" unique_id=1066917407]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_n8ral")
-
-[node name="BigRocks2" type="Node3D" parent="Environment/StaticObjects" unique_id=1656122877]
-script = ExtResource("11_wljb1")
-global_seed = -130
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_boxkr")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://6hjccyojvx0p"
-
-[node name="ScatterItem" type="Node3D" parent="Environment/StaticObjects/BigRocks2" unique_id=1595720556]
-script = ExtResource("18_7025r")
-path = "uid://dkp7qrkkpa4fe"
-
-[node name="ScatterShape" type="Node3D" parent="Environment/StaticObjects/BigRocks2" unique_id=513177718]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-shape = SubResource("Resource_l6q63")
-
-[node name="CampfireShape" type="Node3D" parent="Environment/StaticObjects/BigRocks2" unique_id=1104757551]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("19_m4url")
-negative = true
-shape = SubResource("Resource_mmvbu")
-
-[node name="Monster" parent="." unique_id=583574455 instance=ExtResource("18_ssvqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.433488, -2.3841858e-07, 13.953521)
-script = null
-
-[node name="Monster4" parent="." unique_id=938046065 instance=ExtResource("21_37s47")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4670153, 0.31946778, 9.485704)
-script = null
-
-[node name="Stump" parent="." unique_id=2114167044 instance=ExtResource("18_1kice")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7394543, -2.3841858e-07, -4.5361404)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1623910006]
 material = SubResource("ShaderMaterial_ux7tm")
@@ -928,4 +646,306 @@ handle_input_locally = false
 size = Vector2i(576, 324)
 render_target_update_mode = 4
 
-[editable path="Campfire"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1222683664]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 11.54491, 0)
+visible = false
+shadow_enabled = true
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1674435093 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=433989800]
+environment = SubResource("Environment_ehsp5")
+
+[node name="Campfire" parent="SubViewportContainer/SubViewport" unique_id=1964473192 node_paths=PackedStringArray("player") instance=ExtResource("21_5newe")]
+player = NodePath("../Player")
+
+[node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=482651045]
+
+[node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=256132067]
+data_directory = "res://terrain_data"
+material = SubResource("Terrain3DMaterial_5newe")
+assets = SubResource("Terrain3DAssets_pl11u")
+mesh_lods = 10
+vertex_spacing = 0.25
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Collectibles" type="Node3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=510294539]
+
+[node name="Stick1" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles" unique_id=1949627555]
+script = ExtResource("11_wljb1")
+global_seed = -13
+render_mode = 1
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_qouja")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick1" unique_id=1278797986]
+script = ExtResource("18_7025r")
+path = "uid://chgbwq3y3eoui"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick1" unique_id=5115553]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_flw08")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick1" unique_id=2146987513]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_84hbc")
+
+[node name="Stick2" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles" unique_id=190219307]
+script = ExtResource("11_wljb1")
+global_seed = -560
+render_mode = 1
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_7025r")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick2" unique_id=1048289010]
+script = ExtResource("18_7025r")
+path = "uid://d01s1e40ngqn6"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick2" unique_id=1701121937]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_7gkqi")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick2" unique_id=1839904124]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_753oq")
+
+[node name="Stick3" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles" unique_id=1565410950]
+script = ExtResource("11_wljb1")
+global_seed = -639
+render_mode = 1
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_fedci")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick3" unique_id=1687791114]
+script = ExtResource("18_7025r")
+path = "uid://bcut6xayjsuoo"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick3" unique_id=807100687]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_ja1h7")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/Stick3" unique_id=433254255]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_p4npv")
+
+[node name="firewood" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles" unique_id=1134818426]
+script = ExtResource("11_wljb1")
+global_seed = -612
+render_mode = 1
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_7ixpq")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/firewood" unique_id=1689846441]
+script = ExtResource("18_7025r")
+path = "uid://bwrce73lx0ae"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/firewood" unique_id=2011932549]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_3hv4c")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/Collectibles/firewood" unique_id=545112303]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_vniw0")
+
+[node name="StaticObjects" type="Node3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=898214398]
+
+[node name="Trees" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=277263375]
+script = ExtResource("11_wljb1")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_3x28f")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Trees" unique_id=791227710]
+script = ExtResource("18_7025r")
+path = "uid://camnamx0y6klp"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Trees" unique_id=225916969]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_g8bsm")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Trees" unique_id=1715405731]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_v2yb1")
+
+[node name="Stumps" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=1105611144]
+script = ExtResource("11_wljb1")
+global_seed = 127
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_3x338")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Stumps" unique_id=1761874259]
+script = ExtResource("18_7025r")
+source_scale_multiplier = 0.3
+path = "uid://cpeu6iql72k0w"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Stumps" unique_id=343360098]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_8tghg")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Stumps" unique_id=318950076]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_473mq")
+
+[node name="Rocks2" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=756485618]
+visible = false
+script = ExtResource("11_wljb1")
+global_seed = 2
+modifier_stack = SubResource("Resource_fkywm")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks2" unique_id=565119773]
+script = ExtResource("18_7025r")
+source_scale_multiplier = 0.1
+path = "uid://dkp7qrkkpa4fe"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks2" unique_id=922549667]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_8ool0")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks2" unique_id=1428800327]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_h3rex")
+
+[node name="Rocks" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=62743955]
+visible = false
+script = ExtResource("11_wljb1")
+global_seed = 1
+modifier_stack = SubResource("Resource_i1hsc")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks" unique_id=1807588678]
+script = ExtResource("18_7025r")
+source_scale_multiplier = 0.1
+path = "uid://boxrseqoh5e2q"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks" unique_id=212912929]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_3hbvx")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Rocks" unique_id=695228044]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_q8j3a")
+
+[node name="BigRocks" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=957077304]
+script = ExtResource("11_wljb1")
+global_seed = 18
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_h5tdf")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks" unique_id=775156809]
+script = ExtResource("18_7025r")
+path = "uid://ci6kwqk5mb1iy"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks" unique_id=1283098519]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_bk1p3")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks" unique_id=1066917407]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_n8ral")
+
+[node name="BigRocks2" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=1656122877]
+script = ExtResource("11_wljb1")
+global_seed = -130
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_boxkr")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://6hjccyojvx0p"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks2" unique_id=1595720556]
+script = ExtResource("18_7025r")
+path = "uid://dkp7qrkkpa4fe"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks2" unique_id=513177718]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+shape = SubResource("Resource_l6q63")
+
+[node name="CampfireShape" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/BigRocks2" unique_id=1104757551]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("19_m4url")
+negative = true
+shape = SubResource("Resource_mmvbu")
+
+[node name="Monster" parent="SubViewportContainer/SubViewport" unique_id=583574455 instance=ExtResource("18_ssvqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.433488, -2.3841858e-07, 13.953521)
+script = null
+
+[node name="Monster4" parent="SubViewportContainer/SubViewport" unique_id=938046065 instance=ExtResource("21_37s47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4670153, 0.31946778, 9.485704)
+script = null
+
+[node name="Stump" parent="SubViewportContainer/SubViewport" unique_id=2114167044 instance=ExtResource("18_1kice")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7394543, -2.3841858e-07, -4.5361404)
+
+[node name="Control" type="Control" parent="." unique_id=2139696923]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1289253502]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 384.0
+offset_right = 615.0
+offset_bottom = 407.0
+text = "sdasdasd"
+label_settings = SubResource("LabelSettings_pl11u")
+
+[editable path="SubViewportContainer/SubViewport/Campfire"]
+[editable path="SubViewportContainer/SubViewport/Campfire/Firewood/Firewood3"]

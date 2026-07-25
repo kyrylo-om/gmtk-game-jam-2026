@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://xls556unv7yw" path="res://scripts/animated_text_3d.gd" id="2_0naev"]
 [ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="2_s4a5j"]
 
-[node name="CampfireShade" type="Node3D" unique_id=324286114]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
+[node name="CampfireShade" type="Area3D" unique_id=1547753118]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_pgtbe")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=95299125]
@@ -34,6 +38,10 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="dialogue_timer" unique_id=1292747017]
 wait_time = 10.0
 one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2079526961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6508256, 0)
+shape = SubResource("BoxShape3D_ehsp5")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="dialogue_timer" to="Node3D/Label3D" method="_on_dialogue_timer_timeout"]

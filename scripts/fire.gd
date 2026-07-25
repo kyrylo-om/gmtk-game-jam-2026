@@ -35,10 +35,7 @@ func _on_timer_timeout() -> void:
 		shade_spawner.rotation = player.global_rotation
 	else:
 		shade_spawner.look_at(player.position)
-	var va = randf_range(-90, 90)
-	print(shade_spawner.rotation, va)
-	shade_spawner.rotation_degrees.y += va
-	print(shade_spawner.rotation)
+	shade_spawner.rotation_degrees.y += randf_range(-90, 90)
 	
 	var shade = shades.pick_random().instantiate()
 	add_child(shade)

@@ -2,5 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cal4g8yliiekm" path="res://scripts/monster.gd" id="1_3366s"]
 
-[node name="Monster" type="Node3D" unique_id=583574455]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
+[node name="Monster" type="Area3D" unique_id=1351689094]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_3366s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1663019835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5434562, 0)
+shape = SubResource("BoxShape3D_ehsp5")
