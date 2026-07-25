@@ -3,8 +3,99 @@
 [ext_resource type="Script" uid="uid://khnhc2l4r6cj" path="res://scripts/campfire_shade.gd" id="1_pgtbe"]
 [ext_resource type="Script" uid="uid://xls556unv7yw" path="res://scripts/animated_text_3d.gd" id="2_0naev"]
 [ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="2_s4a5j"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="4_eyv1o"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="5_e20jf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+
+[sub_resource type="Animation" id="Animation_xm58p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_w7wvo"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12mg1"]
+_data = {
+&"RESET": SubResource("Animation_xm58p"),
+&"die": SubResource("Animation_w7wvo")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77e6e"]
+transparency = 3
+alpha_hash_scale = 0.1
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.64, 0.64, 0.64, 1)
+albedo_texture = ExtResource("4_eyv1o")
+normal_enabled = true
+normal_texture = ExtResource("5_e20jf")
+subsurf_scatter_strength = 1.0
+backlight_enabled = true
+backlight_texture = ExtResource("4_eyv1o")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_5uuum"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ano02"]
+curve = SubResource("Curve_5uuum")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31bp8"]
+lifetime_randomness = 0.1
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 3.0
+emission_ring_radius = 0.5
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color = Color(0.1, 0.1, 0.1, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.009999977
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.10300001
+turbulence_influence_over_life = SubResource("CurveTexture_ano02")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eqd1j"]
 
 [node name="CampfireShade" type="Area3D" unique_id=1547753118]
 collision_layer = 4
@@ -42,6 +133,18 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2079526961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6508256, 0)
 shape = SubResource("BoxShape3D_ehsp5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=870056473]
+libraries/ = SubResource("AnimationLibrary_12mg1")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1042785072]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.5343279, 0)
+material_override = SubResource("StandardMaterial3D_77e6e")
+emitting = false
+amount = 150
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_31bp8")
+draw_pass_1 = SubResource("QuadMesh_eqd1j")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="dialogue_timer" to="Node3D/Label3D" method="_on_dialogue_timer_timeout"]
