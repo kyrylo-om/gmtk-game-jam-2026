@@ -736,7 +736,6 @@ filters = [".", "Torch:position:x", "Torch:position:y", "Torch:position:z", "Tor
 [sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_a8ls1"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ehsp5"]
-graph_offset = Vector2(-652.285, 47.731644)
 nodes/output/position = Vector2(320, 160)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_jej6c")
 nodes/Animation/position = Vector2(-820, 160)
@@ -1393,6 +1392,7 @@ transform = Transform3D(1, 0, 0, 0, 0.62251467, -0.78260815, 0, 0.78260815, 0.62
 [node name="RightHand" type="Node3D" parent="Head" unique_id=308871176]
 transform = Transform3D(0.878817, -0.029129848, 0.4762688, 0, 0.9981348, 0.06104854, -0.47715876, -0.053650502, 0.8771779, 0.733, -0.734, -0.67)
 script = ExtResource("9_y4r1p")
+fade_speed = 10.0
 
 [node name="AnimationTree" type="AnimationTree" parent="Head/RightHand" unique_id=1004120180]
 tree_root = SubResource("AnimationNodeBlendTree_ehsp5")
