@@ -26,7 +26,10 @@ func _process(delta: float) -> void:
 		animation_tree.set("parameters/TimeSeek/seek_request", 
 		ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
 	#animation_tree.set("parameters/Sub2/sub_amount", energy / max_energy / 2)
-	animation_tree.set("parameters/TimeScale 2/scale", 2 - energy / max_energy)
+	if energy > 0:
+		animation_tree.set("parameters/TimeScale 2/scale", 2 - energy / max_energy)
+	else:
+		animation_tree.set("parameters/TimeScale 2/scale", 0)
 
 func refuel():
 	fire.restart()

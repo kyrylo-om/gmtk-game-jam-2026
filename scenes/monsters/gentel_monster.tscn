@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dx7inx2qmcv5j"]
 
-[ext_resource type="PackedScene" uid="uid://bh5onc1p4djnx" path="res://scenes/monsters/monster.tscn" id="1_c4afb"]
+[ext_resource type="PackedScene" uid="uid://c8c5agnvp052k" path="res://scenes/monsters/campfire_shade.tscn" id="1_c4afb"]
 [ext_resource type="Texture2D" uid="uid://c67k0pmr5ljuf" path="res://sprites/monsters/gentel_monster.PNG" id="4_vbi6j"]
 [ext_resource type="Texture2D" uid="uid://fe27u1rk7lky" path="res://sprites/monsters/gentel_monster_eyes.jpg" id="5_rkl4f"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkco4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxn0h"]
 transparency = 1
 cull_mode = 1
 albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
@@ -12,31 +12,34 @@ albedo_texture = ExtResource("4_vbi6j")
 emission_enabled = true
 emission_texture = ExtResource("5_rkl4f")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4afb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbi6j"]
 transparency = 1
 albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
 albedo_texture = ExtResource("4_vbi6j")
 emission_energy_multiplier = 2.0
 emission_texture = ExtResource("5_rkl4f")
 
-[node name="Monster" unique_id=583574455 instance=ExtResource("1_c4afb")]
+[node name="CampfireShade" unique_id=324286114 instance=ExtResource("1_c4afb")]
 
-[node name="sitting_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
+[node name="sitting_monster" type="Node3D" parent="." index="1" unique_id=2018006632]
 
-[node name="Sprite3D front" type="Sprite3D" parent="sitting_monster" index="0" unique_id=593479110]
+[node name="Sprite3D front" type="Sprite3D" parent="sitting_monster" index="0" unique_id=859022330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063027143, 1.5069906, 0)
-material_override = SubResource("StandardMaterial3D_rkco4")
+material_override = SubResource("StandardMaterial3D_mxn0h")
 pixel_size = 0.0018
 double_sided = false
 texture = ExtResource("4_vbi6j")
 region_enabled = true
 region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
 
-[node name="Sprite3D back" type="Sprite3D" parent="sitting_monster" index="1" unique_id=1218452034]
+[node name="Sprite3D back" type="Sprite3D" parent="sitting_monster" index="1" unique_id=431621341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0063027143, 1.648084, 0)
-material_override = SubResource("StandardMaterial3D_c4afb")
+material_override = SubResource("StandardMaterial3D_vbi6j")
 pixel_size = 0.002
 double_sided = false
 texture = ExtResource("4_vbi6j")
 region_enabled = true
 region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
+
+[node name="Node3D" parent="." index="2" unique_id=95299125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.405, 0)

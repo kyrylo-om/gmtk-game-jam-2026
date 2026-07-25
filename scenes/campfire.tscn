@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c2saweo03bvro" path="res://scripts/fire.gd" id="1_g5mbl"]
 [ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/textures/fire/image(6).png" id="1_xqmqg"]
 [ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="2_g5mbl"]
+[ext_resource type="PackedScene" uid="uid://dx7inx2qmcv5j" path="res://scenes/monsters/gentel_monster.tscn" id="2_w2pjx"]
+[ext_resource type="PackedScene" uid="uid://bdw4ps4jp5sbf" path="res://scenes/monsters/sitting_monster.tscn" id="3_te7ig"]
 [ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="5_4l61p"]
 [ext_resource type="PackedScene" uid="uid://ilhxqh6ibv8x" path="res://models/Firewood.fbx" id="6_1v5ef"]
 [ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="6_10wrr"]
@@ -578,8 +580,12 @@ _data = {
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ehsp5"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
+
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
+shades = Array[PackedScene]([ExtResource("2_w2pjx"), ExtResource("3_te7ig")])
+shade_time_min = 4
 
 [node name="Firewood" type="Node3D" parent="." unique_id=516141946]
 
@@ -645,6 +651,7 @@ parameters/TimeScale/scale = 0.0
 libraries/ = SubResource("AnimationLibrary_0tnpc")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=579073057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598378, 0)
 collision_layer = 9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=858016525]
@@ -658,4 +665,18 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=1607618393]
 shape = SubResource("SphereShape3D_ehsp5")
 
+[node name="ShadeSpawner" type="Node3D" parent="." unique_id=692067130]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Spawner" type="Node3D" parent="ShadeSpawner" unique_id=1960620190]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 10.6742)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ShadeSpawner/Spawner" unique_id=560776044]
+visible = false
+mesh = SubResource("BoxMesh_ehsp5")
+
+[node name="Timer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1652376198]
+autostart = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]

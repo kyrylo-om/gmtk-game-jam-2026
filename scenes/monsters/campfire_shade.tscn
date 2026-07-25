@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c8c5agnvp052k"]
+
+[ext_resource type="Script" uid="uid://khnhc2l4r6cj" path="res://scripts/campfire_shade.gd" id="1_pgtbe"]
+[ext_resource type="Script" uid="uid://xls556unv7yw" path="res://scripts/animated_text_3d.gd" id="2_0naev"]
+[ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="2_s4a5j"]
+
+[node name="CampfireShade" type="Node3D" unique_id=324286114]
+script = ExtResource("1_pgtbe")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=95299125]
+
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=179036299]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+billboard = 2
+double_sided = false
+font = ExtResource("2_s4a5j")
+font_size = 50
+script = ExtResource("2_0naev")
+lines = Array[String](["Please take care of my kids.", "I hate this life.", "Do you like pineapples?", "Yap yap yap yap", "I'm spongebob.", "Balls."])
+
+[node name="Timer2" type="Timer" parent="." unique_id=1108864555]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="dialogue_timer" type="Timer" parent="." unique_id=122650563]
+wait_time = 0.04
+autostart = true
+
+[node name="Timer" type="Timer" parent="dialogue_timer" unique_id=825278728]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="dialogue_timer" unique_id=1292747017]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="dialogue_timer" to="Node3D/Label3D" method="_on_dialogue_timer_timeout"]
+[connection signal="timeout" from="dialogue_timer/Timer" to="Node3D/Label3D" method="_on_timer_timeout"]
+[connection signal="timeout" from="dialogue_timer/Timer2" to="Node3D/Label3D" method="_on_timer_2_timeout"]

@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 @onready var canvas: CanvasLayer = $Canvas
 @onready var inventory: Node3D = $Inventory
+@onready var torch: Node3D = $Head/RightHand
 
 func attack() -> void:
 	# Forces the state machine to transition to "Attack" immediately
