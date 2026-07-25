@@ -5,28 +5,38 @@ extends Node3D
 @onready var canvas: CanvasLayer = $"../../Canvas"
 @onready var area_3d: Area3D = $"../../Area3D"
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var fire: GPUParticles3D = $Torch/Fire/Fire_vfx/Fire
+@onready var smoke: GPUParticles3D = $Torch/Fire/Fire_vfx/Smoke
+@onready var sparks_2: GPUParticles3D = $Torch/Fire/Fire_vfx/Sparks2
 
 @export var safe = true
+@export var death_delay = 3
 
-const ANIM_LENGTH = 10
-@export var fade_speed: float = 100
+const ANIM_LENGTH = 12
+@export var fade_speed: float = 10
 @export var energy: float = 100
+@export var max_energy = 100
 
 var showed_dg = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not safe:
-		energy -= fade_speed * delta
+		energy = clamp(energy - fade_speed * delta, 0, max_energy)
 		animation_tree.set("parameters/TimeSeek/seek_request", 
-		ANIM_LENGTH - energy / 100 * ANIM_LENGTH)
+		ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
+	#animation_tree.set("parameters/Sub2/sub_amount", energy / max_energy / 2)
+	animation_tree.set("parameters/TimeScale 2/scale", 2 - energy / max_energy)
 
 func refuel():
+	fire.restart()
+	smoke.restart()
+	sparks_2.restart()
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	pass
 
 func refuel_halfway():
-	energy = 100
+	energy = max_energy
 	animation_tree.set("parameters/TimeSeek/seek_request", 0)
 
 func refuel_done():
