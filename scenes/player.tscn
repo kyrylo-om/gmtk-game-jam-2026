@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://dtow3gyacrn0c" path="res://scripts/player/torch.gd" id="9_y4r1p"]
 [ext_resource type="PackedScene" uid="uid://caagp2yfg74oo" path="res://scenes/fire.tscn" id="11_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://c4o2x0shbhjgn" path="res://models/torch.fbx" id="11_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="12_oprun"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="13_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://c0clryqup1pyv" path="res://models/torch top.fbx" id="13_jej6c"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
@@ -1400,6 +1402,25 @@ alpha_curve = SubResource("CurveTexture_hl70x")
 hue_variation_min = -0.010000022
 hue_variation_max = 0.009999977
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfm1y"]
+transparency = 3
+alpha_hash_scale = 0.1
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.64, 0.64, 0.64, 1)
+albedo_texture = ExtResource("12_oprun")
+normal_enabled = true
+normal_texture = ExtResource("13_a8ls1")
+subsurf_scatter_strength = 1.0
+backlight_enabled = true
+backlight_texture = ExtResource("12_oprun")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = true
+
 [sub_resource type="Gradient" id="Gradient_4l61p"]
 offsets = PackedFloat32Array(0.27669904, 0.5815534, 1)
 colors = PackedColorArray(0.34, 0.15549333, 0.0408, 1, 0.6, 0.6, 0.6, 1, 0, 0, 0, 1)
@@ -1694,7 +1715,8 @@ lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_jej6c")
 
 [node name="Smoke" parent="Head/RightHand/Torch/Fire/Fire_vfx" parent_id_path=PackedInt32Array(1964473192, 438073621) index="1" unique_id=1302015300]
-transform = Transform3D(0.99999994, 1.1175871e-08, 2.9802322e-08, 0, 1, 1.1175871e-08, 0, 2.2351742e-08, 1.0000007, 0, -0.081, 0)
+transform = Transform3D(0.9999999, 1.1175871e-08, 2.9802322e-08, 0, 1, 1.1175871e-08, 5.9604645e-08, 3.7252903e-08, 1.0000007, 0, 0.09708583, 0.010892302)
+material_override = SubResource("StandardMaterial3D_qfm1y")
 amount = 60
 amount_ratio = 0.5
 lifetime = 1.5

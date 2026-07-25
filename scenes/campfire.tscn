@@ -74,7 +74,9 @@ hue_variation_max = 0.009999977
 [sub_resource type="QuadMesh" id="QuadMesh_ap7ik"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbk4o"]
-transparency = 1
+transparency = 3
+alpha_hash_scale = 0.1
+alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 albedo_color = Color(0.64, 0.64, 0.64, 1)
@@ -613,7 +615,7 @@ process_material = SubResource("ParticleProcessMaterial_2talo")
 draw_pass_1 = SubResource("QuadMesh_ap7ik")
 
 [node name="Smoke" type="GPUParticles3D" parent="Fire_vfx" unique_id=1302015300]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 0.29387176, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.2861216, 0)
 material_override = SubResource("StandardMaterial3D_tbk4o")
 amount = 1000
 amount_ratio = 0.1
