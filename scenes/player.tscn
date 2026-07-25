@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dtow3gyacrn0c" path="res://scripts/player/torch.gd" id="9_y4r1p"]
 [ext_resource type="PackedScene" uid="uid://caagp2yfg74oo" path="res://scenes/fire.tscn" id="11_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://c4o2x0shbhjgn" path="res://models/torch.fbx" id="11_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://c0clryqup1pyv" path="res://models/torch top.fbx" id="13_jej6c"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
 animation = &"idle"
@@ -1679,6 +1680,9 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_f1ej7")
 
 [node name="torch" parent="Head/RightHand/Torch" unique_id=1902448498 instance=ExtResource("11_d2wvv")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[node name="torch top" parent="Head/RightHand/Torch" unique_id=1918467782 instance=ExtResource("13_jej6c")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Head/RightHand/Torch" unique_id=1434870554]
