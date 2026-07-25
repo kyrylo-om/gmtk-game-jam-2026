@@ -48,7 +48,7 @@ particle_flag_rotate_y = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.5
-emission_ring_radius = 0.1
+emission_ring_radius = 4.0
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 angle_min = -179.99998
@@ -60,8 +60,8 @@ initial_velocity_max = 2.0
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = 0.49997765
 gravity = Vector3(0, 1, 0)
-scale_min = 0.9
-scale_max = 1.4
+scale_min = 1.4
+scale_max = 20.0
 scale_curve = SubResource("CurveTexture_ux44r")
 color = Color(1.8659585, 1.2763183, 0.6460132, 1)
 color_ramp = SubResource("GradientTexture1D_ynbbn")
@@ -110,7 +110,6 @@ emission_ring_radius = 0.5
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 80.0
 direction = Vector3(0, 1, 0)
-spread = 20.0
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0
 gravity = Vector3(0, 0, 0)
@@ -171,7 +170,7 @@ lifetime_randomness = 0.1
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.8
-emission_ring_radius = 0.6
+emission_ring_radius = 4.2
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 direction = Vector3(0, 1, 0)
@@ -199,7 +198,8 @@ animation = &"LightFlicker"
 [sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_4l61p"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ggib5"]
-graph_offset = Vector2(-550.597, 89.3961)
+graph_offset = Vector2(-541.597, 164.3961)
+nodes/output/position = Vector2(320, 280)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_g5mbl")
 nodes/Animation/position = Vector2(-220, 480)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_rach5")
@@ -576,6 +576,8 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ehsp5"]
+
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
 
@@ -635,7 +637,7 @@ omni_range = 10.572079
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=435024590]
 tree_root = SubResource("AnimationNodeBlendTree_ggib5")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Add2/add_amount = 0.0
+parameters/Add2/add_amount = 1.0
 parameters/TimeSeek/seek_request = -1.0
 parameters/TimeScale/scale = 0.0
 
@@ -647,5 +649,13 @@ collision_layer = 9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=858016525]
 shape = SubResource("BoxShape3D_ehsp5")
+
+[node name="SafeZone" type="Area3D" parent="." unique_id=1205796475]
+transform = Transform3D(20.15418, 0, 0, 0, 20.15418, 0, 0, 0, 20.15418, 0, 0, 0)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=1607618393]
+shape = SubResource("SphereShape3D_ehsp5")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_static_body_3d_body_entered"]

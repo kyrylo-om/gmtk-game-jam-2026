@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dn25fx7svp4er"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://dvv3vok31dem0" path="res://scenes/campfire.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bxt3q644ppbny" path="res://hdri/starfield-night_4K.exr" id="3_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://camnamx0y6klp" path="res://scenes/enviroment/tree.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://chgbwq3y3eoui" path="res://scenes/items/stick1.tscn" id="5_iywne"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bdw4ps4jp5sbf" path="res://scenes/monsters/sitting_monster.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://dx7inx2qmcv5j" path="res://scenes/monsters/gentel_monster.tscn" id="20_5newe"]
 [ext_resource type="PackedScene" uid="uid://dkp7qrkkpa4fe" path="res://scenes/enviroment/rocks/rock2.tscn" id="20_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://eqr1a4diu1e3" path="res://scenes/campfire.tscn" id="21_5newe"]
 [ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="21_37s47"]
 [ext_resource type="PackedScene" uid="uid://ci6kwqk5mb1iy" path="res://scenes/enviroment/rocks/rock3.tscn" id="21_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bwrce73lx0ae" path="res://scenes/items/firewood.tscn" id="22_37s47"]
@@ -131,11 +131,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
 
+[node name="Campfire" parent="." unique_id=1964473192 instance=ExtResource("21_5newe")]
+
 [node name="Collectible5" parent="." unique_id=1934788532 instance=ExtResource("22_37s47")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0150077, 0, -4.536568)
-
-[node name="Campfire" parent="." unique_id=1964473192 instance=ExtResource("3_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10823637, 0)
 
 [node name="Environment" type="Node3D" parent="." unique_id=482651045]
 
@@ -214,3 +213,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.416237, 0, 1.5235934)
 
 [node name="rock4" parent="." unique_id=883417986 instance=ExtResource("22_pl11u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.742987, -0.18073392, 7.601918)
+
+[editable path="Campfire"]

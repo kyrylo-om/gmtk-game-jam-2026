@@ -721,6 +721,35 @@ height = 1.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3v2ag"]
+animation = &"refuel"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jej6c"]
+animation = &"torch"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_f1ej7"]
+filter_enabled = true
+filters = [".", "Torch:position:x", "Torch:position:y", "Torch:position:z", "Torch:rotation:x", "Torch:rotation:y", "Torch:rotation:z"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_oprun"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_a8ls1"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ehsp5"]
+graph_offset = Vector2(-652.285, 47.731644)
+nodes/output/position = Vector2(320, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_jej6c")
+nodes/Animation/position = Vector2(-820, 160)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_f1ej7")
+nodes/OneShot/position = Vector2(-40, 120)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_3v2ag")
+"nodes/Animation 2/position" = Vector2(-320, 380)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_oprun")
+nodes/TimeScale/position = Vector2(-600, 160)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_a8ls1")
+nodes/TimeSeek/position = Vector2(-340, 160)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"TimeSeek", &"OneShot", 1, &"Animation 2", &"TimeScale", 0, &"Animation", &"TimeSeek", 0, &"TimeScale"]
+
 [sub_resource type="Animation" id="Animation_f1ej7"]
 length = 0.001
 tracks/0/type = "value"
@@ -834,6 +863,42 @@ tracks/9/keys = {
 "points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Torch/Fire/Fire_vfx/Fire:local_coords")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Torch/Fire/Fire_vfx/Smoke:local_coords")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Torch/Fire/Fire_vfx/Sparks2:local_coords")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_a8ls1"]
 resource_name = "refuel"
@@ -845,9 +910,9 @@ tracks/0/path = NodePath("Torch:rotation:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 3, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.73234224, -1.0702187, 0.07550333, 0.30000007, -0.021164834, -0.7501702, -0.37082192, 0.036253557, 0.26666665, -0.026070774, -0.76280063, -0.5666666, -0.21856552, 0.5666666, 0.21856552, 0.0010520903, -0.71692777, -0.0428118, 0, 0),
-"times": PackedFloat32Array(0, 1.2666667, 1.9, 3.7333333, 4.633333)
+"handle_modes": PackedInt32Array(0, 2, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.56164765, -1.0566124, 0.10376148, 0.8333334, -0.08183503, -0.4145091, -0.29999995, -0.14713857, 0.29999995, 0.14713857, 0.0010520903, -0.71692777, -0.0428118, 0, 0),
+"times": PackedFloat32Array(0, 1.3333334, 3.7333333, 4.633333)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -856,9 +921,9 @@ tracks/1/path = NodePath("Torch:rotation:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 3, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.8553686, -0.600723, 0.016369062, 0.8, -0.021799147, -0.677177, -0.69716275, -0.03933949, 0.4392469, 0.024785817, -0.6659107, -0.5, -0.12351686, 0.5, 0.12351686, 0, -1.0593588, -0.06879867, 0, 0),
-"times": PackedFloat32Array(0, 0.9, 2.3333333, 3.4333334, 5)
+"handle_modes": PackedInt32Array(0, 2, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.1604166, -0.600723, 0.016369062, 0.8, -0.021799147, -0.5074386, -0.4666667, -0.2513957, 0.4666667, 0.2513957, 0, -1.0593588, -0.06879867, 0, 0),
+"times": PackedFloat32Array(0, 0.76666665, 3.2666667, 5)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -867,9 +932,9 @@ tracks/2/path = NodePath("Torch:rotation:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.13333334, 0.2747189, 0.6619257, -0.16581076, -0.013867868, 0.8333334, 0.06969726, 0.39088094, -0.66666675, 0.100673765, 0.86247677, -0.13024315, 0, -1, -0.06602304, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 2.2, 5)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -878,9 +943,9 @@ tracks/3/path = NodePath("Torch:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.26666668, -0.2751147, -0.25188228, -0.7, -0.015488267, 0.5438808, 0.012033959, 0, -0.26666668, 0.0006783258, 0, 0),
+"times": PackedFloat32Array(0, 1.5333333, 5)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -889,9 +954,9 @@ tracks/4/path = NodePath("Torch:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.33333334, -0.14346436, -0.120231956, -0.43333334, 0.061953086, 0.5980075, -0.08549633, -0.2209057, -0.3250815, -0.027149992, 0.8345225, 0.06969723, 0, -1.298811, 0.073371395, 0, 0),
+"times": PackedFloat32Array(0, 1.3666667, 3.3666666, 5)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -901,8 +966,8 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.07254161, -0.5218565, 0.0037425905, 0.4134767, -0.0029653248, -0.032746907, -0.4326421, -0.011266261, 0.28340638, 0.007380072, 0, -0.5333333, -0.0012012859, 0, 0),
-"times": PackedFloat32Array(0, 1.2666668, 2.2666667, 5)
+"points": PackedFloat32Array(0, -0.25, 0, 0.23333333, -0.120231956, -0.10474368, -0.5218565, 0.0037425905, 0.4134767, -0.0029653248, -0.035046466, -0.46666646, -0.07744135, 0.494137, 0.081999965, 0, -0.5333333, -0.0012012859, 0, 0),
+"times": PackedFloat32Array(0, 0.93333334, 2.6, 5)
 }
 tracks/6/type = "method"
 tracks/6/imported = false
@@ -911,12 +976,51 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(2.8, 5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"refuel_halfway"
+}, {
 "args": [],
 "method": &"refuel_done"
 }]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Torch/Fire/Fire_vfx/Fire:local_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Torch/Fire/Fire_vfx/Smoke:local_coords")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Torch/Fire/Fire_vfx/Sparks2:local_coords")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_oprun"]
@@ -1026,6 +1130,7 @@ inherit_velocity_ratio = -0.64
 direction = Vector3(0, 1, 0)
 spread = 15.0
 flatness = 1.0
+initial_velocity_min = 0.39999998
 initial_velocity_max = 0.39999998
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = -2.2351742e-05
@@ -1289,14 +1394,22 @@ transform = Transform3D(1, 0, 0, 0, 0.62251467, -0.78260815, 0, 0.78260815, 0.62
 transform = Transform3D(0.878817, -0.029129848, 0.4762688, 0, 0.9981348, 0.06104854, -0.47715876, -0.053650502, 0.8771779, 0.733, -0.734, -0.67)
 script = ExtResource("9_y4r1p")
 
+[node name="AnimationTree" type="AnimationTree" parent="Head/RightHand" unique_id=1004120180]
+tree_root = SubResource("AnimationNodeBlendTree_ehsp5")
+anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+parameters/TimeScale/scale = 0.0
+parameters/TimeSeek/seek_request = -1.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/RightHand" unique_id=980420671]
 libraries/ = SubResource("AnimationLibrary_a8ls1")
-autoplay = &"torch"
 
 [node name="Torch" type="Node3D" parent="Head/RightHand" unique_id=1833809710]
 
 [node name="Fire" parent="Head/RightHand/Torch" unique_id=1964473192 instance=ExtResource("11_3v2ag")]
-transform = Transform3D(1.0000002, 0, 0, -1.8626451e-09, 1, -3.7252903e-09, 0, -3.7252903e-09, 1.0000002, 0, 0.86296296, 0.052781075)
+transform = Transform3D(1.0000002, 1.8626447e-09, 6.938894e-18, -1.8626451e-09, 1, 3.725291e-09, 0, -3.7252903e-09, 1.0000002, 0, 0.86296296, 0.052781075)
 
 [node name="Fire" parent="Head/RightHand/Torch/Fire/Fire_vfx" parent_id_path=PackedInt32Array(1964473192, 438073621) index="0" unique_id=653983407]
 transform = Transform3D(1, 3.7252903e-09, 0, 0, 1, 1.4901161e-08, 0, 1.8626451e-08, 1.0000005, -0.004641652, -0.13610244, -0.049081296)
@@ -1309,7 +1422,6 @@ transform = Transform3D(0.99999994, 1.1175871e-08, 2.9802322e-08, 0, 1, 1.117587
 amount = 60
 amount_ratio = 0.5
 lifetime = 1.5
-local_coords = true
 process_material = SubResource("ParticleProcessMaterial_oprun")
 
 [node name="Sparks1" parent="Head/RightHand/Torch/Fire/Fire_vfx" parent_id_path=PackedInt32Array(1964473192, 438073621) index="2" unique_id=935501814]
@@ -1346,6 +1458,7 @@ mesh = SubResource("BoxMesh_ehsp5")
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
-[connection signal="body_entered" from="Area3D" to="Head/RightHand" method="_on_area_3d_body_entered"]
+[connection signal="area_entered" from="Area3D" to="Head/RightHand" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="Head/RightHand" method="_on_area_3d_area_exited"]
 
 [editable path="Head/RightHand/Torch/Fire"]
