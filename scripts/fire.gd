@@ -1,5 +1,5 @@
 extends Node3D
-@onready var static_body: Area3D = $Area3D
+@onready var static_body: Area3D = $ScaledObjects/Area3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var shade_spawner: Node3D = $ShadeSpawner
 @export var player: CharacterBody3D 

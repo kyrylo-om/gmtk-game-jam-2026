@@ -576,11 +576,14 @@ _data = {
 &"RESET": SubResource("Animation_gee14")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
+[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w2pjx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ehsp5"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_te7ig"]
+radius = 0.8623047
 
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
@@ -650,21 +653,6 @@ parameters/TimeScale/scale = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977569784]
 libraries/ = SubResource("AnimationLibrary_0tnpc")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=579073057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598378, 0)
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=858016525]
-shape = SubResource("BoxShape3D_ehsp5")
-
-[node name="SafeZone" type="Area3D" parent="." unique_id=1205796475]
-transform = Transform3D(20.15418, 0, 0, 0, 20.15418, 0, 0, 0, 20.15418, 0, 0, 0)
-collision_layer = 16
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=1607618393]
-shape = SubResource("SphereShape3D_ehsp5")
-
 [node name="ShadeSpawner" type="Node3D" parent="." unique_id=692067130]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
@@ -678,5 +666,31 @@ mesh = SubResource("BoxMesh_ehsp5")
 [node name="Timer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1652376198]
 autostart = true
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_static_body_3d_body_entered"]
+[node name="ScaledObjects" type="Node3D" parent="." unique_id=324431567]
+
+[node name="Area3D" type="Area3D" parent="ScaledObjects" unique_id=579073057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598378, 0)
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/Area3D" unique_id=858016525]
+shape = SubResource("CylinderShape3D_w2pjx")
+
+[node name="SafeZone" type="Area3D" parent="ScaledObjects" unique_id=1205796475]
+transform = Transform3D(20.15418, 0, 0, 0, 20.15418, 0, 0, 0, 20.15418, 0, 0, 0)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/SafeZone" unique_id=1607618393]
+shape = SubResource("SphereShape3D_ehsp5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ScaledObjects" unique_id=302231729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6123527, 0)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/StaticBody3D" unique_id=83402270]
+shape = SubResource("CylinderShape3D_te7ig")
+
 [connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="ScaledObjects/Area3D" to="." method="_on_static_body_3d_body_entered"]
+
+[editable path="Firewood/Firewood3"]

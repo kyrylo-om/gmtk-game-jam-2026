@@ -180,6 +180,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(0, -707.99994)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Head/Camera3D:fov")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
 
 [sub_resource type="Animation" id="Animation_tuyoq"]
 resource_name = "idle"
@@ -450,6 +462,18 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 2, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.18606293, -0.010719359, -0.0035991485, -0.06283012, -0.0018621907, 0.065590575, 0.0019440063, 0, -0.1650691, 0.0142013775, 0, 0),
 "times": PackedFloat32Array(0, 0.3251446, 0.7)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Head/Camera3D:fov")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [80.0]
 }
 
 [sub_resource type="Animation" id="Animation_smehm"]
@@ -1452,9 +1476,8 @@ color = Color(1.8247963, 1.3882558, 1.2902569, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_mxod7"]
-
 [node name="Player" type="CharacterBody3D" unique_id=549697417]
+collision_mask = 33
 script = ExtResource("1_ucva2")
 can_sprint = true
 base_speed = 2.5
@@ -1698,21 +1721,6 @@ omni_range = 8.0
 transform = Transform3D(23.121674, 0, 0, 0, 0.39616105, 0, 0, 0, 23.121674, -0.47539735, 0.2161429, -0.41351962)
 visible = false
 mesh = SubResource("BoxMesh_ehsp5")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=475744558]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284, 0.462, -13.403)
-visible = false
-mesh = SubResource("BoxMesh_mxod7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=117703093]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.669, 0.462, -9.688)
-visible = false
-mesh = SubResource("BoxMesh_mxod7")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=483389553]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.231, 0.462, -5.973)
-visible = false
-mesh = SubResource("BoxMesh_mxod7")
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]

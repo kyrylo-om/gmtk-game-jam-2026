@@ -116,14 +116,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_velocity
 
 	# Modify speed based on sprinting
+	is_sprinting = false
+	move_speed = base_speed
 	if can_sprint and Input.is_action_pressed(input_sprint):
 		move_speed = sprint_speed
 		if is_moving: is_sprinting = true
-	elif Input.is_action_pressed("throw"):
-		move_speed = crouch_speed
-	else:
+	if Input.is_action_pressed("throw"):
 		is_sprinting = false
-		move_speed = base_speed
+		move_speed = crouch_speed
 
 	# Apply desired movement to velocity
 	if can_move:
