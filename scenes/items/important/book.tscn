@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d2ok7766ihn3y"]
+
+[ext_resource type="PackedScene" uid="uid://btxyep1gbohip" path="res://scenes/items/important/collectible_important.tscn" id="1_3jmoc"]
+[ext_resource type="PackedScene" uid="uid://nm5o54tiec33" path="res://models/Important objects/book.fbx" id="2_qdeju"]
+[ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="2_xup2v"]
+
+[sub_resource type="Resource" id="Resource_1t3b6"]
+script = ExtResource("2_xup2v")
+name = "Book"
+prefab_path = "uid://d2ok7766ihn3y"
+fuel = 20.0
+mass = 2.0
+metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xup2v"]
+size = Vector3(1.105, 0.24, 0.79)
+
+[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_3jmoc")]
+mass = 2.0
+item_data = SubResource("Resource_1t3b6")
+mesh = NodePath("book/book_Baked")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03533125, 0.15022928, 0.006885886)
+shape = SubResource("BoxShape3D_xup2v")
+
+[node name="book" parent="." index="2" unique_id=1385678747 instance=ExtResource("2_qdeju")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[editable path="book"]

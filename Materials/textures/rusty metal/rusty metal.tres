@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cj54neehnws3w" path="res://Materials/textures/rusty metal/rust_coarse_01_nor_gl_2k.jpg" id="2_e1lri"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("1_7gmu7")
 normal_enabled = true
 normal_scale = 2.0

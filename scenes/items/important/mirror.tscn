@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cfxvdnbi24t51"]
+
+[ext_resource type="PackedScene" uid="uid://btxyep1gbohip" path="res://scenes/items/important/collectible_important.tscn" id="1_5drss"]
+[ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="2_05xkw"]
+[ext_resource type="PackedScene" uid="uid://dftb28flit5rh" path="res://models/Important objects/mirror.fbx" id="2_dvmms"]
+
+[sub_resource type="Resource" id="Resource_5drss"]
+script = ExtResource("2_05xkw")
+name = "Mirror"
+prefab_path = "uid://cfxvdnbi24t51"
+fuel = 20.0
+mass = 3.0
+metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05xkw"]
+size = Vector3(0.155, 1.885, 1.2)
+
+[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_5drss")]
+mass = 3.0
+item_data = SubResource("Resource_5drss")
+mesh = NodePath("mirror/Miror_Baked")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=753305388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04601717, 0.9783021, 0)
+shape = SubResource("BoxShape3D_05xkw")
+
+[node name="mirror" parent="." index="2" unique_id=1369265157 instance=ExtResource("2_dvmms")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.37176418, 0)
+
+[editable path="mirror"]
