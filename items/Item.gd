@@ -5,3 +5,4 @@ extends Resource
 @export_file("*.tscn") var prefab_path: String = ""
 var prefab: PackedScene
 @export var fuel: float = 1
+@export var mass: float = 1

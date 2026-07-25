@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 @onready var canvas: CanvasLayer = $Canvas
+@onready var inventory: Node3D = $Inventory
 
 func attack() -> void:
 	# Forces the state machine to transition to "Attack" immediately
@@ -127,14 +128,16 @@ func _physics_process(delta: float) -> void:
 	if can_move:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var weight = inventory.weight() / 10
+		var speed = move_speed - weight
 		if move_dir:
 			is_moving = true
-			velocity.x = move_dir.x * move_speed
-			velocity.z = move_dir.z * move_speed
+			velocity.x = move_dir.x * speed
+			velocity.z = move_dir.z * speed
 		else:
 			is_moving = false
-			velocity.x = move_toward(velocity.x, 0, move_speed)
-			velocity.z = move_toward(velocity.z, 0, move_speed)
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.z = move_toward(velocity.z, 0, speed)
 	else:
 		velocity.x = 0
 		velocity.y = 0
@@ -189,6 +192,8 @@ func respawn():
 	has_jumped = false
 	position = Vector3(0, 0, 8)
 	rotate_look_immediately(Vector2.ZERO)
+	inventory.clear()
+	
 	playback.travel("wake_up")
 	disable_move()
 

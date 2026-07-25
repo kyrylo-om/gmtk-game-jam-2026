@@ -55,3 +55,14 @@ func set_held(index: int):
 	print(held_item)
 	left_hand.add_child(held_item)
 	held_item.hold()
+	
+func weight():
+	var res = 0.0
+	for item in items:
+		res += item.mass
+	return res
+	
+func clear():
+	items = []
+	update_inventory_ui()
+	set_held(0)
