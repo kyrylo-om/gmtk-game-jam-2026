@@ -46,13 +46,19 @@ func refuel_done():
 	player.can_move = true
 	
 func die():
-	if not showed_dg:
-		canvas.show_dialogue("Well, guess I'm gonna die.")
-		showed_dg = true
-	ui_animation.play("Death")
+	if not safe:
+		if not showed_dg:
+			canvas.show_dialogue("Well, guess I'm gonna die.")
+			showed_dg = true
+		ui_animation.play("Death")
 	
 func death_done():
 	player.respawn()
+
+func extinguish():
+	energy = 0
+	animation_tree.set("parameters/TimeSeek/seek_request", 
+		ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if not safe:
@@ -63,3 +69,4 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	print("Exited safe zone")
 	safe = false
+	

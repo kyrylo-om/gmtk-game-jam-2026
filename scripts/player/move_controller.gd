@@ -11,11 +11,6 @@ extends CharacterBody3D
 @onready var inventory: Node3D = $Inventory
 @onready var torch: Node3D = $Head/RightHand
 
-func attack() -> void:
-	# Forces the state machine to transition to "Attack" immediately
-	# Automatically returns to "Idle" when "Attack" finishes (if set up in graph)
-	playback.travel("Attack")
-
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?

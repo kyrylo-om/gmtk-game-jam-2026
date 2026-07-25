@@ -68,5 +68,5 @@ func throw():
 		throwed.apply_torque_impulse(-global_transform.basis.x * throw_speed / 10)
 
 func _on_shade_trigger_area_entered(area: Area3D) -> void:
-	#torch.
+	torch.extinguish()
 	area.die()
