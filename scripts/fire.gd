@@ -17,15 +17,19 @@ const ANIM_LENGTH = 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	energy -= fade_speed * delta
+	energy = clamp(energy - fade_speed * delta, 0, 100)
 	animation_tree.set("parameters/TimeSeek/seek_request", energy / 100 * ANIM_LENGTH)
 		
+		
+func add_fuel():
+	energy += 40
+	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("fuel"):
 		body.delete()
-		energy += 50
+		add_fuel()
 
 
 func _on_timer_timeout() -> void:

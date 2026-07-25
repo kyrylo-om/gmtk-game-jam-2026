@@ -3686,7 +3686,22 @@ double_sided = false
 text = "Pick up."
 font = ExtResource("34_js0lu")
 
+[node name="Collectible2" parent="." unique_id=1037344676 instance=ExtResource("29_0sl42")]
+transform = Transform3D(0.88364947, 0, 0.4681492, 0, 1, 0, -0.4681492, 0, 0.88364947, 3.7307327, -4.7683716e-07, 6.335227)
+
+[node name="Plane_001" parent="Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=2071252575]
+material_overlay = ExtResource("26_8ool0")
+
+[node name="Label3D" type="Label3D" parent="Collectible2" unique_id=1205255763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.671, 0)
+billboard = 2
+double_sided = false
+text = "Pick up."
+font = ExtResource("34_js0lu")
+
 [editable path="SubViewportContainer/SubViewport/Campfire"]
 [editable path="SubViewportContainer/SubViewport/Campfire/Firewood/Firewood3"]
 [editable path="Collectible"]
 [editable path="Collectible/Branch 1"]
+[editable path="Collectible2"]
+[editable path="Collectible2/Branch 2"]
