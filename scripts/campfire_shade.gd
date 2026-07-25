@@ -21,3 +21,7 @@ func die():
 	
 func die_done():
 	queue_free()
+
+
+func _on_body_entered(body: Node3D) -> void:
+	die()

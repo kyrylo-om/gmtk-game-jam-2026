@@ -1,5 +1,6 @@
 extends Node3D
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@export var mesh: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,4 +12,11 @@ func _process(delta: float) -> void:
 	pass
 	
 func die():
+	mesh.queue_free()
+	animation_player.play("die")
+	
+func die_done():
 	queue_free()
+
+func _on_body_entered(body: Node3D) -> void:
+	die()

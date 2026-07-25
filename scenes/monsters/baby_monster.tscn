@@ -55,9 +55,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Monster" unique_id=583574455 instance=ExtResource("1_q3rtg")]
+[node name="Monster" unique_id=583574455 node_paths=PackedStringArray("mesh") instance=ExtResource("1_q3rtg")]
+mesh = NodePath("tree_monster")
 
 [node name="tree_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="tree_monster" index="0" unique_id=21929988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12732255, 0.28375852, 0)
@@ -76,3 +78,6 @@ sprite_frames = SubResource("SpriteFrames_ux44r")
 animation = &"run"
 autoplay = "run"
 frame_progress = 0.1154416
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
+transform = Transform3D(1.1571364, 0, 0, 0, 2.7771275, 0, 0, 0, 1.1571364, 0, 0.5434562, 0)

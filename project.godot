@@ -103,6 +103,7 @@ reset={
 3d_physics/layer_4="Interactibles"
 3d_physics/layer_5="Safe Zone"
 3d_physics/layer_6="Campfire"
+3d_physics/layer_7="Thrown Items"
 
 [physics]
 

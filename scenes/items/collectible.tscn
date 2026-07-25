@@ -6,10 +6,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
 [node name="Collectible" type="RigidBody3D" unique_id=1934788532 groups=["fuel"]]
-collision_layer = 9
+collision_layer = 8
 freeze = true
 script = ExtResource("1_15c1p")
 outline_material = ExtResource("2_j4in7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=753305388]
 shape = SubResource("BoxShape3D_ehsp5")
+
+[node name="Timer" type="Timer" parent="." unique_id=465650762]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

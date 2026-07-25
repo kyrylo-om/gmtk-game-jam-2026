@@ -44,3 +44,6 @@ double_sided = false
 texture = ExtResource("4_vbi6j")
 region_enabled = true
 region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
+
+[node name="CollisionShape3D" parent="." index="4" unique_id=2079526961]
+transform = Transform3D(1.2199095, 0, 0, 0, 3.2027006, 0, 0, 0, 1.2199095, 0, 1.5596942, 0)

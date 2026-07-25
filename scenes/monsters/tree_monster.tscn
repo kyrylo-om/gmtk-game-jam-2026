@@ -12,7 +12,8 @@ emission_enabled = true
 emission_texture = ExtResource("3_csr2h")
 billboard_mode = 2
 
-[node name="Monster" unique_id=583574455 instance=ExtResource("1_2bos4")]
+[node name="Monster" unique_id=583574455 node_paths=PackedStringArray("mesh") instance=ExtResource("1_2bos4")]
+mesh = NodePath("tree_monster")
 
 [node name="tree_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
 
@@ -23,3 +24,6 @@ pixel_size = 0.002
 texture = ExtResource("2_ranq0")
 region_enabled = true
 region_rect = Rect2(393.83105, 0, 1079.163, 2048)
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
+transform = Transform3D(1.3396989, 0, 0, 0, 4.476243, 0, 0, 0, 1.3396989, 0, 1.8986864, 0)

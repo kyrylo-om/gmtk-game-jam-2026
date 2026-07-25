@@ -81,7 +81,7 @@ particles_anim_loop = true
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ano02"]
+[sub_resource type="CurveTexture" id="CurveTexture_eyv1o"]
 curve = SubResource("Curve_5uuum")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31bp8"]
@@ -107,13 +107,13 @@ turbulence_enabled = true
 turbulence_noise_strength = 0.1
 turbulence_influence_min = 0.0
 turbulence_influence_max = 0.10300001
-turbulence_influence_over_life = SubResource("CurveTexture_ano02")
+turbulence_influence_over_life = SubResource("CurveTexture_eyv1o")
 
 [sub_resource type="QuadMesh" id="QuadMesh_eqd1j"]
 
 [node name="CampfireShade" type="Area3D" unique_id=1547753118]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 64
 script = ExtResource("1_pgtbe")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=95299125]
@@ -122,7 +122,6 @@ script = ExtResource("1_pgtbe")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 billboard = 2
 double_sided = false
-text = "dasdasdasdasdasdasdasdasdasdasdasd"
 font = ExtResource("2_s4a5j")
 font_size = 50
 script = ExtResource("2_0naev")
@@ -161,6 +160,7 @@ lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_31bp8")
 draw_pass_1 = SubResource("QuadMesh_eqd1j")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="dialogue_timer" to="Node3D/Label3D" method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="dialogue_timer/Timer" to="Node3D/Label3D" method="_on_timer_timeout"]

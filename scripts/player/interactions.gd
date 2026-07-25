@@ -66,6 +66,9 @@ func throw():
 		
 		throwed.apply_central_impulse((forward_vector + global_transform.basis.x * 0.2) * throw_speed)
 		throwed.apply_torque_impulse(-global_transform.basis.x * throw_speed / 10)
+		
+		throwed.set_collision_layer_value(7, true)
+		throwed.start_timer()
 
 func _on_shade_trigger_area_entered(area: Area3D) -> void:
 	torch.extinguish()

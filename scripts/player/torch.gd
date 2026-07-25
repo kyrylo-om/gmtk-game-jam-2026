@@ -23,9 +23,8 @@ var showed_dg = false
 func _process(delta: float) -> void:
 	if not safe:
 		energy = clamp(energy - fade_speed * delta, 0, max_energy)
-		animation_tree.set("parameters/TimeSeek/seek_request", 
-		ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
-	#animation_tree.set("parameters/Sub2/sub_amount", energy / max_energy / 2)
+	animation_tree.set("parameters/TimeSeek/seek_request", 
+	ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
 	if energy > 0:
 		animation_tree.set("parameters/TimeScale 2/scale", 2 - energy / max_energy)
 	else:
@@ -56,9 +55,7 @@ func death_done():
 	player.respawn()
 
 func extinguish():
-	energy = 0
-	animation_tree.set("parameters/TimeSeek/seek_request", 
-		ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
+	create_tween().tween_property(self, "energy", 0, 0.3)
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if not safe:

@@ -59,6 +59,7 @@ var freeflying : bool = false
 var is_moving = false
 var is_sprinting = false
 var has_jumped = false
+var said_boundary = false
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
@@ -137,9 +138,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.y = 0
-		
+	
+	#REMOVE
 	if Input.is_action_just_pressed("reset"):
 		respawn()
+		
+	if not said_boundary and position.distance_to(Vector3.ZERO) > 60:
+		canvas.show_dialogue("There is nothing for me outside without her.")
+		said_boundary = true
 	
 	# Use velocity to actually move
 	move_and_slide()
@@ -200,5 +206,5 @@ func disable_move():
 	velocity = Vector3.ZERO
 
 func respawn_done():
-	canvas.show_dialogue("No. I can't let it go.")
+	canvas.show_dialogue("No. I can't let her go.")
 	can_move = true

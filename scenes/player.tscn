@@ -669,7 +669,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_qfm1y"]
 resource_name = "Death"
-length = 5.0
+length = 10.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -677,7 +677,7 @@ tracks/0/path = NodePath("../Head/RightHand")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5),
+"times": PackedFloat32Array(10),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -692,8 +692,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-707.99994, -0.25, 0, 0.36666667, 400.02878, -150, -2.1666667, -29.536987, 0, 0),
-"times": PackedFloat32Array(0, 5)
+"points": PackedFloat32Array(-707.99994, -0.25, 0, 1.3, 389.99994, -150, -2.6333332, -46, 0, 0),
+"times": PackedFloat32Array(0, 10)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -713,9 +713,9 @@ tracks/3/path = NodePath("Control/Blink/TextureRect2:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 2),
+"handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.8333334, 0, 0, 0),
-"times": PackedFloat32Array(0, 5)
+"times": PackedFloat32Array(0, 10)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -724,9 +724,9 @@ tracks/4/path = NodePath("Control/Blink/TextureRect2:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(374, -0.25, 0, 0.25528532, -286.8039, -100, -2.4, -0.030342102, 0, 0),
-"times": PackedFloat32Array(0, 5)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(374, -0.25, 0, 1.5333333, -282, -100, -2.1333332, 50, 0, 0),
+"times": PackedFloat32Array(0, 10)
 }
 
 [sub_resource type="Animation" id="Animation_fulsm"]
