@@ -8,9 +8,14 @@ extends Node3D
 @onready var torch: Node3D = $RightHand
 var collider = null
 var look_at_fire = false
+var hint_throw = false
+var hinted_throw = false
 
 @export var max_throw_speed: int = 10
 var throw_speed: float = 0
+
+func _ready() -> void:
+	canvas.show_tooltip("Press E to wake up.")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -51,13 +56,21 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_released("throw"):
 		throw()
-		canvas.show_dialogue("How about you throw yourself instead?")
 		throw_speed = 0
+		
+	if hint_throw:
+		canvas.show_tooltip("Hold Q to throw into the fire.")
 
 func pickup(item: RigidBody3D):
+	if not hinted_throw:
+		hint_throw = true
 	inventory.add_item(item.delete())
 	
 func throw():
+	if not hinted_throw:
+		hint_throw = false
+		hinted_throw = true
+		canvas.hide_tooltip()
 	var throwed: RigidBody3D = inventory.throw()
 
 	if throwed:

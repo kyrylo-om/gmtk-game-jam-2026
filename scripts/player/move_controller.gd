@@ -10,9 +10,10 @@ extends CharacterBody3D
 @onready var canvas: CanvasLayer = $Canvas
 @onready var inventory: Node3D = $Inventory
 @onready var torch: Node3D = $Head/RightHand
+@onready var canvas_player: AnimationPlayer = $Canvas/AnimationPlayer
 
 ## Can we move around?
-@export var can_move : bool = true
+@export var can_move : bool = false
 ## Are we affected by gravity?
 @export var has_gravity : bool = true
 ## Can we press to jump?
@@ -60,6 +61,7 @@ var is_moving = false
 var is_sprinting = false
 var has_jumped = false
 var said_boundary = false
+var first_respawn = true
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
@@ -86,6 +88,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+			
+func _process(delta: float) -> void:
+	if first_respawn:
+		if Input.is_action_just_pressed("pickup"):
+			canvas.hide_tooltip()
+			canvas_player.play("RESET")
+			respawn()
+		if Input.is_action_just_pressed("throw"):
+			canvas.show_dialogue("I'm a developer and I'm cool as heck.")
+			canvas.hide_tooltip()
+			canvas_player.play("RESET")
+			can_move = true
+			first_respawn = false
 
 func _physics_process(delta: float) -> void:
 	# If freeflying, handle freefly and nothing else
@@ -192,7 +207,7 @@ func release_mouse():
 	
 func respawn():
 	has_jumped = false
-	position = Vector3(0, 0, 8)
+	position = Vector3(0, 0, 3)
 	rotate_look_immediately(Vector2.ZERO)
 	inventory.clear()
 	
@@ -206,5 +221,9 @@ func disable_move():
 	velocity = Vector3.ZERO
 
 func respawn_done():
-	canvas.show_dialogue("No. I can't let her go.")
+	if first_respawn:
+		first_respawn = false
+	else:
+		var lines = ["No. I can't let her go.", "As long as I remember..."]
+		canvas.show_dialogue(lines.pick_random())
 	can_move = true

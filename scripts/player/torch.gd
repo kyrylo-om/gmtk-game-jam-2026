@@ -39,6 +39,9 @@ func refuel():
 
 func refuel_halfway():
 	energy = max_energy
+	var lines = ["I will always hold a piece of you with me.", "I won't forget.", "Darkness won't take you from me."]
+	if randi() % 2:
+		canvas.show_dialogue(lines.pick_random())
 	animation_tree.set("parameters/TimeSeek/seek_request", 0)
 
 func refuel_done():
@@ -47,7 +50,7 @@ func refuel_done():
 func die():
 	if not safe:
 		if not showed_dg:
-			canvas.show_dialogue("Well, guess I'm gonna die.")
+			canvas.show_dialogue("I must return.")
 			showed_dg = true
 		ui_animation.play("Death")
 	

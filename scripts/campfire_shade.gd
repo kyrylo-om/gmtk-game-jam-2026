@@ -16,7 +16,8 @@ func _on_timer_2_timeout() -> void:
 	label_3d.show_text()
 	
 func die():
-	mesh.queue_free()
+	if mesh:
+		mesh.queue_free()
 	animation_player.play("die")
 	
 func die_done():

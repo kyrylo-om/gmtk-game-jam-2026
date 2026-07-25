@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 	pass
 	
 func die():
-	mesh.queue_free()
+	if mesh:
+		mesh.queue_free()
 	animation_player.play("die")
 	
 func die_done():

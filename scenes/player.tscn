@@ -496,10 +496,10 @@ tracks/0/path = NodePath("Control/Blink/TextureRect2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457, 1.1333334, 1.2, 1.3333335, 2.0333335, 2.1000001, 2.2333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374)]
+"values": [Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374), Vector2(0, 374), Vector2(0, -200), Vector2(0, 374)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -508,10 +508,10 @@ tracks/1/path = NodePath("Control/Blink/TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.20000002, 0.24184564, 0.3085123, 0.4418457, 1.1333334, 1.2, 1.3333335, 2.0333335, 2.1000001, 2.2333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994)]
+"values": [Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994), Vector2(0, -707.99994), Vector2(0, -200), Vector2(0, -707.99994)]
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -775,11 +775,65 @@ tracks/3/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Blink/TextureRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -200)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -200)]
+}
+
+[sub_resource type="Animation" id="Animation_60mlk"]
+resource_name = "start"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Blink/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Blink/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -200)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4r5pv"]
 _data = {
 &"Death": SubResource("Animation_qfm1y"),
-&"RESET": SubResource("Animation_fulsm")
+&"RESET": SubResource("Animation_fulsm"),
+&"start": SubResource("Animation_60mlk")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb2i2"]
@@ -1535,6 +1589,7 @@ script = ExtResource("2_qhqgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas" unique_id=523277314]
 libraries/ = SubResource("AnimationLibrary_4r5pv")
+autoplay = &"start"
 
 [node name="Control" type="Control" parent="Canvas" unique_id=117146400]
 layout_mode = 3
@@ -1559,18 +1614,18 @@ anchor_top = 20.849997
 anchor_right = -10.675
 anchor_bottom = 20.849998
 offset_left = 427.0
-offset_top = -1541.9998
+offset_top = -1033.9999
 offset_right = 2347.0
-offset_bottom = -461.99982
+offset_bottom = 46.00006
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Canvas/Control/Blink" unique_id=1767979920]
 layout_mode = 0
-offset_top = 374.0
+offset_top = -200.0
 offset_right = 1920.0
-offset_bottom = 1454.0
+offset_bottom = 880.0
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")
 flip_v = true
