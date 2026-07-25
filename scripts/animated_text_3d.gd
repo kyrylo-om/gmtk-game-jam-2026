@@ -33,6 +33,7 @@ func _on_dialogue_timer_timeout() -> void:
 
 func _on_timer_timeout() -> void:
 	timer_3.start()
+	print("dsa")
 	create_tween().tween_property(self, "modulate:a", 0.0, 0.2)
 
 func _on_timer_2_timeout() -> void:

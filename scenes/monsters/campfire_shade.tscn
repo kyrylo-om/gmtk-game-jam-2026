@@ -32,10 +32,24 @@ tracks/0/path = NodePath("Smoke:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6666666, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die_done"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12mg1"]
@@ -108,6 +122,7 @@ script = ExtResource("1_pgtbe")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 billboard = 2
 double_sided = false
+text = "dasdasdasdasdasdasdasdasdasdasdasd"
 font = ExtResource("2_s4a5j")
 font_size = 50
 script = ExtResource("2_0naev")

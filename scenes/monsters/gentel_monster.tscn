@@ -19,7 +19,11 @@ albedo_texture = ExtResource("4_vbi6j")
 emission_energy_multiplier = 2.0
 emission_texture = ExtResource("5_rkl4f")
 
-[node name="CampfireShade" unique_id=324286114 instance=ExtResource("1_c4afb")]
+[node name="CampfireShade" unique_id=324286114 node_paths=PackedStringArray("mesh") instance=ExtResource("1_c4afb")]
+mesh = NodePath("sitting_monster")
+
+[node name="Node3D" parent="." index="0" unique_id=95299125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.405, 0)
 
 [node name="sitting_monster" type="Node3D" parent="." index="1" unique_id=2018006632]
 
@@ -40,6 +44,3 @@ double_sided = false
 texture = ExtResource("4_vbi6j")
 region_enabled = true
 region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
-
-[node name="Node3D" parent="." index="2" unique_id=95299125]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.405, 0)
