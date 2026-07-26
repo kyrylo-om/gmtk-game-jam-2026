@@ -61,5 +61,5 @@ draw_pass_1 = SubResource("QuadMesh_cif55")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=451143110]
 light_color = Color(1.7388712, 1.4124036, 1.1267445, 1)
 light_volumetric_fog_energy = 3.377
-omni_range = 1.0
+omni_range = 1.5
 omni_attenuation = 0.5
