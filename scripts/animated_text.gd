@@ -5,6 +5,7 @@ extends Label
 var text_to_display: String = ""
 
 func show_text(text_arg: String):
+	print("Dsada")
 	modulate.a = 1.0
 	timer_2.stop()
 	text = ""

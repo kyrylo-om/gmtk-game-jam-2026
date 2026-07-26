@@ -624,6 +624,17 @@ tracks/19/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/20/type = "method"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_458eo"]
 resource_name = "cutscene2"
@@ -759,6 +770,20 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["HI!!!!!!"],
+"method": &"show_text"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3rex"]
@@ -1404,6 +1429,11 @@ font = ExtResource("51_bk1p3")
 font_size = 30
 outline_size = 1
 
+[sub_resource type="LabelSettings" id="LabelSettings_o8ni1"]
+font = ExtResource("51_bk1p3")
+font_size = 30
+outline_size = 1
+
 [node name="Game" type="Node3D" unique_id=861187367]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=181788228]
@@ -1444,6 +1474,7 @@ wait_time = 1.0
 
 [node name="CutsceneTimer" parent="SubViewportContainer/SubViewport/Campfire" index="10" unique_id=400677440]
 wait_time = 3.0
+autostart = true
 
 [node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=482651045]
 
@@ -5790,7 +5821,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 [node name="Collectible" parent="SubViewportContainer/SubViewport" unique_id=189514411 instance=ExtResource("23_nepv3")]
 transform = Transform3D(0.7592206, 0, 0.65083337, 0, 1, 0, -0.65083337, 0, 0.7592206, -3.5641086, 0.0014599562, 3.8937445)
 
-[node name="Plane" parent="SubViewportContainer/SubViewport/Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=1648757585]
+[node name="Plane" parent="SubViewportContainer/SubViewport/Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=195210663]
 transform = Transform3D(1, -2.3841858e-07, -1.8626451e-09, 1.8626451e-09, 1.8626451e-09, 0.9999998, -1.4901161e-07, -1, 3.7252903e-09, -3.2622452, 0, 0)
 material_overlay = ExtResource("26_8ool0")
 
@@ -5804,7 +5835,7 @@ font = ExtResource("34_js0lu")
 [node name="Collectible2" parent="SubViewportContainer/SubViewport" unique_id=1037344676 instance=ExtResource("29_0sl42")]
 transform = Transform3D(0.88364947, 0, 0.4681492, 0, 1, 0, -0.4681492, 0, 0.88364947, 3.76328, -3.5762787e-07, -0.11535597)
 
-[node name="Plane_001" parent="SubViewportContainer/SubViewport/Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=2071252575]
+[node name="Plane_001" parent="SubViewportContainer/SubViewport/Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=1590303062]
 material_overlay = ExtResource("26_8ool0")
 
 [node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/Collectible2" unique_id=1205255763]
@@ -5828,6 +5859,56 @@ visible = false
 
 [node name="Fire" parent="SubViewportContainer/SubViewport/Forest fire" index="1" unique_id=1329256548]
 modifier_stack = SubResource("Resource_kpl5h")
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Forest fire" unique_id=673337214]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="Control" parent="SubViewportContainer/SubViewport/Forest fire/Control" unique_id=1315883727]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="Control" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer" unique_id=536383905]
+anchors_preset = 0
+offset_top = -100.0
+offset_right = 1152.0
+offset_bottom = -72.0
+
+[node name="Dialogue" type="Label" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer" unique_id=1375230810]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -14.0
+offset_right = 500.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_tuyoq")
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("52_n8ral")
+
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=1510867840]
+wait_time = 0.04
+autostart = true
+
+[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=121997490]
+wait_time = 3.5
+one_shot = true
 
 [node name="Cutscene1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1133042819]
 process_mode = 4
@@ -6117,7 +6198,7 @@ offset_right = 500.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_tuyoq")
+label_settings = SubResource("LabelSettings_o8ni1")
 horizontal_alignment = 1
 autowrap_mode = 3
 script = ExtResource("52_n8ral")
@@ -6148,6 +6229,8 @@ stream = ExtResource("46_458eo")
 volume_db = -10.0
 autoplay = true
 
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
 
