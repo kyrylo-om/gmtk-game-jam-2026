@@ -62,7 +62,7 @@ initial_velocity_max = 2.0
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = 0.49997765
 gravity = Vector3(0, 1, 0)
-scale_min = 3.0
+scale_min = 1.4
 scale_max = 20.0
 scale_curve = SubResource("CurveTexture_ux44r")
 color = Color(1.8659585, 1.2763183, 0.6460132, 1)
@@ -123,7 +123,6 @@ hue_variation_min = -2.2351742e-08
 hue_variation_max = 0.009999977
 anim_speed_min = 1.0
 anim_speed_max = 1.0
-turbulence_enabled = true
 turbulence_noise_strength = 0.1
 turbulence_influence_min = 0.0
 turbulence_influence_max = 0.10300001
@@ -197,22 +196,31 @@ animation = &"Intensity"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w2pjx"]
 animation = &"burn"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_te7ig"]
+animation = &"burn_important"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g5mbl"]
 animation = &"LightFlicker"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_0f1eb"]
+mix_mode = 1
+fadeout_time = 0.5
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_te7ig"]
 filters = ["Fire_vfx/Smoke:amount_ratio"]
 mix_mode = 1
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_w2pjx"]
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_txieb"]
 
 [sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_4l61p"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ggib5"]
-graph_offset = Vector2(-471.1791, 99.45099)
-nodes/output/position = Vector2(800, 200)
+graph_offset = Vector2(-286.7533, 113.48221)
+nodes/output/position = Vector2(1200, 240)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_g5mbl")
-nodes/Animation/position = Vector2(-220, 480)
+nodes/Animation/position = Vector2(-440, 520)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_rach5")
 nodes/Add2/position = Vector2(60, 280)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_rach5")
@@ -225,7 +233,13 @@ nodes/OneShot/node = SubResource("AnimationNodeOneShot_te7ig")
 nodes/OneShot/position = Vector2(420, 260)
 "nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_w2pjx")
 "nodes/Animation 3/position" = Vector2(160, 580)
-node_connections = [&"output", 0, &"OneShot", &"Add2", 0, &"TimeSeek", &"Add2", 1, &"Animation", &"TimeSeek", 0, &"TimeScale", &"TimeScale", 0, &"Animation 2", &"OneShot", 0, &"Add2", &"OneShot", 1, &"Animation 3"]
+"nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_w2pjx")
+"nodes/TimeScale 2/position" = Vector2(-180, 440)
+"nodes/OneShot 2/node" = SubResource("AnimationNodeOneShot_0f1eb")
+"nodes/OneShot 2/position" = Vector2(800, 260)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_te7ig")
+"nodes/Animation 4/position" = Vector2(540, 580)
+node_connections = [&"output", 0, &"OneShot 2", &"Add2", 0, &"TimeSeek", &"Add2", 1, &"TimeScale 2", &"TimeSeek", 0, &"TimeScale", &"TimeScale", 0, &"Animation 2", &"OneShot", 0, &"Add2", &"OneShot", 1, &"Animation 3", &"TimeScale 2", 0, &"Animation", &"OneShot 2", 0, &"OneShot", &"OneShot 2", 1, &"Animation 4"]
 
 [sub_resource type="Animation" id="Animation_g5mbl"]
 resource_name = "Intensity"
@@ -249,7 +263,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.5, -16.666668, -0.049999997, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.2, -16.666668, -0.049999997, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/2/type = "bezier"
@@ -315,7 +329,7 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0, 45, -16.666668, -4.166667, 0, 0),
+"points": PackedFloat32Array(20, -0.25, 0, 0.25, 0, 20, -16.666668, -4.166667, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/8/type = "bezier"
@@ -326,7 +340,7 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 3, -16.666668, -0.16666667, 0, 0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 5, -16.666668, -0.16666667, 0, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/9/type = "bezier"
@@ -348,7 +362,7 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.05, 0, 0, 16.666668, 0.15833335, 1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 41.066666, 0.05000681, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/11/type = "bezier"
@@ -370,7 +384,7 @@ tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(0.35, 0, 0, 16.666668, 0.108333334, 1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 16.666668, 0.108333334, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/13/type = "bezier"
@@ -381,7 +395,7 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.1, 0, 0, 16.666668, 0.15, 1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.05, 0, 0, 16.666668, 0.15, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/14/type = "bezier"
@@ -392,7 +406,7 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(0.1, 0, 0, 16.666668, 0.15, 1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, 0, 0, 16.666668, 0.15, 0.6, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 100)
 }
 tracks/15/type = "bezier"
@@ -417,10 +431,130 @@ tracks/16/keys = {
 "points": PackedFloat32Array(0.08755994, -0.25, 0, 0.25, 0, 20, -23.099998, -2.02696, 0, 0),
 "times": PackedFloat32Array(0, 99.73333)
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ScaledObjects/SafeZone:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 10, 99.833336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(10, 10, 10), Vector3(10, 10, 10), Vector3(50, 50, 50)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ScaledObjects/Collider/CollisionShape3D:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(6, 6, 6)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Fire_vfx/Smoke:process_material:initial_velocity")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 3), Vector2(5, 5)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ScaledObjects/Area3D:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(8, 8, 8)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Fire_vfx/Smoke:process_material:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 2), Vector2(2, 4)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Fire_vfx/Fire:process_material:initial_velocity")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 2), Vector2(3, 4)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Fire_vfx/Sparks2:process_material:initial_velocity")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(4, 5)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Fire_vfx/Fire:process_material:color")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(30.266666, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.8659585, 1.2763183, 0.6460132, 1), Color(1.8409998, 1.2475778, 1.1351324, 1)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("OmniLight3D2:light_color")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(30.400002, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.353, 0.947, 0.512, 1), Color(1.353, 0.75032437, 0.568657, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("OmniLight3D2:light_size")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_u5sy4"]
 resource_name = "Init"
-length = 5.0
+length = 3.0000000000000004
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -429,10 +563,10 @@ tracks/0/path = NodePath("OmniLight3D2:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.9, 1.5, 2.2, 2.9333334, 3.6666667, 4.9333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333344, 0.40000004, 0.43333334, 0.53333324, 0.56666654, 0.6000001, 0.7333333, 0.8, 0.8999999, 1.5, 1.5666666, 1.5999999, 1.666667, 1.7000003, 1.8000002, 2.1, 2.1333337, 2.3666668, 2.533333, 2.5666668, 2.5999997, 2.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [3.0, 1.0, 4.0, 5.0, 3.0, 5.0, 3.0, 3.0]
+"values": [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.5, 0.0, 0.0, 1.2, 0.0, 0.0, 1.2, 0.0, 0.0, 1.5, 1.2, 0.0, 1.0, 0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gee14"]
@@ -661,6 +795,102 @@ tracks/19/keys = {
 "points": PackedFloat32Array(10.572079, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ScaledObjects/SafeZone:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(20.15418, 20.15418, 20.15418)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ScaledObjects/Collider/CollisionShape3D:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Fire_vfx/Smoke:process_material:initial_velocity")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 3)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("ScaledObjects/Area3D:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Fire_vfx/Smoke:process_material:scale")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 2)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Fire_vfx/Fire:process_material:color")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.8659585, 1.2763183, 0.6460132, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("OmniLight3D2:light_color")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.353, 0.947, 0.512, 1)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("OmniLight3D2:light_size")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_0f1eb"]
 resource_name = "burn"
@@ -756,7 +986,7 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 0, 2),
-"points": PackedFloat32Array(0, 0, 0, 0.1, 0.98124015, 1, -0.25, 0, 0.25, 0, 0, -0.06666666, 0.3786515, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1, 0.98124015, 1, -0.25, 0, 0.25, 0, 0, -0.06666666, 0.38340887, 0, 0),
 "times": PackedFloat32Array(0, 0.43333334, 0.8666667)
 }
 tracks/8/type = "bezier"
@@ -766,9 +996,132 @@ tracks/8/path = NodePath("OmniLight3D2:light_energy")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(6, -0.100000024, -0.20803022, 0.20000002, -0.55474687, 0, -0.16666669, 1.5500433, 0, 0),
+"times": PackedFloat32Array(0, 0.8666667)
+}
+
+[sub_resource type="Animation" id="Animation_w2pjx"]
+resource_name = "burn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire_vfx/Smoke:amount_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.2, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fire_vfx/Sparks1:amount_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fire_vfx/Sparks1:process_material:initial_velocity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(10, 10), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fire_vfx/Smoke:process_material:emission_ring_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fire_vfx/Fire:amount_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fire_vfx/Fire:process_material:initial_velocity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 10)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fire_vfx/Sparks2:process_material:initial_velocity")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLight3D2:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "handle_modes": PackedInt32Array(2, 0, 0),
-"points": PackedFloat32Array(0.08755994, 0, 0, 0.022222225, 0.13634643, 5.3640428, -0.100000024, -0.20803022, 0.20000002, -0.55474687, 0, -0.16666669, 1.5500433, 0, 0),
-"times": PackedFloat32Array(0, 0.13333334, 0.8666667)
+"points": PackedFloat32Array(0.08755994, 0, 0, 0.022222225, 0.13634643, 7.9173565, -0.100000024, -0.20803022, 0.20000002, -0.55474687, 7.9173565, -0.100000024, -0.20803022, 0.20000002, -0.55474687),
+"times": PackedFloat32Array(0, 0.26666668, 1.0333333)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("OmniLight3D2:light_color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.3529997, 0.28108898, 0.17628683, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fire_vfx/Fire:process_material:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.866, 1.6986756, 1.5441983, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0tnpc"]
@@ -776,7 +1129,8 @@ _data = {
 &"Intensity": SubResource("Animation_g5mbl"),
 &"LightFlicker": SubResource("Animation_u5sy4"),
 &"RESET": SubResource("Animation_gee14"),
-&"burn": SubResource("Animation_0f1eb")
+&"burn": SubResource("Animation_0f1eb"),
+&"burn_important": SubResource("Animation_w2pjx")
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_ehsp5"]
@@ -788,12 +1142,10 @@ _data = {
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_te7ig"]
 radius = 0.8623047
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ehsp5"]
-
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
 shades = Array[PackedScene]([ExtResource("2_w2pjx"), ExtResource("3_te7ig")])
-fade_speed = 1.0
+minutes_to_fade = 10.0
 shade_time_min = 4
 
 [node name="Firewood" type="Node3D" parent="." unique_id=516141946]
@@ -819,7 +1171,7 @@ process_material = SubResource("ParticleProcessMaterial_2talo")
 draw_pass_1 = SubResource("QuadMesh_ap7ik")
 
 [node name="Smoke" type="GPUParticles3D" parent="Fire_vfx" unique_id=1302015300]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.2861216, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013, 1.5, 0)
 material_override = SubResource("StandardMaterial3D_tbk4o")
 amount = 1000
 amount_ratio = 0.1
@@ -829,7 +1181,7 @@ draw_pass_1 = SubResource("QuadMesh_hl70x")
 
 [node name="Sparks1" type="GPUParticles3D" parent="Fire_vfx" unique_id=935501814]
 material_override = SubResource("StandardMaterial3D_m3qdq")
-amount = 100
+amount = 300
 amount_ratio = 0.35
 process_material = SubResource("ParticleProcessMaterial_ux44r")
 draw_pass_1 = SubResource("QuadMesh_rao50")
@@ -843,9 +1195,9 @@ process_material = SubResource("ParticleProcessMaterial_4l61p")
 draw_pass_1 = SubResource("QuadMesh_rao50")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=823998882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9391477, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 light_color = Color(1.353, 0.947, 0.512, 1)
-light_size = 10.0
+light_size = 1.0
 shadow_enabled = true
 omni_range = 10.572079
 
@@ -858,6 +1210,10 @@ parameters/TimeScale/scale = 0.0
 parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
+"parameters/TimeScale 2/scale" = 1.0
+"parameters/OneShot 2/active" = false
+"parameters/OneShot 2/internal_active" = false
+"parameters/OneShot 2/request" = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977569784]
 libraries/ = SubResource("AnimationLibrary_0tnpc")
@@ -893,16 +1249,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/SafeZone" unique_id=1607618393]
 shape = SubResource("SphereShape3D_ehsp5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ScaledObjects" unique_id=302231729]
+[node name="Collider" type="StaticBody3D" parent="ScaledObjects" unique_id=302231729]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6123527, 0)
 collision_layer = 32
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/StaticBody3D" unique_id=83402270]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScaledObjects/Collider" unique_id=83402270]
 shape = SubResource("CylinderShape3D_te7ig")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1253944558]
-transform = Transform3D(57.989956, 0, 0, 0, 57.989956, 0, 0, 0, 57.989956, 0, -0.095, 0)
-mesh = SubResource("PlaneMesh_ehsp5")
 
 [connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ScaledObjects/Area3D" to="." method="_on_static_body_3d_body_entered"]

@@ -12,6 +12,8 @@ extends CharacterBody3D
 @onready var torch: Node3D = $Head/RightHand
 @onready var canvas_player: AnimationPlayer = $Canvas/AnimationPlayer
 
+@export var campfire: Node3D
+
 ## Can we move around?
 @export var can_move : bool = false
 ## Are we affected by gravity?
@@ -94,6 +96,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("pickup"):
 			canvas.hide_tooltip()
 			canvas_player.play("RESET")
+			campfire.unstop()
 			respawn()
 		if Input.is_action_just_pressed("throw"):
 			canvas.show_dialogue("I'm a developer and I'm cool as heck.")
@@ -101,6 +104,7 @@ func _process(delta: float) -> void:
 			canvas_player.play("RESET")
 			can_move = true
 			first_respawn = false
+			campfire.unstop()
 
 func _physics_process(delta: float) -> void:
 	# If freeflying, handle freefly and nothing else
@@ -207,7 +211,7 @@ func release_mouse():
 	
 func respawn():
 	has_jumped = false
-	position = Vector3(0, 0, 3)
+	position = Vector3(0, 0, 5)
 	rotate_look_immediately(Vector2.ZERO)
 	inventory.clear()
 	

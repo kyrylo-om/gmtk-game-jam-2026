@@ -8,21 +8,26 @@ extends Node3D
 @onready var timer: Timer = $ShadeSpawner/Spawner/Timer
 
 const ANIM_LENGTH = 100
-@export var fade_speed: float = 5
-@export var energy: float = 0
-
+@export var energy: float = 10
+@export var minutes_to_fade: float
 @export var shade_time_min = 2
 @export var shade_time_max = 20
+var fade_speed: float = 5
+var stop = true
 
 
+func _ready() -> void:
+	fade_speed = 100 / (minutes_to_fade * 60)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	energy = clamp(energy - fade_speed * delta, 0, 100)
+	if not stop:
+		energy = clamp(energy - fade_speed * delta, 0, 100)
 	animation_tree.set("parameters/TimeSeek/seek_request", energy / 100 * ANIM_LENGTH)
-		
-		
+	animation_tree.set("parameters/Add2/add_amount", energy / 100 * 3)
+	animation_tree.set("parameters/TimeScale 2/scale", energy / 100 * 2)
+	
 func add_fuel():
-	energy += 40
+	energy += 10
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 
@@ -45,3 +50,6 @@ func _on_timer_timeout() -> void:
 	add_child(shade)
 	shade.position = spawner.global_position
 	shade.look_at(position)
+	
+func unstop():
+	stop = false

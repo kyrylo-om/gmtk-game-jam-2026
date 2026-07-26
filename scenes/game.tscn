@@ -107,6 +107,7 @@ _shader_parameters = {
 &"noise_texture": SubResource("NoiseTexture2D_1kice"),
 &"projection_threshold": 0.8
 }
+world_background = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37s47"]
 transparency = 4
@@ -677,8 +678,9 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 visible = false
 shadow_enabled = true
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1674435093 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1674435093 node_paths=PackedStringArray("campfire") instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+campfire = NodePath("../Campfire")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
@@ -4007,184 +4009,184 @@ shape = SubResource("Resource_x8trd")
 
 [node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput" unique_id=1484006328]
 
-[node name="Fireflies" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=806279985 instance=ExtResource("40_0sl42")]
+[node name="Fireflies" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=806279985 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.305719, 2.533154, -42.158577)
 
-[node name="Fireflies2" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=312231934 instance=ExtResource("40_0sl42")]
+[node name="Fireflies2" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=312231934 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.70224, 0.99997884, -3.3537443)
 
-[node name="Fireflies3" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1009767575 instance=ExtResource("40_0sl42")]
+[node name="Fireflies3" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1009767575 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.956745, 0.9999875, -8.187988)
 
-[node name="Fireflies4" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2045347209 instance=ExtResource("40_0sl42")]
+[node name="Fireflies4" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2045347209 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.85441, 1, -60.986313)
 
-[node name="Fireflies5" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1533237559 instance=ExtResource("40_0sl42")]
+[node name="Fireflies5" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1533237559 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.366974, 1, -7.56959)
 
-[node name="Fireflies6" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=449924875 instance=ExtResource("40_0sl42")]
+[node name="Fireflies6" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=449924875 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.11007, 1.5183659, 5.3440237)
 
-[node name="Fireflies7" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1026848590 instance=ExtResource("40_0sl42")]
+[node name="Fireflies7" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1026848590 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.04587, 1.2522036, 8.4496)
 
-[node name="Fireflies8" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1314667140 instance=ExtResource("40_0sl42")]
+[node name="Fireflies8" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1314667140 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.724873, 2.0377078, 26.52163)
 
-[node name="Fireflies9" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1404373023 instance=ExtResource("40_0sl42")]
+[node name="Fireflies9" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1404373023 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.305148, 1.4606457, 3.2390738)
 
-[node name="Fireflies10" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1271958930 instance=ExtResource("40_0sl42")]
+[node name="Fireflies10" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1271958930 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.62768, 9.6369095, -42.75518)
 
-[node name="Fireflies11" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1490427279 instance=ExtResource("40_0sl42")]
+[node name="Fireflies11" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1490427279 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.109104, 1.8442805, -20.074007)
 
-[node name="Fireflies12" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2049010992 instance=ExtResource("40_0sl42")]
+[node name="Fireflies12" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2049010992 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.889239, 1.0693173, 11.686431)
 
-[node name="Fireflies13" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1432541113 instance=ExtResource("40_0sl42")]
+[node name="Fireflies13" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1432541113 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.793747, 1, 58.733273)
 
-[node name="Fireflies14" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=579793686 instance=ExtResource("40_0sl42")]
+[node name="Fireflies14" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=579793686 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.990143, 2.39008, 46.07322)
 
-[node name="Fireflies15" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2001619729 instance=ExtResource("40_0sl42")]
+[node name="Fireflies15" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=2001619729 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.384652, 1.1407145, 60.113792)
 
-[node name="Fireflies16" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1146422596 instance=ExtResource("40_0sl42")]
+[node name="Fireflies16" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1146422596 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.920002, 1.528557, -15.21765)
 
-[node name="Fireflies17" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=994332448 instance=ExtResource("40_0sl42")]
+[node name="Fireflies17" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=994332448 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3003508, 1.2550073, 30.759085)
 
-[node name="Fireflies18" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1728933553 instance=ExtResource("40_0sl42")]
+[node name="Fireflies18" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1728933553 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.728954, 8.462429, -62.80774)
 
-[node name="Fireflies19" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1708249114 instance=ExtResource("40_0sl42")]
+[node name="Fireflies19" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1708249114 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.365995, 1.3392097, 41.40569)
 
-[node name="Fireflies20" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1418958481 instance=ExtResource("40_0sl42")]
+[node name="Fireflies20" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1418958481 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3166423, 3.809585, -37.89612)
 
-[node name="Fireflies21" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=114855350 instance=ExtResource("40_0sl42")]
+[node name="Fireflies21" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=114855350 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4861946, 1.0061799, 44.601875)
 
-[node name="Fireflies22" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=500533461 instance=ExtResource("40_0sl42")]
+[node name="Fireflies22" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=500533461 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.79164, 1.0048817, -45.587585)
 
-[node name="Fireflies23" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=447306271 instance=ExtResource("40_0sl42")]
+[node name="Fireflies23" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=447306271 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.269857, 2.3905058, -17.096516)
 
-[node name="Fireflies24" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=850899052 instance=ExtResource("40_0sl42")]
+[node name="Fireflies24" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=850899052 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.961176, 1.0764709, 22.74766)
 
-[node name="Fireflies25" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=881772064 instance=ExtResource("40_0sl42")]
+[node name="Fireflies25" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=881772064 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.19288, 1, -48.15676)
 
-[node name="Fireflies26" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1997795121 instance=ExtResource("40_0sl42")]
+[node name="Fireflies26" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1997795121 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.29067, 0.9399917, 12.401362)
 
-[node name="Fireflies27" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1684321802 instance=ExtResource("40_0sl42")]
+[node name="Fireflies27" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1684321802 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.593638, 1.0000001, 11.27769)
 
-[node name="Fireflies28" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=693556329 instance=ExtResource("40_0sl42")]
+[node name="Fireflies28" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=693556329 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.393696, 1, 56.435)
 
-[node name="Fireflies29" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=946899006 instance=ExtResource("40_0sl42")]
+[node name="Fireflies29" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=946899006 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.077076, 2.6080754, -12.529466)
 
-[node name="Fireflies30" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=429624480 instance=ExtResource("40_0sl42")]
+[node name="Fireflies30" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=429624480 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.41779, 1, -2.0744126)
 
-[node name="Fireflies31" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=384426878 instance=ExtResource("40_0sl42")]
+[node name="Fireflies31" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=384426878 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0389986, 1, 69.75071)
 
-[node name="Fireflies32" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1833773303 instance=ExtResource("40_0sl42")]
+[node name="Fireflies32" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1833773303 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.602811, 1.2262036, 20.415073)
 
-[node name="Fireflies33" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=257314520 instance=ExtResource("40_0sl42")]
+[node name="Fireflies33" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=257314520 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.65847, 1, 59.876755)
 
-[node name="Fireflies34" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=912095734 instance=ExtResource("40_0sl42")]
+[node name="Fireflies34" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=912095734 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.22896, 1.1021035, 14.438396)
 
-[node name="Fireflies35" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=87074838 instance=ExtResource("40_0sl42")]
+[node name="Fireflies35" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=87074838 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.168446, 1.0291281, -37.162304)
 
-[node name="Fireflies36" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=615250815 instance=ExtResource("40_0sl42")]
+[node name="Fireflies36" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=615250815 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.610059, 1.8202884, -8.954471)
 
-[node name="Fireflies37" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=59893330 instance=ExtResource("40_0sl42")]
+[node name="Fireflies37" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=59893330 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.865005, 1.0753502, 18.886997)
 
-[node name="Fireflies38" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1592279204 instance=ExtResource("40_0sl42")]
+[node name="Fireflies38" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1592279204 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.02056, 1.0001748, 31.054165)
 
-[node name="Fireflies39" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=536136894 instance=ExtResource("40_0sl42")]
+[node name="Fireflies39" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=536136894 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.902588, 6.8758707, -62.388813)
 
-[node name="Fireflies40" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1687258828 instance=ExtResource("40_0sl42")]
+[node name="Fireflies40" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1687258828 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.94586, 1, 58.426075)
 
-[node name="Fireflies41" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=791837502 instance=ExtResource("40_0sl42")]
+[node name="Fireflies41" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=791837502 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.566975, 2.1786819, -28.249487)
 
-[node name="Fireflies42" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1400171893 instance=ExtResource("40_0sl42")]
+[node name="Fireflies42" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1400171893 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.998522, 1.8030231, 4.1356606)
 
-[node name="Fireflies43" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1268071735 instance=ExtResource("40_0sl42")]
+[node name="Fireflies43" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1268071735 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.60825, 1.1313579, -35.522583)
 
-[node name="Fireflies44" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=694505444 instance=ExtResource("40_0sl42")]
+[node name="Fireflies44" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=694505444 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.687112, 1.1658787, 16.273102)
 
-[node name="Fireflies45" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1514920791 instance=ExtResource("40_0sl42")]
+[node name="Fireflies45" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1514920791 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.554834, 1.0000054, -26.039816)
 
-[node name="Fireflies46" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1040933671 instance=ExtResource("40_0sl42")]
+[node name="Fireflies46" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1040933671 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.36485, 1.0000074, -11.05735)
 
-[node name="Fireflies47" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=489177752 instance=ExtResource("40_0sl42")]
+[node name="Fireflies47" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=489177752 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.48758, 2.6679714, 16.22472)
 
-[node name="Fireflies48" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=447044407 instance=ExtResource("40_0sl42")]
+[node name="Fireflies48" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=447044407 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.061375, 1.2135648, 35.61381)
 
-[node name="Fireflies49" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=419000851 instance=ExtResource("40_0sl42")]
+[node name="Fireflies49" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=419000851 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.639309, 1.9234254, 26.348616)
 
-[node name="Fireflies50" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1085753492 instance=ExtResource("40_0sl42")]
+[node name="Fireflies50" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1085753492 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1529045, 1, 75.1983)
 
-[node name="Fireflies51" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1120300532 instance=ExtResource("40_0sl42")]
+[node name="Fireflies51" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1120300532 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.484587, 2.036411, 10.953647)
 
-[node name="Fireflies52" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=251728736 instance=ExtResource("40_0sl42")]
+[node name="Fireflies52" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=251728736 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.279654, 1.0553777, -18.30249)
 
-[node name="Fireflies53" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=776814188 instance=ExtResource("40_0sl42")]
+[node name="Fireflies53" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=776814188 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.706833, 5.1886606, -31.872541)
 
-[node name="Fireflies54" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1636720829 instance=ExtResource("40_0sl42")]
+[node name="Fireflies54" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1636720829 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.138635, 1.1545115, -24.07539)
 
-[node name="Fireflies55" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1226707933 instance=ExtResource("40_0sl42")]
+[node name="Fireflies55" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1226707933 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.74915, 2.9516153, -73.55967)
 
-[node name="Fireflies56" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1557836335 instance=ExtResource("40_0sl42")]
+[node name="Fireflies56" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1557836335 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7114, 4.73512, 28.420181)
 
-[node name="Fireflies57" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=542488867 instance=ExtResource("40_0sl42")]
+[node name="Fireflies57" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=542488867 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.539177, 1.086123, -22.705397)
 
-[node name="Fireflies58" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=957575133 instance=ExtResource("40_0sl42")]
+[node name="Fireflies58" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=957575133 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.968323, 3.010358, 67.50709)
 
-[node name="Fireflies59" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=181724878 instance=ExtResource("40_0sl42")]
+[node name="Fireflies59" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=181724878 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.13226, 1.9631552, 57.583775)
 
-[node name="Fireflies60" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1880509915 instance=ExtResource("40_0sl42")]
+[node name="Fireflies60" parent="SubViewportContainer/SubViewport/Environment/StaticObjects/Fireflies/ScatterOutput/ScatterItem" unique_id=1880509915 instance=ExtResource("40_0sl42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7500095, 3.087727, -42.532715)
 
 [node name="Rocks2" type="Node3D" parent="SubViewportContainer/SubViewport/Environment/StaticObjects" unique_id=756485618]
@@ -5041,9 +5043,10 @@ transform = Transform3D(-4.6100467e-08, -1, -9.313226e-09, 1, -4.1211024e-08, -3
 [node name="Fireflies8" parent="SubViewportContainer/SubViewport/Environment/Important collectibles/Fireflies5" unique_id=505235623 instance=ExtResource("40_0sl42")]
 transform = Transform3D(-4.6100467e-08, -1, -9.313226e-09, 1, -4.1211024e-08, -3.4960976e-09, -3.958121e-09, 1.1175871e-08, 1, -26.692923, 11.253899, -57.869682)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=1512220509]
+[node name="Boundary" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=1512220509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Environment/StaticBody3D" unique_id=1202896478]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Environment/Boundary" unique_id=1202896478]
 shape = SubResource("WorldBoundaryShape3D_4k41e")
 
 [node name="Black rock 4" parent="SubViewportContainer/SubViewport/Environment" unique_id=1319962843 instance=ExtResource("45_fedci")]
@@ -5058,7 +5061,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4310815, 0, 8.273806)
 [node name="Collectible" parent="." unique_id=189514411 instance=ExtResource("23_nepv3")]
 transform = Transform3D(0.7592206, 0, 0.65083337, 0, 1, 0, -0.65083337, 0, 0.7592206, -3.5641086, 0.0014599562, 3.8937445)
 
-[node name="Plane" parent="Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=195210663]
+[node name="Plane" parent="Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=1648757585]
 transform = Transform3D(1, -2.3841858e-07, -1.8626451e-09, 1.8626451e-09, 1.8626451e-09, 0.9999998, -1.4901161e-07, -1, 3.7252903e-09, -3.2622452, 0, 0)
 material_overlay = ExtResource("26_8ool0")
 
@@ -5072,7 +5075,7 @@ font = ExtResource("34_js0lu")
 [node name="Collectible2" parent="." unique_id=1037344676 instance=ExtResource("29_0sl42")]
 transform = Transform3D(0.88364947, 0, 0.4681492, 0, 1, 0, -0.4681492, 0, 0.88364947, 3.7307327, -4.7683716e-07, 6.335227)
 
-[node name="Plane_001" parent="Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=1590303062]
+[node name="Plane_001" parent="Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=2071252575]
 material_overlay = ExtResource("26_8ool0")
 
 [node name="Label3D" type="Label3D" parent="Collectible2" unique_id=1205255763]
