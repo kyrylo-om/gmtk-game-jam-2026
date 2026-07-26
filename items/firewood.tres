@@ -6,6 +6,6 @@
 script = ExtResource("1_euuk0")
 name = "Firewood"
 prefab_path = "uid://bwrce73lx0ae"
-fuel = 5.0
+fuel = 10.0
 mass = 5.0
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"

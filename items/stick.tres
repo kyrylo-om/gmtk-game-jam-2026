@@ -6,5 +6,6 @@
 script = ExtResource("1_7mv65")
 name = "Branch"
 prefab_path = "uid://chgbwq3y3eoui"
+fuel = 7.0
 mass = 3.0
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"

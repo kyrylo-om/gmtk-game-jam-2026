@@ -6,4 +6,5 @@
 script = ExtResource("1_uo6hb")
 name = "Stick"
 prefab_path = "uid://bcut6xayjsuoo"
+fuel = 4.0
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"

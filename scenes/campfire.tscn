@@ -1292,7 +1292,7 @@ radius = 0.8623047
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
 shades = Array[PackedScene]([ExtResource("2_w2pjx"), ExtResource("3_te7ig")])
-minutes_to_fade = 10.0
+minutes_to_fade = 5.0
 shade_time_min = 4
 
 [node name="Firewood" type="Node3D" parent="." unique_id=516141946]
