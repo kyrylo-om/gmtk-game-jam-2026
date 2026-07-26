@@ -6,10 +6,13 @@ extends Node3D
 @onready var inventory: Node3D = $"../Inventory"
 @onready var player: CharacterBody3D = $".."
 @onready var torch: Node3D = $RightHand
+@onready var animation_tree: AnimationTree = $"../AnimationTree"
+@onready var monster_spawner: Node3D = $"../MonsterSpawner"
 var collider = null
 var look_at_fire = false
 var hint_throw = false
 var hinted_throw = false
+var current_tree_monster: Area3D
 
 @export var max_throw_speed: int = 10
 var throw_speed: float = 0
@@ -41,7 +44,7 @@ func _process(delta: float) -> void:
 				canvas.hide_tooltip()
 				collider = null
 				
-	if not look_at_fire and ray_cast_fire.is_colliding():
+	if not look_at_fire and ray_cast_fire.is_colliding() and not player.first_respawn:
 		look_at_fire = true
 		canvas.show_tooltip("Press E to light up the torch.")
 	elif look_at_fire and not ray_cast_fire.is_colliding():
@@ -86,3 +89,20 @@ func throw():
 func _on_shade_trigger_area_entered(area: Area3D) -> void:
 	torch.extinguish()
 	area.die()
+
+
+func _on_look_area_entered(area: Area3D) -> void:
+	current_tree_monster = area
+	if current_tree_monster.mesh:
+		current_tree_monster.mesh.looked_at()
+		animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+func _on_look_area_exited(area: Area3D) -> void:
+	if current_tree_monster:
+		current_tree_monster.die()
+		#monster_spawner.spawn_tree_monster()
+		animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
+	
+func tree_monster_looked():
+	current_tree_monster.die()
+	torch.extinguish()

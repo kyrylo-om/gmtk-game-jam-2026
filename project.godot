@@ -28,6 +28,7 @@ enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addon
 
 fuel=""
 firefly=""
+player=""
 
 [input]
 
@@ -105,6 +106,7 @@ reset={
 3d_physics/layer_5="Safe Zone"
 3d_physics/layer_6="Campfire"
 3d_physics/layer_7="Thrown Items"
+3d_physics/layer_8="DON'T LOOK"
 
 [physics]
 

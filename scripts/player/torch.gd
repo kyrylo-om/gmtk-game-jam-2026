@@ -74,3 +74,5 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 	print("Exited safe zone")
 	safe = false
 	
+func is_safe():
+	return safe

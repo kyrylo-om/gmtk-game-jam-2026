@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh5onc1p4djnx"]
 
-[ext_resource type="Script" uid="uid://cal4g8yliiekm" path="res://scripts/monster.gd" id="1_3366s"]
+[ext_resource type="Script" uid="uid://cal4g8yliiekm" path="res://scripts/shades/monster.gd" id="1_3366s"]
 [ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="2_gcx1e"]
 [ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="3_bna5n"]
 

@@ -6,7 +6,7 @@
 extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
+@onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/AnimationNodeStateMachine/playback")
 @onready var canvas: CanvasLayer = $Canvas
 @onready var inventory: Node3D = $Inventory
 @onready var torch: Node3D = $Head/RightHand

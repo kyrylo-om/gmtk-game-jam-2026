@@ -1,0 +1,84 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://brai0suav81lm"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur7pv"]
+animation = &"jump_end"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y4r1p"]
+animation = &"jump_start"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_smehm"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2wvv"]
+animation = &"wake_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fjrip"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_smehm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ur7pv"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4r1p"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "not is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d2wvv"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "is_moving and is_sprinting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3v2ag"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "not is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jej6c"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "is_sprinting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f1ej7"]
+xfade_time = 0.2
+advance_mode = 2
+advance_expression = "not is_sprinting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfm1y"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oprun"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8ls1"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fulsm"]
+xfade_time = 0.2
+
+[resource]
+state_machine_type = 1
+states/Start/position = Vector2(122, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_tuyoq")
+states/idle/position = Vector2(319, 100)
+states/jump_end/node = SubResource("AnimationNodeAnimation_ur7pv")
+states/jump_end/position = Vector2(183, -12)
+states/jump_start/node = SubResource("AnimationNodeAnimation_y4r1p")
+states/jump_start/position = Vector2(183, -73)
+states/run/node = SubResource("AnimationNodeAnimation_smehm")
+states/run/position = Vector2(320, -18)
+states/wake_up/node = SubResource("AnimationNodeAnimation_d2wvv")
+states/wake_up/position = Vector2(-9, -73)
+states/walk/node = SubResource("AnimationNodeAnimation_fjrip")
+states/walk/position = Vector2(529, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_smehm"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_jej6c"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_f1ej7"), "jump_end", "idle", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "wake_up", "idle", SubResource("AnimationNodeStateMachineTransition_oprun"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_a8ls1"), "walk", "jump_start", SubResource("AnimationNodeStateMachineTransition_fulsm")]
+graph_offset = Vector2(-253, -98)
