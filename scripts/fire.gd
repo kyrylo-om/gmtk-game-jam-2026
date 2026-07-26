@@ -6,6 +6,7 @@ extends Node3D
 @export var shades: Array[PackedScene]
 @onready var spawner: Node3D = $ShadeSpawner/Spawner
 @onready var timer: Timer = $ShadeSpawner/Spawner/Timer
+@onready var audio_burn: AudioStreamPlayer3D = $Audio_burn
 
 const ANIM_LENGTH = 100
 @export var energy: float = 10
@@ -29,7 +30,7 @@ func _process(delta: float) -> void:
 func add_fuel():
 	energy += 10
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-
+	audio_burn.play()
 
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("fuel"):
