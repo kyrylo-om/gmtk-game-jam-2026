@@ -8,6 +8,8 @@ extends Node3D
 @onready var timer: Timer = $ShadeSpawner/Spawner/Timer
 @onready var audio_burn: AudioStreamPlayer3D = $Audio_burn
 @onready var cutscene_timer: Timer = $CutsceneTimer
+@onready var cutscene_anim: AnimationPlayer = $"../../../AnimationPlayer"
+
 
 const ANIM_LENGTH = 100
 @export var energy: float = 10
@@ -74,4 +76,4 @@ func unstop():
 
 func _on_cutscene_timer_timeout() -> void:
 	#cutscene_anim.start()
-	print("ENDING 2")
+	cutscene_anim.play("cutscene2")

@@ -8,6 +8,7 @@ extends Node3D
 @onready var torch: Node3D = $RightHand
 @onready var animation_tree: AnimationTree = $"../AnimationTree"
 @onready var monster_spawner: Node3D = $"../MonsterSpawner"
+@onready var cutscene_anim: AnimationPlayer = $"../../../../AnimationPlayer"
 var collider = null
 var look_at_fire = false
 var hint_throw = false
@@ -54,7 +55,7 @@ func _process(delta: float) -> void:
 			canvas.show_tooltip("Press E to contemplate.")
 			if Input.is_action_just_pressed("pickup"):
 				player.disable_move()
-				print("ENDING 1")
+				cutscene_anim.play("cutscene1")
 		else:
 			canvas.show_tooltip("Press E to light up the torch.\n" + str(player.importants_found) + " / 5.")
 			if Input.is_action_just_pressed("pickup"):
