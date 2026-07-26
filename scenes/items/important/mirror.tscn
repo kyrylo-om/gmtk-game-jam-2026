@@ -10,6 +10,7 @@ name = "Mirror"
 prefab_path = "uid://cfxvdnbi24t51"
 fuel = 20.0
 mass = 3.0
+spawnpoint = "mirror"
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_05xkw"]

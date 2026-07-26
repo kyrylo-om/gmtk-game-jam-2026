@@ -6,3 +6,4 @@ extends Resource
 var prefab: PackedScene
 @export var fuel: float = 1
 @export var mass: float = 1
+@export var spawnpoint: String = ""

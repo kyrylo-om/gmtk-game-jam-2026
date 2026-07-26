@@ -10,6 +10,7 @@ name = "Book"
 prefab_path = "uid://d2ok7766ihn3y"
 fuel = 20.0
 mass = 2.0
+spawnpoint = "book"
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xup2v"]

@@ -10,6 +10,7 @@ name = "Comb"
 prefab_path = "uid://c6giircyxigta"
 fuel = 20.0
 mass = 1.5
+spawnpoint = "comb"
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_diexx"]

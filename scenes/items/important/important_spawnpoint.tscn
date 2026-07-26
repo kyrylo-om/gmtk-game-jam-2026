@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dipnslepd0apa"]
+
+[ext_resource type="Script" uid="uid://bytnatl4fns50" path="res://scripts/important_spawnpoint.gd" id="1_mekhw"]
+
+[node name="ImportantSpawnpoint" type="Node3D" unique_id=1235243398 groups=["important_spawnpoint"]]
+script = ExtResource("1_mekhw")
+
+[node name="Position" type="Node3D" parent="." unique_id=768509459]

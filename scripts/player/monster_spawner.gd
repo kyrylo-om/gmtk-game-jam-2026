@@ -7,6 +7,7 @@ extends Node3D
 
 @onready var torch: Node3D = $"../Head/RightHand"
 @onready var timer: Timer = $Timer
+@onready var timer_2: Timer = $Timer2
 @onready var spawner: Node3D = $Spawner
 
 # Called when the node enters the scene tree for the first time.
@@ -28,3 +29,8 @@ func spawn(monster: PackedScene):
 
 func spawn_tree_monster():
 	spawn(monsters[1])
+
+
+func _on_timer_2_timeout() -> void:
+	print("spawn started")
+	timer.start()

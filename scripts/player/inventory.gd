@@ -63,6 +63,9 @@ func weight():
 	return res
 	
 func clear():
+	for item in items:
+		if item.spawnpoint:
+			get_tree().get_first_node_in_group(item.spawnpoint).spawn()
 	items = []
 	update_inventory_ui()
 	set_held(0)

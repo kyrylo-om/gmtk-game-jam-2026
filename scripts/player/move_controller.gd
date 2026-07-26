@@ -64,6 +64,7 @@ var is_sprinting = false
 var has_jumped = false
 var said_boundary = false
 var first_respawn = true
+var importants_found = 0
 
 @onready var audio_step: AudioStreamPlayer = $Audio_step
 
@@ -165,7 +166,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		respawn()
 		
-	if not said_boundary and position.distance_to(Vector3.ZERO) > 60:
+	if not said_boundary and position.distance_to(Vector3.ZERO) > 80:
 		canvas.show_dialogue("There is nothing for me outside without her.")
 		said_boundary = true
 	

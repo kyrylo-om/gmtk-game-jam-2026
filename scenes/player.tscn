@@ -863,6 +863,9 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb2i2"]
 font = ExtResource("6_d2wvv")
+font_size = 18
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
 font = ExtResource("6_fjrip")
@@ -1865,7 +1868,6 @@ monsters = Array[PackedScene]([ExtResource("17_fulsm"), ExtResource("18_4r5pv")]
 max_delay = 2
 
 [node name="Timer" type="Timer" parent="MonsterSpawner" unique_id=1448975270]
-autostart = true
 
 [node name="Spawner" type="Node3D" parent="MonsterSpawner" unique_id=115722679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
@@ -1884,6 +1886,10 @@ pitch_scale = 2.0
 
 [node name="Audio_blow" type="AudioStreamPlayer" parent="." unique_id=1955192381]
 stream = ExtResource("23_4ni07")
+[node name="Timer2" type="Timer" parent="MonsterSpawner" unique_id=887410207]
+wait_time = 20.0
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
@@ -1893,5 +1899,6 @@ stream = ExtResource("23_4ni07")
 [connection signal="area_entered" from="Head/Look" to="Head" method="_on_look_area_entered"]
 [connection signal="area_exited" from="Head/Look" to="Head" method="_on_look_area_exited"]
 [connection signal="timeout" from="MonsterSpawner/Timer" to="MonsterSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="MonsterSpawner/Timer2" to="MonsterSpawner" method="_on_timer_2_timeout"]
 
 [editable path="Head/RightHand/Torch/Fire"]

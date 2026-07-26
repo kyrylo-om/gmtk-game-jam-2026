@@ -44,15 +44,16 @@ func _process(delta: float) -> void:
 				canvas.hide_tooltip()
 				collider = null
 				
-	if not look_at_fire and ray_cast_fire.is_colliding() and not player.first_respawn:
+	if not look_at_fire and ray_cast_fire.is_colliding():
 		look_at_fire = true
-		canvas.show_tooltip("Press E to light up the torch.")
 	elif look_at_fire and not ray_cast_fire.is_colliding():
 		look_at_fire = false
 		canvas.hide_tooltip()
-	if look_at_fire and Input.is_action_just_pressed("pickup"):
-		player.disable_move()
-		torch.refuel()
+	if look_at_fire:
+		canvas.show_tooltip("Press E to light up the torch.\n" + str(player.importants_found) + " / 5.")
+		if Input.is_action_just_pressed("pickup"):
+			player.disable_move()
+			torch.refuel()
 
 	if Input.is_action_pressed("throw"):
 		throw_speed = clamp(throw_speed + 10 * delta, 0, max_throw_speed)

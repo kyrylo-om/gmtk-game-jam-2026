@@ -10,6 +10,7 @@ name = "Clock"
 prefab_path = "uid://cfulpgbwkky47"
 fuel = 20.0
 mass = 2.0
+spawnpoint = "clock"
 metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lv067"]
