@@ -215,7 +215,7 @@ func release_mouse():
 	
 func respawn():
 	has_jumped = false
-	position = Vector3(0, 0, 5)
+	position = Vector3(0, 0, 7)
 	rotate_look_immediately(Vector2.ZERO)
 	inventory.clear()
 	
