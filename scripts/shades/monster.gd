@@ -15,9 +15,12 @@ func die():
 	if mesh:
 		mesh.queue_free()
 	animation_player.play("die")
-	
+
 func die_done():
 	queue_free()
 
 func _on_body_entered(body: Node3D) -> void:
+	die()
+
+func _on_timer_timeout() -> void:
 	die()

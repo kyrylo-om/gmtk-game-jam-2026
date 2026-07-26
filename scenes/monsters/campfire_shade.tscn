@@ -126,7 +126,7 @@ font = ExtResource("2_s4a5j")
 font_size = 50
 outline_size = 0
 script = ExtResource("2_0naev")
-lines = Array[String](["Please take care of my kids.", "I hate this life.", "Do you like pineapples?", "Yap yap yap yap", "I'm spongebob.", "Balls."])
+lines = Array[String](["We love you.", "Let us help you...", "You have to move on.", "Everything will get better.", "We promise...", "You're too hard on yourself.", "We care about you.", "We share your pain."])
 
 [node name="Timer2" type="Timer" parent="." unique_id=1108864555]
 wait_time = 4.0

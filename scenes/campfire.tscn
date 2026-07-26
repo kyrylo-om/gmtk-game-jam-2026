@@ -1376,6 +1376,7 @@ visible = false
 mesh = SubResource("BoxMesh_ehsp5")
 
 [node name="Timer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1652376198]
+wait_time = 20.0
 autostart = true
 
 [node name="ScaledObjects" type="Node3D" parent="." unique_id=324431567]
