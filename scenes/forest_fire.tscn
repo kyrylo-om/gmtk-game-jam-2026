@@ -13,34 +13,35 @@
 [ext_resource type="Script" uid="uid://bn7wxmoit4x3w" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="11_t4tiq"]
 [ext_resource type="PackedScene" uid="uid://b5tremd0g32us" path="res://scenes/tree_fire.tscn" id="12_0jrs8"]
 [ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="13_60qgx"]
+[ext_resource type="PackedScene" uid="uid://botblf86w6yvt" path="res://models/house.fbx" id="14_gnn1w"]
 
-[sub_resource type="Resource" id="Resource_64e4a"]
+[sub_resource type="Resource" id="Resource_gnn1w"]
 script = ExtResource("4_43ovm")
 amount = 600
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_mrklk"]
+[sub_resource type="Resource" id="Resource_aaqk0"]
 script = ExtResource("5_lpvc8")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(-0.3, 0, -0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_dw867"]
+[sub_resource type="Resource" id="Resource_43ovm"]
 script = ExtResource("6_gn4lt")
 offset_step = 2.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_c11ff"]
+[sub_resource type="Resource" id="Resource_lpvc8"]
 script = ExtResource("7_jdaqh")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_gt3jb"]
+[sub_resource type="Resource" id="Resource_gn4lt"]
 script = ExtResource("8_8rytt")
 terrain_node = NodePath("../../Environment/Terrain3D")
 enable_texture_filtering = true
@@ -48,9 +49,9 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_5ghq7"]
+[sub_resource type="Resource" id="Resource_jdaqh"]
 script = ExtResource("2_gnn1w")
-stack = Array[ExtResource("3_aaqk0")]([SubResource("Resource_64e4a"), SubResource("Resource_mrklk"), SubResource("Resource_dw867"), SubResource("Resource_c11ff"), SubResource("Resource_gt3jb")])
+stack = Array[ExtResource("3_aaqk0")]([SubResource("Resource_gnn1w"), SubResource("Resource_aaqk0"), SubResource("Resource_43ovm"), SubResource("Resource_lpvc8"), SubResource("Resource_gn4lt")])
 
 [sub_resource type="Resource" id="Resource_xixf6"]
 script = ExtResource("11_t4tiq")
@@ -93,14 +94,29 @@ spread = 25.0
 initial_velocity_min = 1.0
 initial_velocity_max = 1.0
 gravity = Vector3(0, 1, 0)
-scale_min = 0.04
-scale_max = 0.08
+scale_min = 0.099999994
+scale_max = 0.19999999
 scale_curve = SubResource("CurveTexture_tbk4o")
 color = Color(1.8247963, 1.3882558, 1.2902569, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rao50"]
 
 [node name="Forest fire" type="Node3D" unique_id=569204172]
+
+[node name="House" type="Node3D" parent="." unique_id=1566710256]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="house" parent="House" unique_id=379623012 instance=ExtResource("14_gnn1w")]
+transform = Transform3D(0.1233786, 0, 0.27345517, 0, 0.3, 0, -0.27345517, 0, 0.1233786, -0.51016927, 0, 3.4436793)
+
+[node name="Fire2" parent="House" unique_id=1066040157 instance=ExtResource("12_0jrs8")]
+transform = Transform3D(1, 0, 0, 0, 0.6140771, 0, 0, 0, 1, -2.8056633, -2.453632e-07, -0.10585499)
+
+[node name="Fire3" parent="House" unique_id=491996469 instance=ExtResource("12_0jrs8")]
+transform = Transform3D(1, 0, 0, 0, 0.6140771, 0, 0, 0, 1, 1.9037635, -8.3099275e-07, 3.6040936)
+
+[node name="Fire4" parent="House" unique_id=2096450757 instance=ExtResource("12_0jrs8")]
+transform = Transform3D(1, 0, 0, 0, 0.6140771, 0, 0, 0, 1, 1.9753568, -8.3099275e-07, 0.09811211)
 
 [node name="Fire" type="Node3D" parent="." unique_id=1329256548]
 script = ExtResource("1_fsiit")
@@ -109,7 +125,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_5ghq7")
+modifier_stack = SubResource("Resource_jdaqh")
 Performance/use_chunks = false
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -1790,9 +1806,14 @@ transform = Transform3D(-0.7681126, 0, 0.47428033, 0, 0.9027396, 0, -0.47428033,
 transform = Transform3D(-0.57325053, 0, -0.6928268, 0, 0.8992359, 0, 0.6928268, 0, -0.57325053, 26.226877, 4.3875925e-06, -24.111544)
 
 [node name="Sparks2" type="GPUParticles3D" parent="." unique_id=34262823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020256996, 8.206657, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020256996, 11.197019, 0)
 material_override = SubResource("StandardMaterial3D_m3qdq")
-amount = 2000
+amount = 5000
 amount_ratio = 0.1
 process_material = SubResource("ParticleProcessMaterial_4l61p")
 draw_pass_1 = SubResource("QuadMesh_rao50")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1131572994]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.688307, 0)
+light_color = Color(1, 0.4225, 0.37, 1)
+sky_mode = 1
