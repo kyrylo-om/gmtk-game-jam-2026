@@ -838,7 +838,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -200)]
+"values": [Vector2(0, -100)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1645,14 +1645,14 @@ mouse_filter = 2
 [node name="TextureRect" type="TextureRect" parent="Canvas/Control/Blink" unique_id=390713282]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -10.675
+anchor_left = -21.825
 anchor_top = 20.849997
-anchor_right = -10.675
-anchor_bottom = 20.849998
-offset_left = 427.0
+anchor_right = 16.091639
+anchor_bottom = 20.85
+offset_left = 873.0
 offset_top = -1033.9999
-offset_right = 2347.0
-offset_bottom = 46.00006
+offset_right = 2793.0
+offset_bottom = 46.0
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")
 metadata/_edit_use_anchors_ = true
@@ -1660,7 +1660,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect2" type="TextureRect" parent="Canvas/Control/Blink" unique_id=1767979920]
 layout_mode = 0
 offset_top = -200.0
-offset_right = 1920.0
+offset_right = 3519.999
 offset_bottom = 880.0
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")

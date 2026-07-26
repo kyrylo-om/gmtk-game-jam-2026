@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		look_at_fire = false
 		canvas.hide_tooltip()
 	if look_at_fire:
-		if player.campfire.energy == 0 or true:
+		if player.campfire.energy == 0:
 			canvas.show_tooltip("Press E to contemplate.")
 			if Input.is_action_just_pressed("pickup"):
 				player.disable_move()
