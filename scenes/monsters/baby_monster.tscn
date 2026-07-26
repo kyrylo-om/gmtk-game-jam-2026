@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://v47fxcknbxgh" path="res://scripts/shades/baby.gd" id="2_0ifx4"]
 [ext_resource type="Texture2D" uid="uid://bmj0d08eqyw74" path="res://sprites/monsters/baby_monster.png" id="2_hhgoa"]
 [ext_resource type="Texture2D" uid="uid://d4np0cnvkkklw" path="res://sprites/monsters/baby_monster_eyes.jpg" id="3_q3rtg"]
+[ext_resource type="AudioStream" uid="uid://cs0w6282eny82" path="res://audio/laugh.mp3" id="5_h6mgr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
 transparency = 1
@@ -68,3 +69,9 @@ frame_progress = 0.8583686
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
 transform = Transform3D(1.1571364, 0, 0, 0, 2.7771275, 0, 0, 0, 1.1571364, 0, 0.5434562, 0)
+
+[node name="Audio_lauch" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1728907760]
+stream = ExtResource("5_h6mgr")
+volume_db = -15.0
+pitch_scale = 1.1
+autoplay = true
