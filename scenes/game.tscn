@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cxisb1oqgc7jb" path="res://shaders/ps1_effect_2d.gdshader" id="1_pl11u"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://slpvh3vo3eyv" path="res://hdri/kiara_1_dawn_4k.exr" id="2_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://bxt3q644ppbny" path="res://hdri/starfield-night_4K.exr" id="3_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://1gv51ykmvagj" path="res://Materials/textures/cubblestone/grassy_cobblestone_diff_2k.jpg" id="9_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://163k2l6ipxik" path="res://Materials/textures/cubblestone/grassy_cobblestone_nor_gl_2k.jpg" id="10_js0lu"]
@@ -45,7 +46,13 @@
 [ext_resource type="PackedScene" uid="uid://dje8d42k03wbi" path="res://scenes/forest_fire.tscn" id="45_458eo"]
 [ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Rocks/Black rock 4.fbx" id="45_fedci"]
 [ext_resource type="AudioStream" uid="uid://c6v8ug13kd18l" path="res://audio/forest_crickets.mp3" id="46_458eo"]
+[ext_resource type="PackedScene" uid="uid://bdw4ps4jp5sbf" path="res://scenes/monsters/sitting_monster.tscn" id="47_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://cfulpgbwkky47" path="res://scenes/items/important/clock.tscn" id="47_rm0al"]
+[ext_resource type="PackedScene" uid="uid://f6lu2pqisoca" path="res://scenes/monsters/tree_monster.tscn" id="48_q8j3a"]
+[ext_resource type="PackedScene" uid="uid://dx7inx2qmcv5j" path="res://scenes/monsters/gentel_monster.tscn" id="49_ms3bu"]
+[ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="50_7ixpq"]
+[ext_resource type="FontFile" uid="uid://1qivvlyxag5i" path="res://fonts/IMFellEnglishSC-Regular.ttf" id="51_bk1p3"]
+[ext_resource type="Script" uid="uid://4an2rmg0sfye" path="res://scripts/animated_text.gd" id="52_n8ral"]
 
 [sub_resource type="Animation" id="Animation_oaba0"]
 length = 100.0
@@ -132,6 +139,406 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:current")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SubViewportContainer/SubViewport/Cutscene1:process_mode")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SubViewportContainer/SubViewport/Cutscene1:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:process_mode")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.6546445, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:z")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.5055768, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:z")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.115, 2.06)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Control/ColorRect:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/ShadesREal:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("SubViewportContainer/SubViewport/WorldEnvironment:environment:sky:sky_material:panorama")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ssvqc")]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SubViewportContainer/SubViewport/WorldEnvironment:environment:background_energy_multiplier")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yd4ix"]
+resource_name = "cutscene1"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Cutscene1:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Cutscene1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6.966667, 13.333333, 13.800001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11.899999, 13.233334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.225, 0.225, 0.225)]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.6546445, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:position:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0),
+"points": PackedFloat32Array(3.5055768, -0.25, 0, 0.25, 0, 3.1964316, -0.6, 0.20444512, 0, 0, 2.4297626, -0.5666666, 0.17888927, 0, 0, 2.3893049, -1.0555556, 0.0141079025, 0, 0, 3.9138544, -1.2511005, -0.04418993, 0, 0),
+"times": PackedFloat32Array(0, 1.7333333, 3.0333333, 10.866666, 13.299999)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 3, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, 0.10196522, 0.2289095, -0.12683976, -0.010578692, 0.12683976, 0.010578692, 0.09138652, -0.38486743, -0.005289346, 0, 0, 0.09667587, -0.26666665, -0.0052893474, 0, 0, 1.1545448, -1.3823996, -0.0793401, 0, 0, 1.1439661, -0.22222225, -0.0052893357, 0, 0, 0.21833073, -0.9539833, 0.005289346, 0, 0, 0.20190842, -0.25, 0, 0.29020214, 0.032686114, 0.21084604, -0.12683976, -0.010578692, 0.12683976, 0.010578692, 0.07332305, -0.30979824, 0.04927797, 0, 0, 0.08647408, -0.26666665, -0.0052893474, 0, 0, 0, -0.0333333, -0.00060211495, 0, 0),
+"times": PackedFloat32Array(0, 1.5283018, 2.9, 3.9666667, 6.5666666, 7.9, 9.166667, 11.133333, 11.9368725, 12.4, 14.233334, 14.4)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 3, 2, 0, 0, 0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.23333333, 0.049071763, 0.1337013, -0.11997068, 0.015868045, 0.11997068, -0.015868045, -0.24184224, -0.5848675, 0, 0, 0, 0, -0.25, 0, 0.09020233, 0.15150258, 0.27072147, -0.11997068, 0.015868045, 0.11997068, -0.015868045, -0.2599057, -0.5848675, 0, 0, 0, -0.25311917, -0.3293581, -0.0017332038, 0, 0, 0, -0.022222202, -0.0018063486, 0, 0),
+"times": PackedFloat32Array(0, 1.2618287, 2.7333333, 11.133333, 11.8, 12.290518, 14.233334, 14.4)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Camera3D:rotation:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Shades:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(11.9, 13.233334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.115, 2.06), Vector3(0, -0.115, 4.125)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Control/ColorRect:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(11.900001, 13.266666, 14.433333, 14.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/ShadesREal:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(14.5, 14.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SubViewportContainer/SubViewport/WorldEnvironment:environment:sky:sky_material:panorama")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(14.466667, 14.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_ssvqc"), ExtResource("2_o8ni1")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SubViewportContainer/SubViewport/WorldEnvironment:environment:background_energy_multiplier")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(15.9, 18.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.6]
 }
 
 [sub_resource type="Animation" id="Animation_458eo"]
@@ -225,6 +632,7 @@ tracks/6/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3rex"]
 _data = {
 &"RESET": SubResource("Animation_oaba0"),
+&"cutscene1": SubResource("Animation_yd4ix"),
 &"cutscene2": SubResource("Animation_458eo")
 }
 
@@ -241,6 +649,7 @@ sky_material = SubResource("PanoramaSkyMaterial_uwrxv")
 
 [sub_resource type="Environment" id="Environment_ehsp5"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_uwrxv")
 ambient_light_source = 1
 glow_enabled = true
@@ -639,6 +1048,7 @@ texture_threshold = 1.0
 [sub_resource type="Resource" id="Resource_h5tdf"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.3, 0.15)
+rotation = Vector3(10, 360, 10)
 scale = Vector3(-0.3, 0, -0.3)
 enabled = false
 reference_frame = 2
@@ -818,6 +1228,11 @@ stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_ip3rd"), SubResour
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k41e"]
 size = Vector3(1.6, 3.455, 1.375)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
+font = ExtResource("51_bk1p3")
+font_size = 30
+outline_size = 1
 
 [node name="Game" type="Node3D" unique_id=861187367]
 
@@ -5202,7 +5617,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 [node name="Collectible" parent="SubViewportContainer/SubViewport" unique_id=189514411 instance=ExtResource("23_nepv3")]
 transform = Transform3D(0.7592206, 0, 0.65083337, 0, 1, 0, -0.65083337, 0, 0.7592206, -3.5641086, 0.0014599562, 3.8937445)
 
-[node name="Plane" parent="SubViewportContainer/SubViewport/Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=195210663]
+[node name="Plane" parent="SubViewportContainer/SubViewport/Collectible/Branch 1" parent_id_path=PackedInt32Array(189514411, 772268168) index="0" unique_id=1648757585]
 transform = Transform3D(1, -2.3841858e-07, -1.8626451e-09, 1.8626451e-09, 1.8626451e-09, 0.9999998, -1.4901161e-07, -1, 3.7252903e-09, -3.2622452, 0, 0)
 material_overlay = ExtResource("26_8ool0")
 
@@ -5216,7 +5631,7 @@ font = ExtResource("34_js0lu")
 [node name="Collectible2" parent="SubViewportContainer/SubViewport" unique_id=1037344676 instance=ExtResource("29_0sl42")]
 transform = Transform3D(0.88364947, 0, 0.4681492, 0, 1, 0, -0.4681492, 0, 0.88364947, 3.76328, -3.5762787e-07, -0.11535597)
 
-[node name="Plane_001" parent="SubViewportContainer/SubViewport/Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=1590303062]
+[node name="Plane_001" parent="SubViewportContainer/SubViewport/Collectible2/Branch 2" parent_id_path=PackedInt32Array(1037344676, 1664574026) index="0" unique_id=2071252575]
 material_overlay = ExtResource("26_8ool0")
 
 [node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/Collectible2" unique_id=1205255763]
@@ -5233,10 +5648,327 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2
 process_mode = 4
 visible = false
 
+[node name="Cutscene1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1133042819]
+process_mode = 4
+visible = false
+
+[node name="Shades" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=1902702376]
+process_mode = 4
+transform = Transform3D(0.6920632, 0, 0.7218369, 0, 1, 0, -0.7218369, 0, 0.6920632, 0, -0.115, 2.06)
+visible = false
+
+[node name="Shades2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=619446411]
+transform = Transform3D(1.3676342, 0, 0.65455365, 0, 1.5162003, 0, -0.65455365, 0, 1.3676342, 0, -0.9845495, 0)
+
+[node name="Pivot2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1252865081]
+transform = Transform3D(0.55955464, 0, 0.82879347, 0, 1, 0, -0.82879347, 0, 0.55955464, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot2" unique_id=324286114 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot14" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=365904654]
+transform = Transform3D(-0.4676931, 0, -0.8838909, 0, 1, 0, 0.8838909, 0, -0.4676931, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot14" unique_id=1449982057 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot9" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1092706698]
+transform = Transform3D(-0.84297734, 0, 0.53794914, 0, 1, 0, -0.53794914, 0, -0.84297734, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot9" unique_id=74492162 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot16" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1826256895]
+transform = Transform3D(0.2951421, 0, -0.9554535, 0, 1, 0, 0.9554535, 0, 0.2951421, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot16" unique_id=1956510947 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot13" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1172826544]
+transform = Transform3D(-0.77163494, 0, -0.63606566, 0, 1, 0, 0.63606566, 0, -0.77163494, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot13" unique_id=570885731 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=698613953]
+transform = Transform3D(-0.1378471, 0, 0.99045354, 0, 1, 0, -0.99045354, 0, -0.1378471, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot5" unique_id=1839399921 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=2088412046]
+transform = Transform3D(0.95658386, 0, 0.2914572, 0, 1, 0, -0.2914572, 0, 0.95658386, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot" unique_id=583574455 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot15" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1424822810]
+transform = Transform3D(-0.14788769, 0, -0.98900425, 0, 1, 0, 0.98900425, 0, -0.14788769, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot15" unique_id=655007622 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot11" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=612699194]
+transform = Transform3D(-0.9976849, 0, 0.06800854, 0, 1, 0, -0.06800854, 0, -0.9976849, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot11" unique_id=1940699659 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot12" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=300937482]
+transform = Transform3D(-0.9540495, 0, -0.29964915, 0, 1, 0, 0.29964915, 0, -0.9540495, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot12" unique_id=1297962552 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot6" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1378578709]
+transform = Transform3D(0.2671541, 0, 0.9636539, 0, 1, 0, -0.9636539, 0, 0.2671541, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot6" unique_id=2112000794 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=151467652]
+transform = Transform3D(0.80189127, 0, 0.59747, 0, 1, 0, -0.59747, 0, 0.80189127, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot3" unique_id=399819981 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot7" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=750890741]
+transform = Transform3D(-0.39875448, 0, 0.9170577, 0, 1, 0, -0.9170577, 0, -0.39875448, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot7" unique_id=1582866090 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot18" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=274180737]
+transform = Transform3D(0.8443805, 0, -0.5357439, 0, 1, 0, 0.5357439, 0, 0.8443805, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot18" unique_id=1280884228 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot19" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1321303101]
+transform = Transform3D(0.97114, 0, -0.23851031, 0, 1, 0, 0.23851031, 0, 0.97114, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot19" unique_id=1292185015 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=814289702]
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot4" unique_id=1406706072 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot17" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=116831681]
+transform = Transform3D(0.61448693, 0, -0.7889271, 0, 1, 0, 0.7889271, 0, 0.61448693, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot17" unique_id=993052973 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot8" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1855064048]
+transform = Transform3D(-0.61065745, 0, 0.79189485, 0, 1, 0, -0.79189485, 0, -0.61065745, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot8" unique_id=530710009 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot10" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1368334745]
+transform = Transform3D(-0.9519188, 0, 0.3063504, 0, 1, 0, -0.3063504, 0, -0.9519188, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot10" unique_id=766766918 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2066858789]
+transform = Transform3D(0.55955464, 0, 0.82879347, 0, 1, 0, -0.82879347, 0, 0.55955464, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot2" unique_id=797640169 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot14" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=564440799]
+transform = Transform3D(-0.4676931, 0, -0.8838909, 0, 1, 0, 0.8838909, 0, -0.4676931, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot14" unique_id=1670455444 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot9" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=290876409]
+transform = Transform3D(-0.84297734, 0, 0.53794914, 0, 1, 0, -0.53794914, 0, -0.84297734, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot9" unique_id=1257356420 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot16" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1112188731]
+transform = Transform3D(0.2951421, 0, -0.9554535, 0, 1, 0, 0.9554535, 0, 0.2951421, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot16" unique_id=1596402111 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot13" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=505811619]
+transform = Transform3D(-0.77163494, 0, -0.63606566, 0, 1, 0, 0.63606566, 0, -0.77163494, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot13" unique_id=1580827626 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1324764113]
+transform = Transform3D(-0.1378471, 0, 0.99045354, 0, 1, 0, -0.99045354, 0, -0.1378471, 0, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot5" unique_id=408106904 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=835939085]
+transform = Transform3D(0.95658386, 0, 0.2914572, 0, 1, 0, -0.2914572, 0, 0.95658386, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot" unique_id=2009144960 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot15" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1867579639]
+transform = Transform3D(-0.14788769, 0, -0.98900425, 0, 1, 0, 0.98900425, 0, -0.14788769, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot15" unique_id=1840236870 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot11" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2001454201]
+transform = Transform3D(-0.9976849, 0, 0.06800854, 0, 1, 0, -0.06800854, 0, -0.9976849, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot11" unique_id=1651993266 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot12" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=975706682]
+transform = Transform3D(-0.9540495, 0, -0.29964915, 0, 1, 0, 0.29964915, 0, -0.9540495, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot12" unique_id=1774791018 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot6" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=248630994]
+transform = Transform3D(0.2671541, 0, 0.9636539, 0, 1, 0, -0.9636539, 0, 0.2671541, 0, 0, 0)
+
+[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot6" unique_id=2124841616 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2094209010]
+transform = Transform3D(0.80189127, 0, 0.59747, 0, 1, 0, -0.59747, 0, 0.80189127, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot3" unique_id=655093318 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot7" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1786713467]
+transform = Transform3D(-0.39875448, 0, 0.9170577, 0, 1, 0, -0.9170577, 0, -0.39875448, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot7" unique_id=433499862 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot18" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=153961734]
+transform = Transform3D(0.8443805, 0, -0.5357439, 0, 1, 0, 0.5357439, 0, 0.8443805, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot18" unique_id=1139876444 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot19" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=725219301]
+transform = Transform3D(0.97114, 0, -0.23851031, 0, 1, 0, 0.23851031, 0, 0.97114, 0, 0, 0)
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot19" unique_id=1701905163 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=314005922]
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot4" unique_id=1714450175 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot17" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=765815836]
+transform = Transform3D(0.61448693, 0, -0.7889271, 0, 1, 0, 0.7889271, 0, 0.61448693, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot17" unique_id=1368199428 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot8" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=807021944]
+transform = Transform3D(-0.61065745, 0, 0.79189485, 0, 1, 0, -0.79189485, 0, -0.61065745, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot8" unique_id=1872919507 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Pivot10" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1393354133]
+transform = Transform3D(-0.9519188, 0, 0.3063504, 0, 1, 0, -0.3063504, 0, -0.9519188, 0, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot10" unique_id=25655025 instance=ExtResource("50_7ixpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=779110977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6546445, 3.5055768)
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=1052013208]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Cutscene1/Control" unique_id=1691731229]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="Control" parent="SubViewportContainer/SubViewport/Cutscene1/Control" unique_id=1898494679]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="Control" parent="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer" unique_id=304391619]
+anchors_preset = 0
+offset_top = -100.0
+offset_right = 1152.0
+offset_bottom = -72.0
+
+[node name="Dialogue" type="Label" parent="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer" unique_id=1608368208]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -14.0
+offset_right = 500.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_tuyoq")
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("52_n8ral")
+
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=1168658373]
+wait_time = 0.04
+autostart = true
+
+[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=2133375052]
+wait_time = 3.5
+one_shot = true
+
+[node name="ShadesREal" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=488222184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.47)
+visible = false
+
+[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal" unique_id=734104057 instance=ExtResource("47_3hbvx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.14, 0, 0)
+
+[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal" unique_id=1323563833 instance=ExtResource("49_ms3bu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.97, 0, 0)
+
+[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal" unique_id=1933600155 instance=ExtResource("48_q8j3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=942399329]
 stream = ExtResource("46_458eo")
 volume_db = -10.0
 autoplay = true
+
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
 
 [editable path="SubViewportContainer/SubViewport/Campfire"]
 [editable path="SubViewportContainer/SubViewport/Campfire/Firewood/Firewood3"]
