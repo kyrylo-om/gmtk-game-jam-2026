@@ -40,7 +40,7 @@ radial_accel_max = 0.19999775
 scale_min = 0.06
 scale_max = 0.099999994
 scale_curve = SubResource("CurveTexture_v3s22")
-color = Color(1.44, 1.696, 1.789, 1)
+color = Color(1.7887712, 1.7887712, 1.7887712, 1)
 color_ramp = SubResource("GradientTexture1D_6v5pg")
 turbulence_enabled = true
 turbulence_noise_strength = 2.0
@@ -49,7 +49,6 @@ turbulence_noise_scale = 2.0
 [sub_resource type="QuadMesh" id="QuadMesh_cif55"]
 
 [node name="Fireflies" type="Node3D" unique_id=806279985]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Sparks2" type="GPUParticles3D" parent="." unique_id=1133806431]
 material_override = SubResource("StandardMaterial3D_v3s22")
@@ -60,7 +59,7 @@ process_material = SubResource("ParticleProcessMaterial_4t2dn")
 draw_pass_1 = SubResource("QuadMesh_cif55")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=451143110]
-light_color = Color(1.44, 1.696, 1.789, 1)
-light_energy = 1.5
+light_color = Color(1.7388712, 1.4124036, 1.1267445, 1)
 light_volumetric_fog_energy = 3.377
-omni_range = 1.3
+omni_range = 1.0
+omni_attenuation = 0.5
