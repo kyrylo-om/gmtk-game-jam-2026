@@ -1425,7 +1425,12 @@ stream = ExtResource("11_sbayf")
 max_db = 6.0
 pitch_scale = 1.2
 
+[node name="CutsceneTimer" type="Timer" parent="." unique_id=400677440]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ScaledObjects/Area3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
 
 [editable path="Firewood/Firewood3"]

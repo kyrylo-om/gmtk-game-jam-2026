@@ -7,6 +7,7 @@ extends Node3D
 @onready var spawner: Node3D = $ShadeSpawner/Spawner
 @onready var timer: Timer = $ShadeSpawner/Spawner/Timer
 @onready var audio_burn: AudioStreamPlayer3D = $Audio_burn
+@onready var cutscene_timer: Timer = $CutsceneTimer
 
 const ANIM_LENGTH = 100
 @export var energy: float = 10
@@ -39,14 +40,18 @@ func add_important_fuel(amount: float):
 	player.importants_found += 1
 	animation_tree.set("parameters/OneShot 2/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	audio_burn.play()
+	
+	if player.importants_found >= 5:
+		cutscene_timer.start()
 
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("fuel_important"):
-		body.delete()
-		add_important_fuel(body.item_data.fuel)
-	if body.is_in_group("fuel"):
-		body.delete()
-		add_fuel(body.item_data.fuel)
+	if energy > 0:
+		if body.is_in_group("fuel_important"):
+			body.delete()
+			add_important_fuel(body.item_data.fuel)
+		if body.is_in_group("fuel"):
+			body.delete()
+			add_fuel(body.item_data.fuel)
 
 
 func _on_timer_timeout() -> void:
@@ -65,3 +70,8 @@ func _on_timer_timeout() -> void:
 	
 func unstop():
 	stop = false
+
+
+func _on_cutscene_timer_timeout() -> void:
+	#cutscene_anim.start()
+	print("ENDING 2")
