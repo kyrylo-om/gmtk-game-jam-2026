@@ -24,3 +24,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_timer_timeout() -> void:
 	die()
+
+
+func _on_timer_2_timeout() -> void:
+	die()

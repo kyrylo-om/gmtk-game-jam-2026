@@ -1867,16 +1867,17 @@ mesh = SubResource("BoxMesh_ehsp5")
 [node name="MonsterSpawner" type="Node3D" parent="." unique_id=1652891788]
 script = ExtResource("16_a8ls1")
 monsters = Array[PackedScene]([ExtResource("17_fulsm"), ExtResource("18_4r5pv")])
-min_delay = 4
-max_delay = 7
+min_delay = 6
+max_delay = 10
 
 [node name="Timer" type="Timer" parent="MonsterSpawner" unique_id=1448975270]
+wait_time = 5.0
 
 [node name="Spawner" type="Node3D" parent="MonsterSpawner" unique_id=115722679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="Timer2" type="Timer" parent="MonsterSpawner" unique_id=887410207]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
