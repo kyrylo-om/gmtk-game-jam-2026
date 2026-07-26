@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="6_10wrr"]
 [ext_resource type="AudioStream" uid="uid://b3vwyf88w08no" path="res://audio/campfire.mp3" id="9_te7ig"]
 [ext_resource type="AudioStream" uid="uid://b81d86jsqeh7l" path="res://audio/blazing_fire.mp3" id="10_0f1eb"]
+[ext_resource type="AudioStream" uid="uid://dejbmmhcl0nhx" path="res://audio/child_lough.mp3" id="10_73d8c"]
 [ext_resource type="AudioStream" uid="uid://g43rlk8kkao8" path="res://audio/ignite.mp3" id="11_sbayf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
@@ -1412,6 +1413,13 @@ unit_size = 2.0
 autoplay = true
 max_distance = 10.0
 
+[node name="Audio_laugh" type="AudioStreamPlayer3D" parent="." unique_id=20445828]
+stream = ExtResource("10_73d8c")
+attenuation_model = 2
+volume_db = -40.0
+unit_size = 15.0
+max_distance = 15.0
+
 [node name="Audio_blazing_fire" type="AudioStreamPlayer3D" parent="." unique_id=63201496]
 stream = ExtResource("10_0f1eb")
 attenuation_model = 2
@@ -1429,8 +1437,13 @@ pitch_scale = 1.2
 wait_time = 5.0
 one_shot = true
 
+[node name="Timer_laugh" type="Timer" parent="." unique_id=37799974]
+wait_time = 40.0
+autostart = true
+
 [connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ScaledObjects/Area3D" to="." method="_on_static_body_3d_body_entered"]
 [connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
+[connection signal="timeout" from="Timer_laugh" to="." method="_on_timer_laugh_timeout"]
 
 [editable path="Firewood/Firewood3"]

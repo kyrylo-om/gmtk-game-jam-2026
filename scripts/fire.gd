@@ -9,6 +9,7 @@ extends Node3D
 @onready var audio_burn: AudioStreamPlayer3D = $Audio_burn
 @onready var cutscene_timer: Timer = $CutsceneTimer
 @onready var cutscene_anim: AnimationPlayer = $"../../../AnimationPlayer"
+@onready var audio_laugh: AudioStreamPlayer3D = $Audio_laugh
 
 
 const ANIM_LENGTH = 100
@@ -77,3 +78,7 @@ func unstop():
 func _on_cutscene_timer_timeout() -> void:
 	#cutscene_anim.start()
 	cutscene_anim.play("cutscene2")
+
+
+func _on_timer_laugh_timeout() -> void:
+	audio_laugh.play()
