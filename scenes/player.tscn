@@ -19,6 +19,10 @@
 [ext_resource type="Script" uid="uid://0an3lhplm5wn" path="res://scripts/player/monster_spawner.gd" id="16_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="17_fulsm"]
 [ext_resource type="PackedScene" uid="uid://f6lu2pqisoca" path="res://scenes/monsters/tree_monster.tscn" id="18_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://g43rlk8kkao8" path="res://audio/ignite.mp3" id="20_60mlk"]
+[ext_resource type="AudioStream" uid="uid://ddfpc3akiw441" path="res://audio/step2.mp3" id="21_i4ail"]
+[ext_resource type="AudioStream" uid="uid://b3vwyf88w08no" path="res://audio/campfire.mp3" id="22_a38lo"]
+[ext_resource type="AudioStream" uid="uid://bc4talt6wp4lg" path="res://audio/blow.wav" id="23_4ni07"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4r5pv"]
 animation = &"fov"
@@ -301,6 +305,23 @@ tracks/4/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.07871893, -0.057594083, -0.007159261, -0.15922695, -0.015427122, 0.038399704, 0.0037204563, 0, -0.08468249, -0.0005868424, 0, 0),
 "times": PackedFloat32Array(0, 0.30727223, 0.6)
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"step"
+}, {
+"args": [],
+"method": &"step"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_jej6c"]
 resource_name = "jump_start"
@@ -453,6 +474,23 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [80.0]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.16666667, 0.47629192),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"step"
+}, {
+"args": [],
+"method": &"step"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_smehm"]
@@ -623,6 +661,23 @@ tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.18510382, 0.0050747697, 0.002444312, -0.11789876, 0.0023103002, 0.13680258, -0.005907082, -0.0067710667, -0.116222054, -0.0013908785, 0.16467792, 0.0016007884, 0, -0.105489135, -0.0046758926, 0, 0),
 "times": PackedFloat32Array(0, 0.4537858, 0.95365167, 1.3)
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("..")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.23333333, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"step"
+}, {
+"args": [],
+"method": &"step"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fjrip"]
@@ -1270,7 +1325,7 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"die"
+"method": &"torch_die"
 }]
 }
 tracks/1/type = "bezier"
@@ -1814,6 +1869,21 @@ autostart = true
 
 [node name="Spawner" type="Node3D" parent="MonsterSpawner" unique_id=115722679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Audio_ignite" type="AudioStreamPlayer" parent="." unique_id=670694783]
+stream = ExtResource("20_60mlk")
+volume_db = 10.0
+
+[node name="Audio_step" type="AudioStreamPlayer" parent="." unique_id=241224864]
+stream = ExtResource("21_i4ail")
+
+[node name="Audio_torch" type="AudioStreamPlayer" parent="." unique_id=1212306080]
+stream = ExtResource("22_a38lo")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[node name="Audio_blow" type="AudioStreamPlayer" parent="." unique_id=1955192381]
+stream = ExtResource("23_4ni07")
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]

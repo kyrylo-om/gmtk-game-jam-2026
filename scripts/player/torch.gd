@@ -20,6 +20,11 @@ const ANIM_LENGTH = 12
 var showed_dg = false
 var said_firefly = false
 
+@onready var audio_ignite: AudioStreamPlayer = $"../../Audio_ignite"
+@onready var audio_torch: AudioStreamPlayer = $"../../Audio_torch"
+@onready var audio_blow: AudioStreamPlayer = $"../../Audio_blow"
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not safe:
@@ -39,6 +44,9 @@ func refuel():
 	pass
 
 func refuel_halfway():
+	audio_ignite.play()
+	audio_torch.play()
+	
 	energy = max_energy
 	var lines = ["I will always hold a piece of you with me.", "I won't forget.", "Darkness won't take you from me."]
 	if randi() % 2:
@@ -47,7 +55,10 @@ func refuel_halfway():
 
 func refuel_done():
 	player.can_move = true
-	
+
+func torch_die():
+	audio_torch.stop()
+
 func die():
 	if not safe:
 		if not showed_dg:
@@ -59,7 +70,9 @@ func death_done():
 	player.respawn()
 
 func extinguish():
-	create_tween().tween_property(self, "energy", 0, 0.3)
+	if energy > 0:
+		audio_blow.play()
+		create_tween().tween_property(self, "energy", 0, 0.3)
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if not safe:

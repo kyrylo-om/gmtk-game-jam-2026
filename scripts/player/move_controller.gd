@@ -65,6 +65,9 @@ var has_jumped = false
 var said_boundary = false
 var first_respawn = true
 
+@onready var audio_step: AudioStreamPlayer = $Audio_step
+
+
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
@@ -231,3 +234,7 @@ func respawn_done():
 		var lines = ["No. I can't let her go.", "As long as I remember..."]
 		canvas.show_dialogue(lines.pick_random())
 	can_move = true
+
+func step():
+	audio_step.pitch_scale = randf()*0.3 + 0.85
+	audio_step.play()
