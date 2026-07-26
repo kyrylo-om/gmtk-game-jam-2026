@@ -27,6 +27,7 @@ enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addon
 [global_group]
 
 fuel=""
+firefly=""
 
 [input]
 

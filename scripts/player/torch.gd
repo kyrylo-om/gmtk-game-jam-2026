@@ -18,6 +18,7 @@ const ANIM_LENGTH = 12
 @export var max_energy = 100
 
 var showed_dg = false
+var said_firefly = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -65,6 +66,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		print("Entered safe zone")
 		ui_animation.play("Death", -1, -1, false)
 		safe = true
+	if area.is_in_group("firefly") and not said_firefly:
+		canvas.show_dialogue("I'm safe from the darkness here.")
+		said_firefly = true
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	print("Exited safe zone")
