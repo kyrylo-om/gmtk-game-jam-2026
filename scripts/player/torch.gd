@@ -70,9 +70,9 @@ func death_done():
 	player.respawn()
 
 func extinguish():
+	create_tween().tween_property(self, "energy", 0, 0.3)
 	if energy > 0:
 		audio_blow.play()
-		create_tween().tween_property(self, "energy", 0, 0.3)
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if not safe:
@@ -84,8 +84,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		said_firefly = true
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
-	print("Exited safe zone")
-	safe = false
+	if not area_3d.has_overlapping_areas():
+		print("Exited safe zone")
+		safe = false
 	
 func is_safe():
 	return safe

@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://btxyep1gbohip" path="res://scenes/items/important/collectible_important.tscn" id="1_xifje"]
 [ext_resource type="PackedScene" uid="uid://b0hbyqeod2p3k" path="res://models/Important objects/box.fbx" id="2_4hitb"]
 [ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="2_ewqej"]
+[ext_resource type="Material" uid="uid://dfnjsiu6kifoo" path="res://Materials/outline_blue.tres" id="4_ewqej"]
 
 [sub_resource type="Resource" id="Resource_w4aes"]
 script = ExtResource("2_ewqej")
-name = "jewelry box"
+name = "Jewelry box"
 prefab_path = "uid://lt1yatbclm52"
 fuel = 20.0
 mass = 3.0
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 [sub_resource type="BoxShape3D" id="BoxShape3D_xifje"]
 size = Vector3(0.59, 0.8, 1.19)
 
-[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_xifje")]
+[node name="Collectible2" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_xifje")]
 mass = 3.0
 item_data = SubResource("Resource_w4aes")
 mesh = NodePath("box/Cube_Baked")
@@ -27,5 +28,8 @@ shape = SubResource("BoxShape3D_xifje")
 
 [node name="box" parent="." index="2" unique_id=974888852 instance=ExtResource("2_4hitb")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="Cube_Baked" parent="box" index="0" unique_id=2030758600]
+material_overlay = ExtResource("4_ewqej")
 
 [editable path="box"]

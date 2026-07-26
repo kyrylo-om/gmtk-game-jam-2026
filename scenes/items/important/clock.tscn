@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://btxyep1gbohip" path="res://scenes/items/important/collectible_important.tscn" id="1_c201v"]
 [ext_resource type="Script" uid="uid://dtv4bd68p4ulq" path="res://items/Item.gd" id="2_iemgm"]
 [ext_resource type="PackedScene" uid="uid://di7lrsqbq2upv" path="res://models/Important objects/clock.fbx" id="2_nf0ly"]
+[ext_resource type="Material" uid="uid://dfnjsiu6kifoo" path="res://Materials/outline_blue.tres" id="4_iemgm"]
 
 [sub_resource type="Resource" id="Resource_c201v"]
 script = ExtResource("2_iemgm")
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 [sub_resource type="BoxShape3D" id="BoxShape3D_lv067"]
 size = Vector3(0.195, 0.868, 1)
 
-[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_c201v")]
+[node name="Collectible2" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_c201v")]
 mass = 2.0
 item_data = SubResource("Resource_c201v")
 mesh = NodePath("clock/Clock_Baked")
@@ -27,5 +28,8 @@ shape = SubResource("BoxShape3D_lv067")
 
 [node name="clock" parent="." index="2" unique_id=1546807268 instance=ExtResource("2_nf0ly")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Clock_Baked" parent="clock" index="0" unique_id=1069887962]
+material_overlay = ExtResource("4_iemgm")
 
 [editable path="clock"]

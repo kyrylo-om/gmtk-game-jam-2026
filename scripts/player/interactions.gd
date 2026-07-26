@@ -68,7 +68,20 @@ func _process(delta: float) -> void:
 func pickup(item: RigidBody3D):
 	if not hinted_throw:
 		hint_throw = true
-	inventory.add_item(item.delete())
+	var item_data = item.delete()
+	inventory.add_item(item_data)
+	
+	if item_data.name == "Book":
+		canvas.show_dialogue("It's her diary.")
+	elif item_data.name == "Jewelry box":
+		canvas.show_dialogue("There is nothing inside anymore.")
+	elif item_data.name == "Clock":
+		canvas.show_dialogue("It keeps counting down.")
+	elif item_data.name == "Comb":
+		canvas.show_dialogue("I can still smell her hair.")
+	elif item_data.name == "Mirror":
+		canvas.show_dialogue("It is shattered.")
+		
 	
 func throw():
 	if not hinted_throw:

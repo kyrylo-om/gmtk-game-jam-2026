@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 [sub_resource type="BoxShape3D" id="BoxShape3D_05xkw"]
 size = Vector3(0.155, 1.885, 1.2)
 
-[node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_5drss")]
+[node name="Collectible2" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_5drss")]
 mass = 3.0
 item_data = SubResource("Resource_5drss")
 mesh = NodePath("mirror/Miror_Baked")
