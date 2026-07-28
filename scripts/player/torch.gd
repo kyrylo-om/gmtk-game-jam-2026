@@ -78,7 +78,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		print("Entered safe zone")
 		ui_animation.play("Death", -1, -1, false)
 		safe = true
-	if area.is_in_group("firefly") and not said_firefly:
+	if not said_firefly and energy <= 0 and area.is_in_group("firefly"):
 		canvas.show_dialogue("I'm safe from the darkness here.")
 		said_firefly = true
 
