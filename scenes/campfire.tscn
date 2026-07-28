@@ -68,7 +68,7 @@ initial_velocity_max = 2.0
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = 0.49997765
 gravity = Vector3(0, 1, 0)
-scale_min = 1.4
+scale_min = 1.5802345
 scale_max = 20.0
 scale_curve = SubResource("CurveTexture_ux44r")
 color = Color(1.8659585, 1.2763183, 0.6460132, 1)
@@ -236,7 +236,6 @@ mix_mode = 1
 [sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_4l61p"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ggib5"]
-graph_offset = Vector2(-249.6059, 148.86389)
 nodes/output/position = Vector2(1200, 240)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_g5mbl")
 nodes/Animation/position = Vector2(-440, 520)
