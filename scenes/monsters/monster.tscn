@@ -1,134 +1,19 @@
 [gd_scene format=3 uid="uid://bh5onc1p4djnx"]
 
 [ext_resource type="Script" uid="uid://cal4g8yliiekm" path="res://scripts/shades/monster.gd" id="1_3366s"]
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="2_gcx1e"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="3_bna5n"]
+[ext_resource type="PackedScene" uid="uid://dhadkqqwgs2fl" path="res://scenes/monsters/disappearance.tscn" id="2_w06ud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubufv"]
-transparency = 3
-alpha_hash_scale = 0.1
-alpha_antialiasing_mode = 0
-vertex_color_use_as_albedo = true
-vertex_color_is_srgb = true
-albedo_color = Color(0.64, 0.64, 0.64, 1)
-albedo_texture = ExtResource("2_gcx1e")
-normal_enabled = true
-normal_texture = ExtResource("3_bna5n")
-subsurf_scatter_strength = 1.0
-backlight_enabled = true
-backlight_texture = ExtResource("2_gcx1e")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 5
-particles_anim_loop = true
-
-[sub_resource type="Curve" id="Curve_qkh16"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ano02"]
-curve = SubResource("Curve_qkh16")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ih4j4"]
-lifetime_randomness = 0.1
-emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 3.0
-emission_ring_radius = 0.5
-emission_ring_inner_radius = 0.0
-emission_ring_cone_angle = 90.0
-direction = Vector3(0, 1, 0)
-spread = 60.0
-initial_velocity_min = 2.0
-initial_velocity_max = 3.0
-gravity = Vector3(0, 0, 0)
-scale_max = 2.0
-color = Color(0.1, 0.1, 0.1, 1)
-hue_variation_min = -2.2351742e-08
-hue_variation_max = 0.009999977
-anim_speed_min = 1.0
-anim_speed_max = 1.0
-turbulence_enabled = true
-turbulence_noise_strength = 0.1
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.10300001
-turbulence_influence_over_life = SubResource("CurveTexture_ano02")
-
-[sub_resource type="QuadMesh" id="QuadMesh_brmhl"]
-
-[sub_resource type="Animation" id="Animation_xm58p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_w7wvo"]
-resource_name = "die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333337),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"die_done"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdltw"]
-_data = {
-&"RESET": SubResource("Animation_xm58p"),
-&"die": SubResource("Animation_w7wvo")
-}
 
 [node name="Monster" type="Area3D" unique_id=1351689094]
 collision_layer = 4
 collision_mask = 64
 script = ExtResource("1_3366s")
+effect = ExtResource("2_w06ud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1663019835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5434562, 0)
 shape = SubResource("BoxShape3D_ehsp5")
-
-[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1870905354]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.5343279, 0)
-material_override = SubResource("StandardMaterial3D_ubufv")
-emitting = false
-amount = 150
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_ih4j4")
-draw_pass_1 = SubResource("QuadMesh_brmhl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1381684010]
-libraries/ = SubResource("AnimationLibrary_gdltw")
 
 [node name="Timer2" type="Timer" parent="." unique_id=1890306566]
 wait_time = 20.0

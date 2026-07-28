@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://khnhc2l4r6cj" path="res://scripts/shades/campfire_shade.gd" id="1_pgtbe"]
 [ext_resource type="Script" uid="uid://xls556unv7yw" path="res://scripts/animated_text_3d.gd" id="2_0naev"]
 [ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="2_s4a5j"]
+[ext_resource type="AudioStream" uid="uid://5tdxygnmvcb" path="res://audio/whoosh.mp3" id="4_e20jf"]
 [ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="4_eyv1o"]
 [ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="5_e20jf"]
+[ext_resource type="AudioStream" uid="uid://cgpjefw7qf3vc" path="res://audio/whisper2.mp3" id="7_xm58p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
 
@@ -51,6 +53,21 @@ tracks/1/keys = {
 "method": &"die_done"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.5,
+"stream": ExtResource("4_e20jf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12mg1"]
 _data = {
@@ -160,6 +177,14 @@ amount = 150
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_31bp8")
 draw_pass_1 = SubResource("QuadMesh_eqd1j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=528164278]
+volume_db = -10.0
+max_distance = 10.0
+
+[node name="Whisper" type="AudioStreamPlayer3D" parent="." unique_id=79484448]
+stream = ExtResource("7_xm58p")
+max_distance = 15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

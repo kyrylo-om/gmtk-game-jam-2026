@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bmj0d08eqyw74" path="res://sprites/monsters/baby_monster.png" id="2_hhgoa"]
 [ext_resource type="Texture2D" uid="uid://d4np0cnvkkklw" path="res://sprites/monsters/baby_monster_eyes.jpg" id="3_q3rtg"]
 [ext_resource type="AudioStream" uid="uid://cs0w6282eny82" path="res://audio/laugh.mp3" id="5_h6mgr"]
+[ext_resource type="AudioStream" uid="uid://cijybcg0e4utk" path="res://audio/baby_steps.mp3" id="6_li8rw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
 transparency = 1
@@ -75,3 +76,9 @@ stream = ExtResource("5_h6mgr")
 volume_db = -15.0
 pitch_scale = 1.1
 autoplay = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7" unique_id=898931524]
+stream = ExtResource("6_li8rw")
+volume_db = -5.0
+autoplay = true
+max_distance = 20.0

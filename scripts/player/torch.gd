@@ -27,8 +27,7 @@ var said_firefly = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not safe:
-		energy = clamp(energy - fade_speed * delta, 0, max_energy)
+	energy = clamp(energy - fade_speed * delta, 0, max_energy)
 	animation_tree.set("parameters/TimeSeek/seek_request", 
 	ANIM_LENGTH - energy / max_energy * ANIM_LENGTH)
 	if energy > 0:

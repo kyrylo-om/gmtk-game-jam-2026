@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://ddfpc3akiw441" path="res://audio/step2.mp3" id="21_i4ail"]
 [ext_resource type="AudioStream" uid="uid://b3vwyf88w08no" path="res://audio/campfire.mp3" id="22_a38lo"]
 [ext_resource type="AudioStream" uid="uid://bc4talt6wp4lg" path="res://audio/blow.wav" id="23_4ni07"]
+[ext_resource type="AudioStream" uid="uid://d2jvv72krdoyb" path="res://audio/gasp.wav" id="24_l71n6"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4r5pv"]
 animation = &"fov"
@@ -566,6 +567,21 @@ tracks/5/keys = {
 "method": &"respawn_done"
 }]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Audio_gasp")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_l71n6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_d2wvv"]
 resource_name = "walk"
@@ -1895,6 +1911,8 @@ pitch_scale = 2.0
 
 [node name="Audio_blow" type="AudioStreamPlayer" parent="." unique_id=1955192381]
 stream = ExtResource("23_4ni07")
+
+[node name="Audio_gasp" type="AudioStreamPlayer" parent="." unique_id=1634470604]
 
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="Canvas/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="Canvas/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]

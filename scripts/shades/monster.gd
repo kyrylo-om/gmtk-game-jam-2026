@@ -1,6 +1,6 @@
 extends Node3D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var mesh: Node3D
+@export var effect: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,11 +12,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func die():
-	if mesh:
-		mesh.queue_free()
-	animation_player.play("die")
-
-func die_done():
+	var instance = effect.instantiate()
+	get_tree().current_scene.add_child(instance)
+	instance.position = global_position
 	queue_free()
 
 func _on_body_entered(body: Node3D) -> void:

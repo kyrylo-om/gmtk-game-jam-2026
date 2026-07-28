@@ -6,11 +6,14 @@ extends Label3D
 
 @export var lines: Array[String]
 @export var lines_per_life = 2
+@onready var whisper: AudioStreamPlayer3D = $"../../Whisper"
 
 var said_lines = 1
 var text_to_display: String = ""
 
 func show_text():
+	whisper.pitch_scale = randf_range(0.8, 1.2)
+	whisper.play()
 	modulate.a = 1.0
 	timer_2.stop()
 	text = ""

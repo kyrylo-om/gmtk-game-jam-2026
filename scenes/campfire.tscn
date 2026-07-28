@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://b81d86jsqeh7l" path="res://audio/blazing_fire.mp3" id="10_0f1eb"]
 [ext_resource type="AudioStream" uid="uid://dejbmmhcl0nhx" path="res://audio/child_lough.mp3" id="10_73d8c"]
 [ext_resource type="AudioStream" uid="uid://g43rlk8kkao8" path="res://audio/ignite.mp3" id="11_sbayf"]
+[ext_resource type="AudioStream" uid="uid://qxh5a01v2t6q" path="res://audio/burn_important.mp3" id="13_tdo0i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
 transparency = 1
@@ -1293,7 +1294,7 @@ radius = 0.8623047
 [node name="Campfire" type="Node3D" unique_id=1964473192]
 script = ExtResource("1_g5mbl")
 shades = Array[PackedScene]([ExtResource("2_w2pjx"), ExtResource("3_te7ig")])
-minutes_to_fade = 5.0
+minutes_to_fade = 10.0
 shade_time_min = 4
 
 [node name="Firewood" type="Node3D" parent="." unique_id=516141946]
@@ -1376,7 +1377,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 10.67
 visible = false
 mesh = SubResource("BoxMesh_ehsp5")
 
-[node name="Timer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1652376198]
+[node name="SpawnTimer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1256961370]
 wait_time = 20.0
 autostart = true
 
@@ -1433,6 +1434,10 @@ stream = ExtResource("11_sbayf")
 max_db = 6.0
 pitch_scale = 1.2
 
+[node name="Audio_burn_important" type="AudioStreamPlayer3D" parent="." unique_id=224642859]
+stream = ExtResource("13_tdo0i")
+max_db = 0.0
+
 [node name="CutsceneTimer" type="Timer" parent="." unique_id=400677440]
 wait_time = 5.0
 one_shot = true
@@ -1441,7 +1446,7 @@ one_shot = true
 wait_time = 40.0
 autostart = true
 
-[connection signal="timeout" from="ShadeSpawner/Spawner/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ShadeSpawner/Spawner/SpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ScaledObjects/Area3D" to="." method="_on_static_body_3d_body_entered"]
 [connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
 [connection signal="timeout" from="Timer_laugh" to="." method="_on_timer_laugh_timeout"]

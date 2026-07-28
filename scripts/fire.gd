@@ -5,8 +5,9 @@ extends Node3D
 @export var player: CharacterBody3D 
 @export var shades: Array[PackedScene]
 @onready var spawner: Node3D = $ShadeSpawner/Spawner
-@onready var timer: Timer = $ShadeSpawner/Spawner/Timer
+@onready var timer: Timer = $ShadeSpawner/Spawner/SpawnTimer
 @onready var audio_burn: AudioStreamPlayer3D = $Audio_burn
+@onready var audio_burn_important: AudioStreamPlayer3D = $Audio_burn_important
 @onready var cutscene_timer: Timer = $CutsceneTimer
 @onready var cutscene_anim: AnimationPlayer = $"../../../AnimationPlayer"
 @onready var audio_laugh: AudioStreamPlayer3D = $Audio_laugh
@@ -42,7 +43,7 @@ func add_important_fuel(amount: float):
 	print("added ", amount, " energy to fire")
 	player.importants_found += 1
 	animation_tree.set("parameters/OneShot 2/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-	audio_burn.play()
+	audio_burn_important.play()
 	
 	if player.importants_found >= 5:
 		cutscene_timer.start()
