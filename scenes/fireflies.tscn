@@ -53,7 +53,7 @@ turbulence_noise_scale = 2.0
 render_priority = 0
 shader = ExtResource("2_v3s22")
 shader_parameter/sky_affect = 0.9
-shader_parameter/albedo = Color(0.1, 0.0808, 0.064, 1)
+shader_parameter/albedo = Color(0.07, 0.059383336, 0.0455, 1)
 shader_parameter/texture_albedo = ExtResource("1_837t3")
 shader_parameter/proximity_fade_distance = 5.0
 shader_parameter/distance_fade_min = 1.0
@@ -62,7 +62,7 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_r4qpq"]
-size = Vector2(7, 7)
+size = Vector2(8, 8)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_837t3"]
 radius = 0.10254924
