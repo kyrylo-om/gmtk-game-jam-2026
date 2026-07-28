@@ -60,7 +60,7 @@ gravity = Vector3(0, 1, 0)
 scale_min = 2.0
 scale_max = 3.0
 scale_curve = SubResource("CurveTexture_ux44r")
-color = Color(1.8659585, 1.2763183, 0.6460132, 1)
+color = Color(5.913, 2.095, 0.822, 1)
 color_ramp = SubResource("GradientTexture1D_ynbbn")
 alpha_curve = SubResource("CurveTexture_hl70x")
 hue_variation_min = -0.010000022
@@ -113,6 +113,7 @@ initial_velocity_max = 5.0
 gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 3.0
+color = Color(1.353256, 1.353256, 1.353256, 1)
 color_ramp = SubResource("GradientTexture1D_4l61p")
 hue_variation_min = -2.2351742e-08
 hue_variation_max = 0.009999977
@@ -147,8 +148,3 @@ lifetime = 2.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_rao50")
 draw_pass_1 = SubResource("QuadMesh_hl70x")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1547234624]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4876103, 13.6002245, 0)
-visible = false
-light_color = Color(1, 0.51900005, 0.26, 1)
