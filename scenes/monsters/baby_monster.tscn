@@ -51,6 +51,7 @@ animations = [{
 }]
 
 [node name="Monster" unique_id=583574455 node_paths=PackedStringArray("mesh") instance=ExtResource("1_q3rtg")]
+collision_mask = 80
 mesh = NodePath("tree_monster")
 
 [node name="tree_monster" type="Node3D" parent="." index="0" unique_id=1682186267]
@@ -77,8 +78,10 @@ volume_db = -15.0
 pitch_scale = 1.1
 autoplay = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7" unique_id=898931524]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" unique_id=898931524]
 stream = ExtResource("6_li8rw")
 volume_db = -5.0
 autoplay = true
 max_distance = 20.0
+
+[connection signal="area_entered" from="." to="tree_monster" method="_on_monster_area_entered"]

@@ -46,22 +46,19 @@
 [ext_resource type="PackedScene" uid="uid://dje8d42k03wbi" path="res://scenes/forest_fire.tscn" id="45_458eo"]
 [ext_resource type="PackedScene" uid="uid://c566a1m7dg8mk" path="res://models/Rocks/Black rock 4.fbx" id="45_fedci"]
 [ext_resource type="AudioStream" uid="uid://c6v8ug13kd18l" path="res://audio/forest_crickets.mp3" id="46_458eo"]
-[ext_resource type="PackedScene" uid="uid://bdw4ps4jp5sbf" path="res://scenes/monsters/sitting_monster.tscn" id="47_3hbvx"]
 [ext_resource type="PackedScene" uid="uid://cfulpgbwkky47" path="res://scenes/items/important/clock.tscn" id="47_rm0al"]
-[ext_resource type="PackedScene" uid="uid://f6lu2pqisoca" path="res://scenes/monsters/tree_monster.tscn" id="48_q8j3a"]
-[ext_resource type="PackedScene" uid="uid://dx7inx2qmcv5j" path="res://scenes/monsters/gentel_monster.tscn" id="49_ms3bu"]
-[ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="50_7ixpq"]
+[ext_resource type="PackedScene" uid="uid://bl4lrnlqb275t" path="res://scenes/enviroment/cutscene_monsters/baby.tscn" id="49_n8ral"]
+[ext_resource type="PackedScene" uid="uid://bf43o6id8kj3p" path="res://scenes/enviroment/cutscene_monsters/gentel.tscn" id="50_yd4ix"]
+[ext_resource type="PackedScene" uid="uid://cmq0ouir2ix5l" path="res://scenes/enviroment/cutscene_monsters/sitting.tscn" id="51_66xif"]
 [ext_resource type="FontFile" uid="uid://1qivvlyxag5i" path="res://fonts/IMFellEnglishSC-Regular.ttf" id="51_bk1p3"]
+[ext_resource type="PackedScene" uid="uid://dlixku6b32n6r" path="res://scenes/enviroment/cutscene_monsters/tree.tscn" id="52_bnuda"]
 [ext_resource type="Script" uid="uid://4an2rmg0sfye" path="res://scripts/animated_text.gd" id="52_n8ral"]
 [ext_resource type="Texture2D" uid="uid://clfde6d0y7183" path="res://sprites/monsters/sitting_monster.PNG" id="53_0rmfi"]
 [ext_resource type="Texture2D" uid="uid://cufccpump5s6y" path="res://sprites/monsters/tree_monster.PNG" id="53_ms3bu"]
 [ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="54_7ixpq"]
 [ext_resource type="Texture2D" uid="uid://dn7pgagxahxxa" path="res://sprites/monsters/sitting_monster_eyes.jpg" id="54_xbak0"]
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="55_3x28f"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="56_l6q63"]
 [ext_resource type="Texture2D" uid="uid://c67k0pmr5ljuf" path="res://sprites/monsters/gentel_monster.PNG" id="57_mmvbu"]
 [ext_resource type="Texture2D" uid="uid://fe27u1rk7lky" path="res://sprites/monsters/gentel_monster_eyes.jpg" id="58_weeiq"]
-[ext_resource type="Script" uid="uid://cnf61fhbp2p2m" path="res://scripts/shades/tree_monster.gd" id="59_uxocx"]
 
 [sub_resource type="Animation" id="Animation_oaba0"]
 length = 100.0
@@ -345,7 +342,7 @@ tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [1.0]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
@@ -398,7 +395,7 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("SubViewportContainer/SubViewport/Forest fire/Control/ColorRect:visible")
+tracks/28/path = NodePath("SubViewportContainer/SubViewport/Control/ColorRect:visible")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
@@ -478,6 +475,51 @@ tracks/34/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:light_energy")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/36/type = "bezier"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:x")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2.443461, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/37/type = "bezier"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:y")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/38/type = "bezier"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:z")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_yd4ix"]
@@ -640,7 +682,7 @@ tracks/13/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/Control/Co
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(11.900001, 13.266666, 14.433333, 14.6, 32.466667, 32.566666),
+"times": PackedFloat32Array(11.900001, 13.066667, 14.433333, 14.6, 32.466667, 32.566666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false, false, true]
@@ -676,10 +718,10 @@ tracks/16/path = NodePath("SubViewportContainer/SubViewport/WorldEnvironment:env
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 14.5, 14.566667, 20.1),
+"times": PackedFloat32Array(0, 14.5, 14.566667, 17.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.0, 0.1, 0.6]
+"values": [1.0, 0.0, 0.1, 5.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -800,10 +842,55 @@ tracks/26/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.99607843), Color(1, 1, 1, 0.99607843), Color(1, 1, 1, 0)]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:light_energy")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 14.466666, 14.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.1]
+}
+tracks/28/type = "bezier"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:x")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-2.443461, -0.25, 0, 1.5971651, 0.0207448, -2.3991213, -1.692461, 0, 0, 0),
+"times": PackedFloat32Array(14.533334, 20.033333)
+}
+tracks/29/type = "bezier"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:y")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.82040405, -0.008140328, -0.032411814, -1.8950634, 0.0009513311, 0, 0),
+"times": PackedFloat32Array(14.533334, 19.6)
+}
+tracks/30/type = "bezier"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("SubViewportContainer/SubViewport/Cutscene1/DirectionalLight3D:rotation:z")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(14.533334)
+}
 
 [sub_resource type="Animation" id="Animation_458eo"]
 resource_name = "cutscene2"
-length = 20.0
+length = 24.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -871,7 +958,7 @@ tracks/5/path = NodePath("SubViewportContainer/SubViewport/Forest fire:process_m
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(8.000001),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
@@ -883,7 +970,7 @@ tracks/6/path = NodePath("SubViewportContainer/SubViewport/Forest fire:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(8.000001),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -895,7 +982,7 @@ tracks/7/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 16),
+"times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 20.611858, 0), Vector3(0, 52.36899, 0)]
@@ -907,7 +994,7 @@ tracks/8/path = NodePath("SubViewportContainer/SubViewport/Forest fire/House:pro
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(12.033334),
+"times": PackedFloat32Array(16.033335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
@@ -919,7 +1006,7 @@ tracks/9/path = NodePath("SubViewportContainer/SubViewport/Forest fire/House:vis
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(12.033334),
+"times": PackedFloat32Array(16.033335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -936,14 +1023,26 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/11/type = "method"
+tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue")
+tracks/11/path = NodePath("SubViewportContainer/SubViewport/Control/ColorRect:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.2, 3.9666667, 8, 12.033334, 18.166666),
+"times": PackedFloat32Array(0, 19.633335, 19.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2, 7.4, 12, 16, 22.033333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": ["Guilt blinded me like fire."],
@@ -961,18 +1060,6 @@ tracks/11/keys = {
 "args": ["Maybe I should've listened."],
 "method": &"show_text"
 }]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("SubViewportContainer/SubViewport/Forest fire/Control/ColorRect:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 15.633333, 15.966666),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3rex"]
@@ -995,7 +1082,6 @@ sky_material = SubResource("PanoramaSkyMaterial_uwrxv")
 
 [sub_resource type="Environment" id="Environment_ehsp5"]
 background_mode = 2
-background_energy_multiplier = 0.0
 sky = SubResource("Sky_uwrxv")
 ambient_light_source = 3
 glow_enabled = true
@@ -1100,37 +1186,37 @@ uv_scale = 0.6
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_bt5mj")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_e1j6l"), SubResource("Terrain3DTextureAsset_1kice"), SubResource("Terrain3DTextureAsset_pl11u")])
 
-[sub_resource type="Resource" id="Resource_bnuda"]
+[sub_resource type="Resource" id="Resource_0rmfi"]
 script = ExtResource("14_gxtfn")
 amount = 75
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_0rmfi"]
+[sub_resource type="Resource" id="Resource_xbak0"]
 script = ExtResource("22_sgl2t")
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_xbak0"]
+[sub_resource type="Resource" id="Resource_3x28f"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.3, 0.3, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3x28f"]
+[sub_resource type="Resource" id="Resource_l6q63"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_l6q63"]
+[sub_resource type="Resource" id="Resource_mmvbu"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_mmvbu"]
+[sub_resource type="Resource" id="Resource_weeiq"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 align_with_collision_normal = true
@@ -1138,45 +1224,45 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_weeiq"]
+[sub_resource type="Resource" id="Resource_uxocx"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_bnuda"), SubResource("Resource_0rmfi"), SubResource("Resource_xbak0"), SubResource("Resource_3x28f"), SubResource("Resource_l6q63"), SubResource("Resource_mmvbu")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_0rmfi"), SubResource("Resource_xbak0"), SubResource("Resource_3x28f"), SubResource("Resource_l6q63"), SubResource("Resource_mmvbu"), SubResource("Resource_weeiq")])
 
 [sub_resource type="Resource" id="Resource_84hbc"]
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="Resource" id="Resource_uxocx"]
+[sub_resource type="Resource" id="Resource_7nv0b"]
 script = ExtResource("14_gxtfn")
 amount = 150
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_7nv0b"]
+[sub_resource type="Resource" id="Resource_o8oq8"]
 script = ExtResource("22_sgl2t")
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_o8oq8"]
+[sub_resource type="Resource" id="Resource_sxt1d"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.3, 0.3, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_sxt1d"]
+[sub_resource type="Resource" id="Resource_2iuns"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_2iuns"]
+[sub_resource type="Resource" id="Resource_7gkqi"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_7gkqi"]
+[sub_resource type="Resource" id="Resource_3x338"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 align_with_collision_normal = true
@@ -1184,45 +1270,45 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_3x338"]
+[sub_resource type="Resource" id="Resource_1yg85"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_uxocx"), SubResource("Resource_7nv0b"), SubResource("Resource_o8oq8"), SubResource("Resource_sxt1d"), SubResource("Resource_2iuns"), SubResource("Resource_7gkqi")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_7nv0b"), SubResource("Resource_o8oq8"), SubResource("Resource_sxt1d"), SubResource("Resource_2iuns"), SubResource("Resource_7gkqi"), SubResource("Resource_3x338")])
 
 [sub_resource type="Resource" id="Resource_753oq"]
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="Resource" id="Resource_1yg85"]
+[sub_resource type="Resource" id="Resource_s0g06"]
 script = ExtResource("14_gxtfn")
 amount = 150
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_s0g06"]
+[sub_resource type="Resource" id="Resource_2gnni"]
 script = ExtResource("22_sgl2t")
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_2gnni"]
+[sub_resource type="Resource" id="Resource_vgxg3"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.3, 0.3, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_vgxg3"]
+[sub_resource type="Resource" id="Resource_4nbsr"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_4nbsr"]
+[sub_resource type="Resource" id="Resource_fkywm"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_fkywm"]
+[sub_resource type="Resource" id="Resource_dku7i"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 align_with_collision_normal = true
@@ -1230,45 +1316,45 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_dku7i"]
+[sub_resource type="Resource" id="Resource_veaf0"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_1yg85"), SubResource("Resource_s0g06"), SubResource("Resource_2gnni"), SubResource("Resource_vgxg3"), SubResource("Resource_4nbsr"), SubResource("Resource_fkywm")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_s0g06"), SubResource("Resource_2gnni"), SubResource("Resource_vgxg3"), SubResource("Resource_4nbsr"), SubResource("Resource_fkywm"), SubResource("Resource_dku7i")])
 
 [sub_resource type="Resource" id="Resource_p4npv"]
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="Resource" id="Resource_veaf0"]
+[sub_resource type="Resource" id="Resource_flw08"]
 script = ExtResource("14_gxtfn")
 amount = 50
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_flw08"]
+[sub_resource type="Resource" id="Resource_15b3c"]
 script = ExtResource("22_sgl2t")
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_15b3c"]
+[sub_resource type="Resource" id="Resource_veukt"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.3, 0.3, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_veukt"]
+[sub_resource type="Resource" id="Resource_nbjts"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_nbjts"]
+[sub_resource type="Resource" id="Resource_i1hsc"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_i1hsc"]
+[sub_resource type="Resource" id="Resource_ounyb"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 align_with_collision_normal = true
@@ -1276,41 +1362,41 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_ounyb"]
+[sub_resource type="Resource" id="Resource_iekjf"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_veaf0"), SubResource("Resource_flw08"), SubResource("Resource_15b3c"), SubResource("Resource_veukt"), SubResource("Resource_nbjts"), SubResource("Resource_i1hsc")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_flw08"), SubResource("Resource_15b3c"), SubResource("Resource_veukt"), SubResource("Resource_nbjts"), SubResource("Resource_i1hsc"), SubResource("Resource_ounyb")])
 
 [sub_resource type="Resource" id="Resource_vniw0"]
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="Resource" id="Resource_iekjf"]
+[sub_resource type="Resource" id="Resource_okmmv"]
 script = ExtResource("14_gxtfn")
 amount = 600
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_okmmv"]
+[sub_resource type="Resource" id="Resource_ja1h7"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(-0.3, 0, -0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ja1h7"]
+[sub_resource type="Resource" id="Resource_xjcjm"]
 script = ExtResource("16_02fa5")
 offset_step = 2.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_xjcjm"]
+[sub_resource type="Resource" id="Resource_tc8uq"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_tc8uq"]
+[sub_resource type="Resource" id="Resource_h5tdf"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 enable_texture_filtering = true
@@ -1318,42 +1404,42 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_h5tdf"]
-script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_iekjf"), SubResource("Resource_okmmv"), SubResource("Resource_ja1h7"), SubResource("Resource_xjcjm"), SubResource("Resource_tc8uq")])
-
 [sub_resource type="Resource" id="Resource_xbifu"]
+script = ExtResource("12_v2yb1")
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_okmmv"), SubResource("Resource_ja1h7"), SubResource("Resource_xjcjm"), SubResource("Resource_tc8uq"), SubResource("Resource_h5tdf")])
+
+[sub_resource type="Resource" id="Resource_x8trd"]
 script = ExtResource("14_gxtfn")
 amount = 60
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_x8trd"]
+[sub_resource type="Resource" id="Resource_s33c4"]
 script = ExtResource("22_sgl2t")
 enabled = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_s33c4"]
+[sub_resource type="Resource" id="Resource_3hv4c"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 scale = Vector3(-0.3, 0, -0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3hv4c"]
+[sub_resource type="Resource" id="Resource_lddog"]
 script = ExtResource("16_02fa5")
 iterations = 5
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_lddog"]
+[sub_resource type="Resource" id="Resource_boxkr"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_boxkr"]
+[sub_resource type="Resource" id="Resource_de5we"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 enable_texture_filtering = true
@@ -1361,38 +1447,38 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_de5we"]
-script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_xbifu"), SubResource("Resource_x8trd"), SubResource("Resource_s33c4"), SubResource("Resource_3hv4c"), SubResource("Resource_lddog"), SubResource("Resource_boxkr")])
-
 [sub_resource type="Resource" id="Resource_8tghg"]
+script = ExtResource("12_v2yb1")
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_x8trd"), SubResource("Resource_s33c4"), SubResource("Resource_3hv4c"), SubResource("Resource_lddog"), SubResource("Resource_boxkr"), SubResource("Resource_de5we")])
+
+[sub_resource type="Resource" id="Resource_473mq"]
 script = ExtResource("14_gxtfn")
 amount = 60
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_473mq"]
+[sub_resource type="Resource" id="Resource_1va0p"]
 script = ExtResource("16_02fa5")
 iterations = 5
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_1va0p"]
+[sub_resource type="Resource" id="Resource_2tvof"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_2tvof"]
+[sub_resource type="Resource" id="Resource_fsry6"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_fsry6"]
+[sub_resource type="Resource" id="Resource_eky20"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.3, 0.15)
 rotation = Vector3(10, 360, 10)
@@ -1400,86 +1486,47 @@ scale = Vector3(-0.3, 0, -0.3)
 enabled = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_eky20"]
+[sub_resource type="Resource" id="Resource_o3ulk"]
 script = ExtResource("30_0sl42")
 position = Vector3(0, 1.5, 0)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_o3ulk"]
+[sub_resource type="Resource" id="Resource_ghitk"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_8tghg"), SubResource("Resource_473mq"), SubResource("Resource_1va0p"), SubResource("Resource_2tvof"), SubResource("Resource_fsry6"), SubResource("Resource_eky20")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_473mq"), SubResource("Resource_1va0p"), SubResource("Resource_2tvof"), SubResource("Resource_fsry6"), SubResource("Resource_eky20"), SubResource("Resource_o3ulk")])
 
 [sub_resource type="Resource" id="Resource_gdf8r"]
 script = ExtResource("20_8ool0")
 radius = 80.0
 
-[sub_resource type="Resource" id="Resource_ghitk"]
+[sub_resource type="Resource" id="Resource_rundi"]
 script = ExtResource("14_gxtfn")
 amount = 100
 restrict_height = true
 reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_rundi"]
-script = ExtResource("15_twgab")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(10, 360, 10)
-scale = Vector3(0.3, 0, 0.3)
-reference_frame = 2
 
 [sub_resource type="Resource" id="Resource_7kwaa"]
-script = ExtResource("16_02fa5")
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-enabled = false
-restrict_height = true
-
-[sub_resource type="Resource" id="Resource_jye5l"]
-script = ExtResource("17_nepv3")
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-enabled = false
-
-[sub_resource type="Resource" id="Resource_rvhxa"]
-script = ExtResource("18_v2yb1")
-terrain_node = NodePath("../../Terrain3D")
-enable_texture_filtering = true
-target_texture_id = 2
-not_target_texture = true
-texture_threshold = 1.0
-
-[sub_resource type="Resource" id="Resource_rekj2"]
-script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_ghitk"), SubResource("Resource_rundi"), SubResource("Resource_7kwaa"), SubResource("Resource_jye5l"), SubResource("Resource_rvhxa")])
-
-[sub_resource type="Resource" id="Resource_ip3rd"]
-script = ExtResource("14_gxtfn")
-amount = 100
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_s6met"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(10, 360, 10)
 scale = Vector3(0.3, 0, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_7itva"]
+[sub_resource type="Resource" id="Resource_jye5l"]
 script = ExtResource("16_02fa5")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 enabled = false
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_o5ny5"]
+[sub_resource type="Resource" id="Resource_rvhxa"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_7ss2i"]
+[sub_resource type="Resource" id="Resource_rekj2"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 enable_texture_filtering = true
@@ -1487,37 +1534,76 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_1id2h"]
+[sub_resource type="Resource" id="Resource_ip3rd"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_ip3rd"), SubResource("Resource_s6met"), SubResource("Resource_7itva"), SubResource("Resource_o5ny5"), SubResource("Resource_7ss2i")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_rundi"), SubResource("Resource_7kwaa"), SubResource("Resource_jye5l"), SubResource("Resource_rvhxa"), SubResource("Resource_rekj2")])
+
+[sub_resource type="Resource" id="Resource_s6met"]
+script = ExtResource("14_gxtfn")
+amount = 100
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_7itva"]
+script = ExtResource("15_twgab")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(10, 360, 10)
+scale = Vector3(0.3, 0, 0.3)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_o5ny5"]
+script = ExtResource("16_02fa5")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+enabled = false
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_7ss2i"]
+script = ExtResource("17_nepv3")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+enabled = false
+
+[sub_resource type="Resource" id="Resource_1id2h"]
+script = ExtResource("18_v2yb1")
+terrain_node = NodePath("../../Terrain3D")
+enable_texture_filtering = true
+target_texture_id = 2
+not_target_texture = true
+texture_threshold = 1.0
 
 [sub_resource type="Resource" id="Resource_awynl"]
+script = ExtResource("12_v2yb1")
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_s6met"), SubResource("Resource_7itva"), SubResource("Resource_o5ny5"), SubResource("Resource_7ss2i"), SubResource("Resource_1id2h")])
+
+[sub_resource type="Resource" id="Resource_65ua2"]
 script = ExtResource("14_gxtfn")
 amount = 15
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_65ua2"]
+[sub_resource type="Resource" id="Resource_mowrl"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(10, 360, 10)
 scale = Vector3(0.3, 0, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_mowrl"]
+[sub_resource type="Resource" id="Resource_g3qou"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_g3qou"]
+[sub_resource type="Resource" id="Resource_vvi2r"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_vvi2r"]
+[sub_resource type="Resource" id="Resource_r2n6p"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 enable_texture_filtering = true
@@ -1525,41 +1611,41 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_r2n6p"]
+[sub_resource type="Resource" id="Resource_deyyv"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_awynl"), SubResource("Resource_65ua2"), SubResource("Resource_mowrl"), SubResource("Resource_g3qou"), SubResource("Resource_vvi2r")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_65ua2"), SubResource("Resource_mowrl"), SubResource("Resource_g3qou"), SubResource("Resource_vvi2r"), SubResource("Resource_r2n6p")])
 
 [sub_resource type="Resource" id="Resource_n8ral"]
 script = ExtResource("20_8ool0")
 radius = 4.0
 
-[sub_resource type="Resource" id="Resource_deyyv"]
+[sub_resource type="Resource" id="Resource_vnd7u"]
 script = ExtResource("14_gxtfn")
 amount = 20
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_vnd7u"]
+[sub_resource type="Resource" id="Resource_fccuv"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(10, 360, 10)
 scale = Vector3(0.3, 0, 0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_fccuv"]
+[sub_resource type="Resource" id="Resource_kpl5h"]
 script = ExtResource("16_02fa5")
 offset_step = 5.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_kpl5h"]
+[sub_resource type="Resource" id="Resource_nej56"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_nej56"]
+[sub_resource type="Resource" id="Resource_vgiqa"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Terrain3D")
 enable_texture_filtering = true
@@ -1567,42 +1653,47 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_vgiqa"]
+[sub_resource type="Resource" id="Resource_1uieh"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_deyyv"), SubResource("Resource_vnd7u"), SubResource("Resource_fccuv"), SubResource("Resource_kpl5h"), SubResource("Resource_nej56")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_vnd7u"), SubResource("Resource_fccuv"), SubResource("Resource_kpl5h"), SubResource("Resource_nej56"), SubResource("Resource_vgiqa")])
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4k41e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4k41e"]
 size = Vector3(1.6, 3.455, 1.375)
 
-[sub_resource type="Resource" id="Resource_1uieh"]
+[sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
+font = ExtResource("51_bk1p3")
+font_size = 30
+outline_size = 1
+
+[sub_resource type="Resource" id="Resource_x2ts8"]
 script = ExtResource("14_gxtfn")
 amount = 600
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_x2ts8"]
+[sub_resource type="Resource" id="Resource_1fiuy"]
 script = ExtResource("15_twgab")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(-0.3, 0, -0.3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_1fiuy"]
+[sub_resource type="Resource" id="Resource_fikvi"]
 script = ExtResource("16_02fa5")
 offset_step = 2.0
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_fikvi"]
+[sub_resource type="Resource" id="Resource_iwdqm"]
 script = ExtResource("17_nepv3")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 enabled = false
 
-[sub_resource type="Resource" id="Resource_iwdqm"]
+[sub_resource type="Resource" id="Resource_l0ny2"]
 script = ExtResource("18_v2yb1")
 terrain_node = NodePath("../../Environment/Terrain3D")
 enable_texture_filtering = true
@@ -1610,14 +1701,81 @@ target_texture_id = 2
 not_target_texture = true
 texture_threshold = 1.0
 
-[sub_resource type="Resource" id="Resource_l0ny2"]
+[sub_resource type="Resource" id="Resource_h1bth"]
 script = ExtResource("12_v2yb1")
-stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_1uieh"), SubResource("Resource_x2ts8"), SubResource("Resource_1fiuy"), SubResource("Resource_fikvi"), SubResource("Resource_iwdqm")])
+stack = Array[ExtResource("13_js0lu")]([SubResource("Resource_x2ts8"), SubResource("Resource_1fiuy"), SubResource("Resource_fikvi"), SubResource("Resource_iwdqm"), SubResource("Resource_l0ny2")])
 
-[sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
-font = ExtResource("51_bk1p3")
-font_size = 30
-outline_size = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yd4ix"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66xif"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnuda"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rmfi"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbak0"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3x28f"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6q63"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmvbu"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("53_ms3bu")
+emission_enabled = true
+emission_texture = ExtResource("53_ms3bu")
+billboard_mode = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_o8ni1"]
 font = ExtResource("51_bk1p3")
@@ -1645,111 +1803,6 @@ albedo_texture = SubResource("CompressedTexture2D_7nv0b")
 emission_enabled = true
 emission_texture = SubResource("CompressedTexture2D_o8oq8")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]
-
-[sub_resource type="Animation" id="Animation_xm58p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_w7wvo"]
-resource_name = "die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333337),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"die_done"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_12mg1"]
-_data = {
-&"RESET": SubResource("Animation_xm58p"),
-&"die": SubResource("Animation_w7wvo")
-}
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77e6e"]
-transparency = 3
-alpha_hash_scale = 0.1
-alpha_antialiasing_mode = 0
-vertex_color_use_as_albedo = true
-vertex_color_is_srgb = true
-albedo_color = Color(0.64, 0.64, 0.64, 1)
-albedo_texture = ExtResource("55_3x28f")
-normal_enabled = true
-normal_texture = ExtResource("56_l6q63")
-subsurf_scatter_strength = 1.0
-backlight_enabled = true
-backlight_texture = ExtResource("55_3x28f")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 5
-particles_anim_loop = true
-
-[sub_resource type="Curve" id="Curve_5uuum"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_eyv1o"]
-curve = SubResource("Curve_5uuum")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31bp8"]
-lifetime_randomness = 0.1
-emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 3.0
-emission_ring_radius = 0.5
-emission_ring_inner_radius = 0.0
-emission_ring_cone_angle = 90.0
-direction = Vector3(0, 1, 0)
-spread = 60.0
-initial_velocity_min = 2.0
-initial_velocity_max = 3.0
-gravity = Vector3(0, 0, 0)
-scale_max = 2.0
-color = Color(0.1, 0.1, 0.1, 1)
-hue_variation_min = -2.2351742e-08
-hue_variation_max = 0.009999977
-anim_speed_min = 1.0
-anim_speed_max = 1.0
-turbulence_enabled = true
-turbulence_noise_strength = 0.1
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.10300001
-turbulence_influence_over_life = SubResource("CurveTexture_eyv1o")
-
-[sub_resource type="QuadMesh" id="QuadMesh_eqd1j"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2iuns"]
 transparency = 1
 cull_mode = 1
@@ -1776,146 +1829,6 @@ billboard_mode = 2
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_csr2h"]
 load_path = "res://.godot/imported/tree_monster.PNG-6d578639df5a8b1d2b9be32133481a5c.s3tc.ctex"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7gkqi"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubufv"]
-transparency = 3
-alpha_hash_scale = 0.1
-alpha_antialiasing_mode = 0
-vertex_color_use_as_albedo = true
-vertex_color_is_srgb = true
-albedo_color = Color(0.64, 0.64, 0.64, 1)
-albedo_texture = ExtResource("55_3x28f")
-normal_enabled = true
-normal_texture = ExtResource("56_l6q63")
-subsurf_scatter_strength = 1.0
-backlight_enabled = true
-backlight_texture = ExtResource("55_3x28f")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 5
-particles_anim_loop = true
-
-[sub_resource type="Curve" id="Curve_qkh16"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ano02"]
-curve = SubResource("Curve_qkh16")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ih4j4"]
-lifetime_randomness = 0.1
-emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 3.0
-emission_ring_radius = 0.5
-emission_ring_inner_radius = 0.0
-emission_ring_cone_angle = 90.0
-direction = Vector3(0, 1, 0)
-spread = 60.0
-initial_velocity_min = 2.0
-initial_velocity_max = 3.0
-gravity = Vector3(0, 0, 0)
-scale_max = 2.0
-color = Color(0.1, 0.1, 0.1, 1)
-hue_variation_min = -2.2351742e-08
-hue_variation_max = 0.009999977
-anim_speed_min = 1.0
-anim_speed_max = 1.0
-turbulence_enabled = true
-turbulence_noise_strength = 0.1
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.10300001
-turbulence_influence_over_life = SubResource("CurveTexture_ano02")
-
-[sub_resource type="QuadMesh" id="QuadMesh_brmhl"]
-
-[sub_resource type="Animation" id="Animation_753oq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_3x338"]
-resource_name = "die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333337),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"die_done"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdltw"]
-_data = {
-&"RESET": SubResource("Animation_753oq"),
-&"die": SubResource("Animation_3x338")
-}
-
-[sub_resource type="Animation" id="Animation_csr2h"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("tree_monster/Sprite3D:material_override:emission_energy_multiplier")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_iatb8"]
-resource_name = "glow"
-length = 1.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("tree_monster/Sprite3D:material_override:emission_energy_multiplier")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.53333336, 5.42759, 16, -0.39999998, -3.6782293, 0, 0),
-"times": PackedFloat32Array(0, 1.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_evnqs"]
-_data = {
-&"RESET": SubResource("Animation_csr2h"),
-&"glow": SubResource("Animation_iatb8")
-}
 
 [node name="Game" type="Node3D" unique_id=861187367]
 
@@ -1947,7 +1860,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 campfire = NodePath("../Campfire")
 
 [node name="Camera3D" parent="SubViewportContainer/SubViewport/Player/Head" parent_id_path=PackedInt32Array(1674435093, 698233127) index="0" unique_id=44698183]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999998, 0, 0, 0)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999998, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=433989800]
 environment = SubResource("Environment_ehsp5")
@@ -1957,6 +1870,7 @@ player = NodePath("../Player")
 
 [node name="CutsceneTimer" parent="SubViewportContainer/SubViewport/Campfire" index="12" unique_id=400677440]
 wait_time = 3.0
+autostart = true
 
 [node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=482651045]
 
@@ -1978,7 +1892,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_weeiq")
+modifier_stack = SubResource("Resource_uxocx")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -2219,7 +2133,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_3x338")
+modifier_stack = SubResource("Resource_1yg85")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -2685,7 +2599,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_dku7i")
+modifier_stack = SubResource("Resource_veaf0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -3145,7 +3059,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_ounyb")
+modifier_stack = SubResource("Resource_iekjf")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -3325,7 +3239,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_h5tdf")
+modifier_stack = SubResource("Resource_xbifu")
 Performance/use_chunks = false
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -5012,7 +4926,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_de5we")
+modifier_stack = SubResource("Resource_8tghg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -5211,7 +5125,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_o3ulk")
+modifier_stack = SubResource("Resource_ghitk")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -5421,7 +5335,7 @@ global_seed = 2
 show_output_in_tree = true
 render_mode = 1
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_rekj2")
+modifier_stack = SubResource("Resource_ip3rd")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -5734,7 +5648,7 @@ global_seed = 1
 show_output_in_tree = true
 render_mode = 1
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_1id2h")
+modifier_stack = SubResource("Resource_awynl")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -6042,7 +5956,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_r2n6p")
+modifier_stack = SubResource("Resource_deyyv")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -6103,7 +6017,7 @@ show_output_in_tree = true
 render_mode = 1
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_vgiqa")
+modifier_stack = SubResource("Resource_1uieh")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://6hjccyojvx0p"
@@ -6331,18 +6245,7 @@ font = ExtResource("34_js0lu")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20.611858, 0)
 fov = 45.0
 
-[node name="Forest fire" parent="SubViewportContainer/SubViewport" unique_id=569204172 instance=ExtResource("45_458eo")]
-process_mode = 4
-visible = false
-
-[node name="House" parent="SubViewportContainer/SubViewport/Forest fire" index="0" unique_id=1566710256]
-process_mode = 4
-visible = false
-
-[node name="Fire" parent="SubViewportContainer/SubViewport/Forest fire" index="1" unique_id=1329256548]
-modifier_stack = SubResource("Resource_l0ny2")
-
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Forest fire" unique_id=673337214]
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=673337214]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -6350,7 +6253,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="Control" parent="SubViewportContainer/SubViewport/Forest fire/Control" unique_id=1315883727]
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Control" unique_id=99292701]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="Control" parent="SubViewportContainer/SubViewport/Control" unique_id=1315883727]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -6359,13 +6272,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="Control" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer" unique_id=536383905]
+[node name="MarginContainer" type="Control" parent="SubViewportContainer/SubViewport/Control/VBoxContainer" unique_id=536383905]
 anchors_preset = 0
 offset_top = -100.0
 offset_right = 1152.0
 offset_bottom = -72.0
 
-[node name="Dialogue" type="Label" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer" unique_id=1375230810]
+[node name="Dialogue" type="Label" parent="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer" unique_id=1375230810]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -6384,23 +6297,24 @@ horizontal_alignment = 1
 autowrap_mode = 3
 script = ExtResource("52_n8ral")
 
-[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=1510867840]
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=1510867840]
 wait_time = 0.04
 autostart = true
 
-[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=121997490]
+[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue" unique_id=121997490]
 wait_time = 3.5
 one_shot = true
 
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Forest fire/Control" unique_id=99292701]
+[node name="Forest fire" parent="SubViewportContainer/SubViewport" unique_id=569204172 instance=ExtResource("45_458eo")]
+process_mode = 4
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+
+[node name="House" parent="SubViewportContainer/SubViewport/Forest fire" index="0" unique_id=1566710256]
+process_mode = 4
+visible = false
+
+[node name="Fire" parent="SubViewportContainer/SubViewport/Forest fire" index="1" unique_id=1329256548]
+modifier_stack = SubResource("Resource_h1bth")
 
 [node name="Cutscene1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1133042819]
 process_mode = 4
@@ -6411,275 +6325,235 @@ process_mode = 4
 transform = Transform3D(0.6920633, 0, 0.72183686, 0, 1, 0, -0.72183686, 0, 0.6920633, 0, -0.115, 2.06)
 visible = false
 
-[node name="Shades2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=619446411]
-transform = Transform3D(1.3676342, 0, 0.65455365, 0, 1.5162003, 0, -0.65455365, 0, 1.3676342, 0, -0.9845495, 0)
+[node name="Shades2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1957422147]
+transform = Transform3D(0.09390335, 0, -1.0106468, 0, 1.015, 0, 1.0106468, 0, 0.09390335, 1.6716964, 0, -1.6027441)
 
-[node name="Pivot2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1252865081]
-transform = Transform3D(0.55955464, 0, 0.82879347, 0, 1, 0, -0.82879347, 0, 0.55955464, 0, 0, 0)
+[node name="Baby" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=164217150]
+transform = Transform3D(0.5953929, 0, 0.8034348, 0, 1, 0, -0.8034348, 0, 0.5953929, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot2" unique_id=324286114 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Baby" unique_id=117439978 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot14" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=365904654]
-transform = Transform3D(-0.4676931, 0, -0.8838909, 0, 1, 0, 0.8838909, 0, -0.4676931, 0, 0, 0)
+[node name="Baby2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=205779969]
+transform = Transform3D(-0.9651372, 0, -0.26174483, 0, 1, 0, 0.26174483, 0, -0.9651372, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot14" unique_id=1449982057 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Baby2" unique_id=979073941 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot9" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1092706698]
-transform = Transform3D(-0.84297734, 0, 0.53794914, 0, 1, 0, -0.53794914, 0, -0.84297734, 0, 0, 0)
+[node name="Baby3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=795403470]
+transform = Transform3D(-0.6304851, 0, -0.7762016, 0, 1, 0, 0.7762016, 0, -0.6304851, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot9" unique_id=74492162 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Baby3" unique_id=2066924316 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot16" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1826256895]
-transform = Transform3D(0.2951421, 0, -0.9554535, 0, 1, 0, 0.9554535, 0, 0.2951421, 0, 0, 0)
+[node name="Baby4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1219945161]
+transform = Transform3D(0.7957437, 0, 0.6056339, 0, 1, 0, -0.6056339, 0, 0.7957437, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot16" unique_id=1956510947 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Baby4" unique_id=1384407212 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot13" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1172826544]
-transform = Transform3D(-0.77163494, 0, -0.63606566, 0, 1, 0, 0.63606566, 0, -0.77163494, 0, 0, 0)
+[node name="Gentel" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=375947757]
+transform = Transform3D(-0.028223664, 0, 0.9996017, 0, 1, 0, -0.9996017, 0, -0.028223664, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot13" unique_id=570885731 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Gentel" unique_id=1758205946 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=698613953]
-transform = Transform3D(-0.1378471, 0, 0.99045354, 0, 1, 0, -0.99045354, 0, -0.1378471, 0, 0, 0)
+[node name="Gentel3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=2092560080]
+transform = Transform3D(-0.81016916, 0, -0.58619636, 0, 1, 0, 0.58619636, 0, -0.81016916, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot5" unique_id=1839399921 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Gentel3" unique_id=1202439949 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=2088412046]
-transform = Transform3D(0.95658386, 0, 0.2914572, 0, 1, 0, -0.2914572, 0, 0.95658386, 0, 0, 0)
+[node name="Gentel5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=316519234]
+transform = Transform3D(0.94728863, 0, 0.32038203, 0, 1, 0, -0.32038203, 0, 0.94728863, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot" unique_id=583574455 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Gentel5" unique_id=235556256 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot15" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1424822810]
-transform = Transform3D(-0.14788769, 0, -0.98900425, 0, 1, 0, 0.98900425, 0, -0.14788769, 0, 0, 0)
+[node name="Gentel2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1635278291]
+transform = Transform3D(-0.6568203, 0, 0.7540473, 0, 1, 0, -0.7540473, 0, -0.6568203, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot15" unique_id=655007622 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Gentel2" unique_id=773095017 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot11" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=612699194]
-transform = Transform3D(-0.9976849, 0, 0.06800854, 0, 1, 0, -0.06800854, 0, -0.9976849, 0, 0, 0)
+[node name="Gentel4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1869254384]
+transform = Transform3D(0.68612146, 0, -0.7274872, 0, 1, 0, 0.7274872, 0, 0.68612146, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot11" unique_id=1940699659 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Gentel4" unique_id=1702791410 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot12" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=300937482]
-transform = Transform3D(-0.9540495, 0, -0.29964915, 0, 1, 0, 0.29964915, 0, -0.9540495, 0, 0, 0)
+[node name="Sitting" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1326747376]
+transform = Transform3D(0.28500417, 0, 0.9585264, 0, 1, 0, -0.9585264, 0, 0.28500417, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot12" unique_id=1297962552 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Sitting" unique_id=986463668 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot6" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1378578709]
-transform = Transform3D(0.2671541, 0, 0.9636539, 0, 1, 0, -0.9636539, 0, 0.2671541, 0, 0, 0)
+[node name="Sitting5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1153073839]
+transform = Transform3D(0.91382706, 0, -0.40610352, 0, 1, 0, 0.40610352, 0, 0.91382706, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot6" unique_id=2112000794 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Sitting5" unique_id=1293290636 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=151467652]
-transform = Transform3D(0.80189127, 0, 0.59747, 0, 1, 0, -0.59747, 0, 0.80189127, 0, 0, 0)
+[node name="Sitting3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1393857184]
+transform = Transform3D(-0.99508786, 0, 0.09899652, 0, 1, 0, -0.09899652, 0, -0.99508786, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot3" unique_id=399819981 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Sitting3" unique_id=1910620105 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot7" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=750890741]
-transform = Transform3D(-0.39875448, 0, 0.9170577, 0, 1, 0, -0.9170577, 0, -0.39875448, 0, 0, 0)
+[node name="Sitting2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1320479920]
+transform = Transform3D(0.36134937, 0, -0.9324306, 0, 1, 0, 0.9324306, 0, 0.36134937, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot7" unique_id=1582866090 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Sitting2" unique_id=169027164 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot18" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=274180737]
-transform = Transform3D(0.8443805, 0, -0.5357439, 0, 1, 0, 0.5357439, 0, 0.8443805, 0, 0, 0)
+[node name="Sitting4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=350561394]
+transform = Transform3D(-0.8696774, 0, 0.4936204, 0, 1, 0, -0.4936204, 0, -0.8696774, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot18" unique_id=1280884228 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Sitting4" unique_id=356329465 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot19" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1321303101]
-transform = Transform3D(0.97114, 0, -0.23851031, 0, 1, 0, 0.23851031, 0, 0.97114, 0, 0, 0)
+[node name="Tree" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1656419988]
+transform = Transform3D(-0.35750267, 0, 0.9339121, 0, 1, 0, -0.9339121, 0, -0.35750267, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot19" unique_id=1292185015 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Tree" unique_id=1922707173 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_yd4ix")
 
-[node name="Pivot4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=814289702]
+[node name="Tree4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1130077644]
+transform = Transform3D(0.9992261, 0, -0.039337933, 0, 1, 0, 0.039337933, 0, 0.9992261, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot4" unique_id=1406706072 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Tree4" unique_id=956494507 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_66xif")
 
-[node name="Pivot17" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=116831681]
-transform = Transform3D(0.61448693, 0, -0.7889271, 0, 1, 0, 0.7889271, 0, 0.61448693, 0, 0, 0)
+[node name="Tree2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=2137036401]
+transform = Transform3D(-0.36345178, 0, -0.9316131, 0, 1, 0, 0.9316131, 0, -0.36345178, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot17" unique_id=993052973 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Tree2" unique_id=388069942 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_bnuda")
 
-[node name="Pivot8" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1855064048]
-transform = Transform3D(-0.61065745, 0, 0.79189485, 0, 1, 0, -0.79189485, 0, -0.61065745, 0, 0, 0)
+[node name="Tree3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1302173733]
+transform = Transform3D(0.007003486, 0, -0.9999756, 0, 1, 0, 0.9999756, 0, 0.007003486, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot8" unique_id=530710009 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Tree3" unique_id=448059735 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_0rmfi")
 
-[node name="Pivot10" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2" unique_id=1368334745]
-transform = Transform3D(-0.9519188, 0, 0.3063504, 0, 1, 0, -0.3063504, 0, -0.9519188, 0, 0, 0)
+[node name="Baby" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2066858789]
+transform = Transform3D(0.5953929, 0, 0.8034348, 0, 1, 0, -0.8034348, 0, 0.5953929, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Shades2/Pivot10" unique_id=766766918 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Baby" unique_id=1374654196 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2066858789]
-transform = Transform3D(0.55955464, 0, 0.82879347, 0, 1, 0, -0.82879347, 0, 0.55955464, 0, 0, 0)
+[node name="Baby2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=740885807]
+transform = Transform3D(-0.9651372, 0, -0.26174483, 0, 1, 0, 0.26174483, 0, -0.9651372, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot2" unique_id=797640169 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Baby2" unique_id=2101893043 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot14" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=564440799]
-transform = Transform3D(-0.4676931, 0, -0.8838909, 0, 1, 0, 0.8838909, 0, -0.4676931, 0, 0, 0)
+[node name="Baby3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=765639509]
+transform = Transform3D(-0.6304851, 0, -0.7762016, 0, 1, 0, 0.7762016, 0, -0.6304851, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot14" unique_id=1670455444 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Baby3" unique_id=1316907555 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot9" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=290876409]
-transform = Transform3D(-0.84297734, 0, 0.53794914, 0, 1, 0, -0.53794914, 0, -0.84297734, 0, 0, 0)
+[node name="Baby4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1614335820]
+transform = Transform3D(0.7957437, 0, 0.6056339, 0, 1, 0, -0.6056339, 0, 0.7957437, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot9" unique_id=1257356420 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Baby4" unique_id=784822936 instance=ExtResource("49_n8ral")]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, -5, 0.40845168, -5.9604645e-08)
 
-[node name="Pivot16" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1112188731]
-transform = Transform3D(0.2951421, 0, -0.9554535, 0, 1, 0, 0.9554535, 0, 0.2951421, 0, 0, 0)
+[node name="Gentel" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2070845235]
+transform = Transform3D(-0.028223664, 0, 0.9996017, 0, 1, 0, -0.9996017, 0, -0.028223664, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot16" unique_id=1596402111 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Gentel" unique_id=123649584 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot13" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=505811619]
-transform = Transform3D(-0.77163494, 0, -0.63606566, 0, 1, 0, 0.63606566, 0, -0.77163494, 0, 0, 0)
+[node name="Gentel3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=649426813]
+transform = Transform3D(-0.81016916, 0, -0.58619636, 0, 1, 0, 0.58619636, 0, -0.81016916, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot13" unique_id=1580827626 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Gentel3" unique_id=1904735035 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1324764113]
-transform = Transform3D(-0.1378471, 0, 0.99045354, 0, 1, 0, -0.99045354, 0, -0.1378471, 0, 0, 0)
+[node name="Gentel5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1505299831]
+transform = Transform3D(0.94728863, 0, 0.32038203, 0, 1, 0, -0.32038203, 0, 0.94728863, 0, 0, 0)
 
-[node name="CampfireShade2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot5" unique_id=408106904 instance=ExtResource("47_3hbvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Gentel5" unique_id=325397296 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=835939085]
-transform = Transform3D(0.95658386, 0, 0.2914572, 0, 1, 0, -0.2914572, 0, 0.95658386, 0, 0, 0)
+[node name="Gentel2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=175113810]
+transform = Transform3D(-0.6568203, 0, 0.7540473, 0, 1, 0, -0.7540473, 0, -0.6568203, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot" unique_id=2009144960 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Gentel2" unique_id=2003103446 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot15" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1867579639]
-transform = Transform3D(-0.14788769, 0, -0.98900425, 0, 1, 0, 0.98900425, 0, -0.14788769, 0, 0, 0)
+[node name="Gentel4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1936333714]
+transform = Transform3D(0.68612146, 0, -0.7274872, 0, 1, 0, 0.7274872, 0, 0.68612146, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot15" unique_id=1840236870 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Gentel4" unique_id=1502918737 instance=ExtResource("50_yd4ix")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.000001, 1.6579796, -3.5762787e-07)
 
-[node name="Pivot11" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2001454201]
-transform = Transform3D(-0.9976849, 0, 0.06800854, 0, 1, 0, -0.06800854, 0, -0.9976849, 0, 0, 0)
+[node name="Sitting" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1333783700]
+transform = Transform3D(0.28500417, 0, 0.9585264, 0, 1, 0, -0.9585264, 0, 0.28500417, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot11" unique_id=1651993266 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Sitting" unique_id=1410287954 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot12" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=975706682]
-transform = Transform3D(-0.9540495, 0, -0.29964915, 0, 1, 0, 0.29964915, 0, -0.9540495, 0, 0, 0)
+[node name="Sitting5" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1741710483]
+transform = Transform3D(0.91382706, 0, -0.40610352, 0, 1, 0, 0.40610352, 0, 0.91382706, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot12" unique_id=1774791018 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Sitting5" unique_id=754635282 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot6" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=248630994]
-transform = Transform3D(0.2671541, 0, 0.9636539, 0, 1, 0, -0.9636539, 0, 0.2671541, 0, 0, 0)
+[node name="Sitting3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1337731281]
+transform = Transform3D(-0.99508786, 0, 0.09899652, 0, 1, 0, -0.09899652, 0, -0.99508786, 0, 0, 0)
 
-[node name="Monster2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot6" unique_id=2124841616 instance=ExtResource("48_q8j3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Sitting3" unique_id=1911669896 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2094209010]
-transform = Transform3D(0.80189127, 0, 0.59747, 0, 1, 0, -0.59747, 0, 0.80189127, 0, 0, 0)
+[node name="Sitting2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=663831750]
+transform = Transform3D(0.36134937, 0, -0.9324306, 0, 1, 0, 0.9324306, 0, 0.36134937, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot3" unique_id=655093318 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Sitting2" unique_id=872358345 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot7" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1786713467]
-transform = Transform3D(-0.39875448, 0, 0.9170577, 0, 1, 0, -0.9170577, 0, -0.39875448, 0, 0, 0)
+[node name="Sitting4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1283420522]
+transform = Transform3D(-0.8696774, 0, 0.4936204, 0, 1, 0, -0.4936204, 0, -0.8696774, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot7" unique_id=433499862 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D front2" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Sitting4" unique_id=1486318646 instance=ExtResource("51_66xif")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, -5, 1.2374678, 0)
 
-[node name="Pivot18" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=153961734]
-transform = Transform3D(0.8443805, 0, -0.5357439, 0, 1, 0, 0.5357439, 0, 0.8443805, 0, 0, 0)
+[node name="Tree" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1373727660]
+transform = Transform3D(-0.35750267, 0, 0.9339121, 0, 1, 0, -0.9339121, 0, -0.35750267, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot18" unique_id=1139876444 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Tree" unique_id=204514331 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_xbak0")
 
-[node name="Pivot19" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=725219301]
-transform = Transform3D(0.97114, 0, -0.23851031, 0, 1, 0, 0.23851031, 0, 0.97114, 0, 0, 0)
+[node name="Tree4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=2141509649]
+transform = Transform3D(0.9992261, 0, -0.039337933, 0, 1, 0, 0.039337933, 0, 0.9992261, 0, 0, 0)
 
-[node name="CampfireShade" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot19" unique_id=1701905163 instance=ExtResource("49_ms3bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Tree4" unique_id=828907571 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_3x28f")
 
-[node name="Pivot4" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=314005922]
+[node name="Tree2" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1007312598]
+transform = Transform3D(-0.36345178, 0, -0.9316131, 0, 1, 0, 0.9316131, 0, -0.36345178, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot4" unique_id=1714450175 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Tree2" unique_id=1462502066 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_l6q63")
 
-[node name="Pivot17" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=765815836]
-transform = Transform3D(0.61448693, 0, -0.7889271, 0, 1, 0, 0.7889271, 0, 0.61448693, 0, 0, 0)
+[node name="Tree3" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1002391425]
+transform = Transform3D(0.007003486, 0, -0.9999756, 0, 1, 0, 0.9999756, 0, 0.007003486, 0, 0, 0)
 
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot17" unique_id=1368199428 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
-
-[node name="Pivot8" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=807021944]
-transform = Transform3D(-0.61065745, 0, 0.79189485, 0, 1, 0, -0.79189485, 0, -0.61065745, 0, 0, 0)
-
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot8" unique_id=1872919507 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
-
-[node name="Pivot10" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades" unique_id=1393354133]
-transform = Transform3D(-0.9519188, 0, 0.3063504, 0, 1, 0, -0.3063504, 0, -0.9519188, 0, 0, 0)
-
-[node name="Monster" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Pivot10" unique_id=25655025 instance=ExtResource("50_7ixpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = null
+[node name="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/Shades/Tree3" unique_id=1972490051 instance=ExtResource("52_bnuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.972373, 0)
+material_override = SubResource("StandardMaterial3D_mmvbu")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=779110977]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6546445, 3.5055768)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6546445, 3.5055768)
 
 [node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=1052013208]
 layout_mode = 3
@@ -6771,39 +6645,6 @@ texture = ExtResource("53_0rmfi")
 region_enabled = true
 region_rect = Rect2(483.8125, 751.1083, 1137.4817, 1287.9742)
 
-[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" unique_id=1108864555]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
-[node name="dialogue_timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" unique_id=122650563]
-wait_time = 0.04
-autostart = true
-
-[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade/dialogue_timer" unique_id=825278728]
-wait_time = 5.0
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade/dialogue_timer" unique_id=1292747017]
-wait_time = 10.0
-one_shot = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" unique_id=2079526961]
-transform = Transform3D(1.6543919, 0, 0, 0, 2.3215797, 0, 0, 0, 1.6543919, 0, 1.2921225, 0)
-shape = SubResource("BoxShape3D_ehsp5")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" unique_id=870056473]
-libraries/ = SubResource("AnimationLibrary_12mg1")
-
-[node name="Smoke" type="GPUParticles3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" unique_id=1042785072]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.5343279, 0)
-material_override = SubResource("StandardMaterial3D_77e6e")
-emitting = false
-amount = 150
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_31bp8")
-draw_pass_1 = SubResource("QuadMesh_eqd1j")
-
 [node name="CampfireShade2" type="Area3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal" unique_id=1323563833]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.97, 0, 0)
 collision_layer = 4
@@ -6830,46 +6671,12 @@ texture = ExtResource("57_mmvbu")
 region_enabled = true
 region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)
 
-[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" unique_id=325663839]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
-[node name="dialogue_timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" unique_id=1172191849]
-wait_time = 0.04
-autostart = true
-
-[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2/dialogue_timer" unique_id=1122686167]
-wait_time = 5.0
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2/dialogue_timer" unique_id=1582394786]
-wait_time = 10.0
-one_shot = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" unique_id=121098903]
-transform = Transform3D(1.2199095, 0, 0, 0, 3.2027006, 0, 0, 0, 1.2199095, 0, 1.5596942, 0)
-shape = SubResource("BoxShape3D_ehsp5")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" unique_id=697028381]
-libraries/ = SubResource("AnimationLibrary_12mg1")
-
-[node name="Smoke" type="GPUParticles3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" unique_id=689764127]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.5343279, 0)
-material_override = SubResource("StandardMaterial3D_77e6e")
-emitting = false
-amount = 150
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_31bp8")
-draw_pass_1 = SubResource("QuadMesh_eqd1j")
-
 [node name="Monster" type="Area3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal" unique_id=1933600155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0)
 collision_layer = 132
 collision_mask = 64
 
 [node name="tree_monster" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1682186267]
-script = ExtResource("59_uxocx")
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster/tree_monster" unique_id=21929988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12732255, 1.968249, 0)
@@ -6878,28 +6685,6 @@ pixel_size = 0.002
 texture = SubResource("CompressedTexture2D_csr2h")
 region_enabled = true
 region_rect = Rect2(393.83105, 0, 1079.163, 2048)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1663019835]
-transform = Transform3D(1.3396989, 0, 0, 0, 4.476243, 0, 0, 0, 1.3396989, 0, 1.8986864, 0)
-shape = SubResource("BoxShape3D_7gkqi")
-
-[node name="Smoke" type="GPUParticles3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1870905354]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.013212681, 1.5343279, 0)
-material_override = SubResource("StandardMaterial3D_ubufv")
-emitting = false
-amount = 150
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_ih4j4")
-draw_pass_1 = SubResource("QuadMesh_brmhl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1381684010]
-libraries/ = SubResource("AnimationLibrary_gdltw")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=822143636]
-libraries/ = SubResource("AnimationLibrary_evnqs")
-
-[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1460850789]
-wait_time = 10.0
 
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" unique_id=1953769972]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.405, 0)
@@ -6923,21 +6708,23 @@ font = ExtResource("54_7ixpq")
 font_size = 80
 outline_size = 0
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Cutscene1" unique_id=559159615]
+transform = Transform3D(1, 0, 0, 0, -0.76604444, 0.64278764, 0, -0.64278764, -0.76604444, 0, 6.5161457, 0)
+light_energy = 0.0
+shadow_enabled = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=942399329]
 stream = ExtResource("46_458eo")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Forest fire/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue/Timer2" to="SubViewportContainer/SubViewport/Cutscene1/Control/VBoxContainer/MarginContainer/Dialogue" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" method="_on_body_entered"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade/Timer2" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" method="_on_body_entered"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2/Timer2" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/CampfireShade2" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" method="_on_body_entered"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster/Timer" to="SubViewportContainer/SubViewport/Cutscene1/ShadesREal/Monster" method="_on_timer_timeout"]
 
 [editable path="SubViewportContainer/SubViewport/Player"]
 [editable path="SubViewportContainer/SubViewport/Player/Head/RightHand/Torch/Fire"]

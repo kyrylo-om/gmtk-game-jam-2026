@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bf43o6id8kj3p"]
+
+[ext_resource type="Texture2D" uid="uid://c67k0pmr5ljuf" path="res://sprites/monsters/gentel_monster.PNG" id="1_hv6vm"]
+[ext_resource type="Texture2D" uid="uid://fe27u1rk7lky" path="res://sprites/monsters/gentel_monster_eyes.jpg" id="2_tytlv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxn0h"]
+transparency = 1
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("1_hv6vm")
+emission_enabled = true
+emission_texture = ExtResource("2_tytlv")
+billboard_mode = 2
+
+[node name="Sprite3D front" type="Sprite3D" unique_id=1758205946]
+material_override = SubResource("StandardMaterial3D_mxn0h")
+pixel_size = 0.0018
+double_sided = false
+texture = ExtResource("1_hv6vm")
+region_enabled = true
+region_rect = Rect2(531.469, -6.9691772, 1042.1687, 2046.0518)

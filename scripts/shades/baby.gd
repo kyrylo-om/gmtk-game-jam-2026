@@ -14,3 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	monster.look_at(player.position)
 	monster.position += -global_transform.basis.z * delta * move_speed
+
+
+func _on_monster_area_entered(area: Area3D) -> void:
+	monster.die()

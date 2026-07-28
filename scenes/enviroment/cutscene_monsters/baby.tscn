@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bl4lrnlqb275t"]
+
+[ext_resource type="Texture2D" uid="uid://bmj0d08eqyw74" path="res://sprites/monsters/baby_monster.png" id="1_q0exr"]
+[ext_resource type="Texture2D" uid="uid://d4np0cnvkkklw" path="res://sprites/monsters/baby_monster_eyes.jpg" id="2_8852k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
+transparency = 1
+albedo_texture = ExtResource("1_q0exr")
+emission_enabled = true
+emission_texture = ExtResource("2_8852k")
+billboard_mode = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3rtg"]
+atlas = ExtResource("1_q0exr")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ifx4"]
+atlas = ExtResource("1_q0exr")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6mgr"]
+atlas = ExtResource("1_q0exr")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li8rw"]
+atlas = ExtResource("1_q0exr")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux44r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3rtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ifx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6mgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li8rw")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" unique_id=117439978]
+material_override = SubResource("StandardMaterial3D_rao50")
+pixel_size = 0.0028
+sprite_frames = SubResource("SpriteFrames_ux44r")
+animation = &"run"
+autoplay = "run"
+frame = 2
+frame_progress = 0.8583686

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlixku6b32n6r"]
+
+[ext_resource type="Texture2D" uid="uid://cufccpump5s6y" path="res://sprites/monsters/tree_monster.PNG" id="1_gn5vc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2talo"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+albedo_texture = ExtResource("1_gn5vc")
+emission_enabled = true
+emission_texture = ExtResource("1_gn5vc")
+billboard_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_csr2h"]
+load_path = "res://.godot/imported/tree_monster.PNG-6d578639df5a8b1d2b9be32133481a5c.s3tc.ctex"
+
+[node name="Sprite3D" type="Sprite3D" unique_id=1922707173]
+material_override = SubResource("StandardMaterial3D_2talo")
+pixel_size = 0.002
+texture = SubResource("CompressedTexture2D_csr2h")
+region_enabled = true
+region_rect = Rect2(393.83105, 0, 1079.163, 2048)
