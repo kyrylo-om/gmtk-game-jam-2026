@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c63mntqlyqs6r"]
+
+[ext_resource type="Shader" uid="uid://cn8t1cs4ta44o" path="res://shaders/volume_glow.gdshader" id="1_tmcmt"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="2_es2dr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcs48"]
+render_priority = 0
+shader = ExtResource("1_tmcmt")
+shader_parameter/sky_affect = 0.9
+shader_parameter/albedo = Color(0.2, 0.0992, 0.055999994, 1)
+shader_parameter/texture_albedo = ExtResource("2_es2dr")
+shader_parameter/proximity_fade_distance = 5.0
+shader_parameter/distance_fade_min = 1.0
+shader_parameter/distance_fade_max = 3.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ykqxk"]
+size = Vector2(10, 10)
+
+[node name="VolumeGlow" type="Node3D" unique_id=498838321]
+
+[node name="Volume glow" type="MeshInstance3D" parent="." unique_id=1565336469]
+material_override = SubResource("ShaderMaterial_lcs48")
+extra_cull_margin = 10.0
+mesh = SubResource("QuadMesh_ykqxk")
