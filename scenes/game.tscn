@@ -1961,9 +1961,6 @@ player = NodePath("../Player")
 [node name="CutsceneTimer" parent="SubViewportContainer/SubViewport/Campfire" index="13" unique_id=400677440]
 wait_time = 3.0
 
-[node name="Collectible2" parent="SubViewportContainer/SubViewport/Campfire" unique_id=1934788532 instance=ExtResource("41_fedci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9460019, -0.099999905, 4.70023)
-
 [node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=482651045]
 
 [node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/SubViewport/Environment" unique_id=256132067]
