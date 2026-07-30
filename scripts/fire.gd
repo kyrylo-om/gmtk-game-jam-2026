@@ -20,7 +20,7 @@ const ANIM_LENGTH = 100
 @export var shade_time_max = 20
 var fade_speed: float = 5
 var stop = true
-
+var collected_sticks = 0
 
 func _ready() -> void:
 	fade_speed = 100 / (minutes_to_fade * 60)
@@ -37,6 +37,9 @@ func add_fuel(amount: float):
 	print("added ", amount, " energy to fire")
 	animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	audio_burn.play()
+	collected_sticks += 1
+	if collected_sticks >= 5 and player.importants_found <= 0:
+		player.paths_hint()
 	
 func add_important_fuel(amount: float):
 	energy += amount
@@ -47,15 +50,16 @@ func add_important_fuel(amount: float):
 	
 	if player.importants_found >= 5:
 		cutscene_timer.start()
+	else:
+		player.monster_spawner.increase_spawnrate()
 
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
-	if energy > 0:
-		if body.is_in_group("fuel_important"):
-			body.delete()
-			add_important_fuel(body.item_data.fuel)
-		if body.is_in_group("fuel"):
-			body.delete()
-			add_fuel(body.item_data.fuel)
+	if body.is_in_group("fuel_important"):
+		body.delete()
+		add_important_fuel(body.item_data.fuel)
+	elif body.is_in_group("fuel"):
+		body.delete()
+		add_fuel(body.item_data.fuel)
 
 
 func _on_timer_timeout() -> void:
@@ -77,7 +81,7 @@ func unstop():
 
 
 func _on_cutscene_timer_timeout() -> void:
-	#cutscene_anim.start()
+	player.can_reset = true
 	cutscene_anim.play("cutscene2")
 
 

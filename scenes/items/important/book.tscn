@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://dtv4bd68p4ulq"
 size = Vector3(1.105, 0.24, 0.79)
 
 [node name="Collectible2" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_3jmoc")]
-mass = 2.0
+mass = 1.5
 item_data = SubResource("Resource_1t3b6")
 mesh = NodePath("book/book_Baked")
 

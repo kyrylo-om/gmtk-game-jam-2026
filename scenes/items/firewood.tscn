@@ -7,7 +7,7 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2yfuc"]
 
 [node name="Collectible" unique_id=1934788532 node_paths=PackedStringArray("mesh") instance=ExtResource("1_3cukv")]
-mass = 3.0
+mass = 2.0
 item_data = ExtResource("2_3t5rq")
 mesh = NodePath("Firewood/Cylinder_Baked")
 

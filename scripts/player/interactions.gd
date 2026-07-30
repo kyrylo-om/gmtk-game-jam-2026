@@ -9,6 +9,8 @@ extends Node3D
 @onready var animation_tree: AnimationTree = $"../AnimationTree"
 @onready var monster_spawner: Node3D = $"../MonsterSpawner"
 @onready var cutscene_anim: AnimationPlayer = $"../../../../AnimationPlayer"
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var color_rect: Panel = $"../Canvas/Control/HintContainer/ColorRect"
 var collider = null
 var look_at_fire = false
 var hint_throw = false
@@ -55,24 +57,28 @@ func _process(delta: float) -> void:
 			canvas.show_tooltip("Press E to contemplate.")
 			if Input.is_action_just_pressed("pickup"):
 				player.disable_move()
+				player.can_reset = true
 				cutscene_anim.play("cutscene1")
 		else:
-			canvas.show_tooltip("Press E to light up the torch.\n" + str(player.importants_found) + " / 5.")
+			canvas.show_tooltip("Press E to light up the torch.\n" + str(player.importants_found) + " / 5 memories found.")
 			if Input.is_action_just_pressed("pickup"):
 				player.disable_move()
 				torch.refuel()
 
 	if Input.is_action_pressed("throw"):
-		throw_speed = clamp(throw_speed + 10 * delta, 0, max_throw_speed)
+		throw_speed = clamp(throw_speed + 20 * delta, 0, max_throw_speed)
+		color_rect.custom_minimum_size.x = throw_speed * 12
 		
 	if Input.is_action_just_released("throw"):
 		throw()
 		throw_speed = 0
+		color_rect.custom_minimum_size.x = 0
 		
 	if hint_throw:
 		canvas.show_tooltip("Hold Q to throw into the fire.")
 
 func pickup(item: RigidBody3D):
+	audio_stream_player.play()
 	if not hinted_throw:
 		hint_throw = true
 	var item_data = item.delete()

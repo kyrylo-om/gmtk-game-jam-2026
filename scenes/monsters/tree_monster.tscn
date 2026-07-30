@@ -85,8 +85,11 @@ region_rect = Rect2(393.83105, 0, 1079.163, 2048)
 [node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
 transform = Transform3D(1.3396989, 0, 0, 0, 4.476243, 0, 0, 0, 1.3396989, 0, 1.8986864, 0)
 
+[node name="Timer2" parent="." index="2" unique_id=1890306566]
+wait_time = 60.0
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="4" unique_id=822143636]
 libraries/ = SubResource("AnimationLibrary_evnqs")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." index="7" unique_id=1042379344]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." index="5" unique_id=1042379344]
 volume_db = -20.0

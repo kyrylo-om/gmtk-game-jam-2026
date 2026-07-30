@@ -68,7 +68,7 @@ initial_velocity_max = 2.0
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = 0.49997765
 gravity = Vector3(0, 1, 0)
-scale_min = 1.5802345
+scale_min = 1.4
 scale_max = 20.0
 scale_curve = SubResource("CurveTexture_ux44r")
 color = Color(1.8659585, 1.2763183, 0.6460132, 1)
@@ -1421,7 +1421,7 @@ visible = false
 mesh = SubResource("BoxMesh_ehsp5")
 
 [node name="SpawnTimer" type="Timer" parent="ShadeSpawner/Spawner" unique_id=1256961370]
-wait_time = 20.0
+wait_time = 30.0
 autostart = true
 
 [node name="ScaledObjects" type="Node3D" parent="." unique_id=324431567]
@@ -1479,6 +1479,7 @@ pitch_scale = 1.2
 
 [node name="Audio_burn_important" type="AudioStreamPlayer3D" parent="." unique_id=224642859]
 stream = ExtResource("13_tdo0i")
+volume_db = -10.0
 max_db = 0.0
 
 [node name="CutsceneTimer" type="Timer" parent="." unique_id=400677440]

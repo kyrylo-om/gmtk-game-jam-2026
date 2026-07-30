@@ -72,6 +72,9 @@ frame_progress = 0.8583686
 [node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
 transform = Transform3D(1.1571364, 0, 0, 0, 2.7771275, 0, 0, 0, 1.1571364, 0, 0.5434562, 0)
 
+[node name="Timer2" parent="." index="2" unique_id=1890306566]
+wait_time = 15.0
+
 [node name="Audio_lauch" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1728907760]
 stream = ExtResource("5_h6mgr")
 volume_db = -15.0

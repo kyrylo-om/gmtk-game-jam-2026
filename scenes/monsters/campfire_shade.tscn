@@ -178,11 +178,12 @@ draw_pass_1 = SubResource("QuadMesh_eqd1j")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=528164278]
 volume_db = -10.0
-max_distance = 10.0
+max_distance = 15.0
 
 [node name="Whisper" type="AudioStreamPlayer3D" parent="." unique_id=79484448]
 stream = ExtResource("7_xm58p")
-max_distance = 15.0
+volume_db = 5.0
+max_distance = 20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

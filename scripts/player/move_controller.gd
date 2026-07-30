@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var inventory: Node3D = $Inventory
 @onready var torch: Node3D = $Head/RightHand
 @onready var canvas_player: AnimationPlayer = $Canvas/AnimationPlayer
+@onready var monster_spawner: Node3D = $MonsterSpawner
 
 @export var campfire: Node3D
 
@@ -65,6 +66,7 @@ var has_jumped = false
 var said_boundary = false
 var first_respawn = true
 var importants_found = 0
+var can_reset = false
 
 @onready var audio_step: AudioStreamPlayer = $Audio_step
 
@@ -161,10 +163,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.y = 0
-	
-	#REMOVE
-	if Input.is_action_just_pressed("reset"):
-		respawn()
 		
 	if not said_boundary and position.distance_to(Vector3.ZERO) > 80:
 		canvas.show_dialogue("There is nothing for me outside without her.")
@@ -232,10 +230,14 @@ func respawn_done():
 	if first_respawn:
 		first_respawn = false
 	else:
-		var lines = ["No. I can't let her go.", "As long as I remember..."]
+		var lines = ["No. I can't let her go.", "As long as I remember...", "It's still alive."]
 		canvas.show_dialogue(lines.pick_random())
 	can_move = true
 
 func step():
 	audio_step.pitch_scale = randf()*0.3 + 0.85
 	audio_step.play()
+
+func paths_hint():
+	var lines = ["Must follow the paths...", "Must go deeper...", "Wood is not enough."]
+	canvas.show_dialogue(lines.pick_random())

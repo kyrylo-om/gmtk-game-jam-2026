@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var label: Label = $Control/Label
+@onready var label: Label = $Control/HintContainer/Label
 @onready var dialogue: Label = $Control/VBoxContainer/MarginContainer/Dialogue
 
 # Called when the node enters the scene tree for the first time.
@@ -14,10 +14,9 @@ func _process(delta: float) -> void:
 	
 func show_tooltip(text):
 	label.text = text
-	label.visible = true
 	
 func hide_tooltip():
-	label.visible = false
+	label.text = ""
 	
 func show_dialogue(text: String):
 	dialogue.show_text(text)

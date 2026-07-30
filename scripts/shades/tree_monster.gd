@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 	pass
 
 func looked_at():
-	print("Das")
 	animation_player_2.play("glow")
