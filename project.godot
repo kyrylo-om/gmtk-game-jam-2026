@@ -13,6 +13,7 @@ config_version=5
 config/name="gmtk-2026"
 run/main_scene="uid://dn25fx7svp4er"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
