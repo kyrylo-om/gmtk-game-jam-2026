@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c63mntqlyqs6r"]
 
 [ext_resource type="Shader" uid="uid://cn8t1cs4ta44o" path="res://shaders/volume_glow.gdshader" id="1_tmcmt"]
-[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="2_es2dr"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/fire/RoundSoftParticle.png" id="2_es2dr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lcs48"]
 render_priority = 0

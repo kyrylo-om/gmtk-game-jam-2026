@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://xls556unv7yw" path="res://scripts/animated_text_3d.gd" id="2_0naev"]
 [ext_resource type="FontFile" uid="uid://d31hr8kjcnxcc" path="res://fonts/Charm-Regular.ttf" id="2_s4a5j"]
 [ext_resource type="AudioStream" uid="uid://5tdxygnmvcb" path="res://audio/whoosh.mp3" id="4_e20jf"]
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="4_eyv1o"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="5_e20jf"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/fire/SmokePuff02.png" id="4_eyv1o"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/fire/SmokePuffNormal.png" id="5_e20jf"]
 [ext_resource type="AudioStream" uid="uid://cgpjefw7qf3vc" path="res://audio/whisper2.mp3" id="7_xm58p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsp5"]

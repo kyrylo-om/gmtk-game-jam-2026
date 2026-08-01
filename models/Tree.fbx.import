@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "pine_bark": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/Wood_1.tres",
+"use_external/fallback_path": "res://Materials/tree/Wood_1.tres",
 "use_external/path": "uid://bybwerynp2045"
 }
 }

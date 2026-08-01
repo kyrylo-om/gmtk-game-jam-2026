@@ -43,12 +43,12 @@ _subresources={
 "materials": {
 "chimney": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/textures/cubblestone/cobblestone.tres",
+"use_external/fallback_path": "res://Materials/cubblestone/cobblestone.tres",
 "use_external/path": "uid://c6i34qsgt0ah4"
 },
 "house": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/Wood_house.tres",
+"use_external/fallback_path": "res://Materials/wood_2/Wood_house.tres",
 "use_external/path": "uid://lvnivv4mkum"
 }
 }

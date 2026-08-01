@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sp8dxipct0yg"]
 
-[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="1_837t3"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/fire/RoundSoftParticle.png" id="1_837t3"]
 [ext_resource type="Shader" uid="uid://cn8t1cs4ta44o" path="res://shaders/volume_glow.gdshader" id="2_v3s22"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3s22"]

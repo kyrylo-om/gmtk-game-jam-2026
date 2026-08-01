@@ -14,9 +14,6 @@ emission_enabled = true
 emission_texture = ExtResource("2_ranq0")
 billboard_mode = 2
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_csr2h"]
-load_path = "res://.godot/imported/tree_monster.PNG-6d578639df5a8b1d2b9be32133481a5c.s3tc.ctex"
-
 [sub_resource type="Animation" id="Animation_csr2h"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -77,10 +74,10 @@ script = ExtResource("2_iatb8")
 [node name="Sprite3D" type="Sprite3D" parent="tree_monster" index="0" unique_id=21929988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12732255, 1.968249, 0)
 material_override = SubResource("StandardMaterial3D_2talo")
-pixel_size = 0.002
-texture = SubResource("CompressedTexture2D_csr2h")
+pixel_size = 0.004
+texture = ExtResource("2_ranq0")
 region_enabled = true
-region_rect = Rect2(393.83105, 0, 1079.163, 2048)
+region_rect = Rect2(196.916, 0, 539.582, 1024)
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
 transform = Transform3D(1.3396989, 0, 0, 0, 4.476243, 0, 0, 0, 1.3396989, 0, 1.8986864, 0)

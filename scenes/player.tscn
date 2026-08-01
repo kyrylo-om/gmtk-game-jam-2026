@@ -13,11 +13,11 @@
 [ext_resource type="Script" uid="uid://dtow3gyacrn0c" path="res://scripts/player/torch.gd" id="9_y4r1p"]
 [ext_resource type="PackedScene" uid="uid://caagp2yfg74oo" path="res://scenes/fire.tscn" id="11_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://c4o2x0shbhjgn" path="res://models/torch.fbx" id="11_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="12_oprun"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="13_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/fire/SmokePuff02.png" id="12_oprun"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/fire/SmokePuffNormal.png" id="13_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://c0clryqup1pyv" path="res://models/torch top.fbx" id="13_jej6c"]
 [ext_resource type="Script" uid="uid://0an3lhplm5wn" path="res://scripts/player/monster_spawner.gd" id="16_a8ls1"]
-[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="17_31cv2"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/fire/RoundSoftParticle.png" id="17_31cv2"]
 [ext_resource type="PackedScene" uid="uid://c6rqkj6bd1v56" path="res://scenes/monsters/baby_monster.tscn" id="17_fulsm"]
 [ext_resource type="PackedScene" uid="uid://f6lu2pqisoca" path="res://scenes/monsters/tree_monster.tscn" id="18_4r5pv"]
 [ext_resource type="AudioStream" uid="uid://dqkoqwm2uo5hb" path="res://audio/pickup.mp3" id="19_ujl30"]
@@ -1800,18 +1800,18 @@ anchor_top = 20.849997
 anchor_right = 16.091639
 anchor_bottom = 20.85
 offset_left = 873.0
-offset_top = -1033.9999
+offset_top = -1541.9998
 offset_right = 2793.0
-offset_bottom = 46.0
+offset_bottom = -461.99994
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Canvas/Control/Blink" unique_id=1767979920]
 layout_mode = 0
-offset_top = -200.0
+offset_top = 374.0
 offset_right = 3519.999
-offset_bottom = 880.0
+offset_bottom = 1454.0
 scale = Vector2(0.60000014, 0.91999954)
 texture = ExtResource("4_tuyoq")
 flip_v = true

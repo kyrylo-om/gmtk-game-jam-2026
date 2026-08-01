@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "dark_rock": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/Black_rock.tres",
+"use_external/fallback_path": "res://Materials/black rocks/Black_rock.tres",
 "use_external/path": "uid://d2ll4smmxwngu"
 }
 }

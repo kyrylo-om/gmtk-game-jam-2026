@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "Cylinder_Baked": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/textures/firewood/Cylinder_Baked.tres",
+"use_external/fallback_path": "res://Materials/firewood/Cylinder_Baked.tres",
 "use_external/path": "uid://byjx05oxab6vx"
 }
 }

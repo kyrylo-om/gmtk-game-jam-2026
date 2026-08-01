@@ -12,42 +12,43 @@ transparency = 1
 albedo_texture = ExtResource("2_hhgoa")
 emission_enabled = true
 emission_texture = ExtResource("3_q3rtg")
+texture_filter = 0
 billboard_mode = 2
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q3rtg"]
-atlas = ExtResource("2_hhgoa")
-region = Rect2(0, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ifx4"]
-atlas = ExtResource("2_hhgoa")
-region = Rect2(2048, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6mgr"]
-atlas = ExtResource("2_hhgoa")
-region = Rect2(0, 2048, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_li8rw"]
 atlas = ExtResource("2_hhgoa")
-region = Rect2(2048, 2048, 2048, 2048)
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adn53"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jp06"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7hos"]
+atlas = ExtResource("2_hhgoa")
+region = Rect2(1024, 1024, 1024, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ux44r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q3rtg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ifx4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h6mgr")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_li8rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adn53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jp06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7hos")
 }],
 "loop": 1,
 "name": &"run",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [node name="Monster" unique_id=583574455 node_paths=PackedStringArray("mesh") instance=ExtResource("1_q3rtg")]
@@ -62,12 +63,10 @@ move_speed = 2
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="tree_monster" index="0" unique_id=593702492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27552652, 0.00910449)
 material_override = SubResource("StandardMaterial3D_rao50")
-pixel_size = 0.0028
+pixel_size = 0.0056
 sprite_frames = SubResource("SpriteFrames_ux44r")
 animation = &"run"
-autoplay = "run"
-frame = 2
-frame_progress = 0.8583686
+frame_progress = 0.07354411
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=1663019835]
 transform = Transform3D(1.1571364, 0, 0, 0, 2.7771275, 0, 0, 0, 1.1571364, 0, 0.5434562, 0)

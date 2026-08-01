@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dhr0p1j54kcci"]
 
-[ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/textures/fire/image(6).png" id="1_i4b5v"]
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="2_8whan"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="3_ohjjr"]
-[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="4_bk3ey"]
+[ext_resource type="Texture2D" uid="uid://bw1ckes5ujon8" path="res://Materials/fire/image(6).png" id="1_i4b5v"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/fire/SmokePuff02.png" id="2_8whan"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/fire/SmokePuffNormal.png" id="3_ohjjr"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/fire/RoundSoftParticle.png" id="4_bk3ey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rao50"]
 transparency = 1

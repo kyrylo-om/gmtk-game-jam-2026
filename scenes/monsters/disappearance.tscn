@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dhadkqqwgs2fl"]
 
-[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/textures/fire/SmokePuff02.png" id="1_i0cu2"]
+[ext_resource type="Texture2D" uid="uid://bfobio161ckjl" path="res://Materials/fire/SmokePuff02.png" id="1_i0cu2"]
 [ext_resource type="Script" uid="uid://p3ptb37v6714" path="res://scripts/shades/disappearance.gd" id="1_qcdxi"]
-[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/textures/fire/SmokePuffNormal.png" id="2_qcdxi"]
+[ext_resource type="Texture2D" uid="uid://dwcd77v632e8i" path="res://Materials/fire/SmokePuffNormal.png" id="2_qcdxi"]
 [ext_resource type="AudioStream" uid="uid://5tdxygnmvcb" path="res://audio/whoosh.mp3" id="4_s4hm1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0cu2"]

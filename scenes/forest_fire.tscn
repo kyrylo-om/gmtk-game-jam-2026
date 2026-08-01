@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dje8d42k03wbi"]
 
 [ext_resource type="PackedScene" uid="uid://b5tremd0g32us" path="res://scenes/tree_fire.tscn" id="12_0jrs8"]
-[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/textures/fire/RoundSoftParticle.png" id="13_60qgx"]
+[ext_resource type="Texture2D" uid="uid://dicftds24n1nl" path="res://Materials/fire/RoundSoftParticle.png" id="13_60qgx"]
 [ext_resource type="PackedScene" uid="uid://botblf86w6yvt" path="res://models/house.fbx" id="14_gnn1w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3qdq"]

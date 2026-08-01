@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://clfde6d0y7183" path="res://sprites/monsters/sitting_monster.PNG" id="1_qrdcd"]
 [ext_resource type="Texture2D" uid="uid://dn7pgagxahxxa" path="res://sprites/monsters/sitting_monster_eyes.jpg" id="2_g3u55"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nwdf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrdcd"]
 transparency = 1
 albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
 albedo_texture = ExtResource("1_qrdcd")
@@ -11,10 +11,13 @@ emission_enabled = true
 emission_texture = ExtResource("2_g3u55")
 billboard_mode = 2
 
-[node name="Sprite3D front" type="Sprite3D" unique_id=986463668]
-material_override = SubResource("StandardMaterial3D_2nwdf")
-pixel_size = 0.002
+[node name="Sprite3D front" type="Node3D" unique_id=235339772]
+
+[node name="Sprite3D front" type="Sprite3D" parent="." unique_id=1717741482]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.14942849, 1.2998854, 0)
+material_override = SubResource("StandardMaterial3D_qrdcd")
+pixel_size = 0.004
 double_sided = false
 texture = ExtResource("1_qrdcd")
 region_enabled = true
-region_rect = Rect2(483.8125, 751.1083, 1137.4817, 1287.9742)
+region_rect = Rect2(241.907, 375.554, 568.741, 643.987)

@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "book_Baked": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/textures/book/book.tres",
+"use_external/fallback_path": "res://Materials/book/book.tres",
 "use_external/path": "uid://dm1oqq6avrs8g"
 }
 }

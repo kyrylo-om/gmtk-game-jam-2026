@@ -31,20 +31,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17053652, 0, 0)
 [node name="Sprite3D back" type="Sprite3D" parent="sitting_monster" index="0" unique_id=95438836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14942849, 1.2998854, 0)
 material_override = SubResource("StandardMaterial3D_dy5kp")
-pixel_size = 0.002
+pixel_size = 0.004
 double_sided = false
 texture = ExtResource("2_huw2v")
 region_enabled = true
-region_rect = Rect2(483.8125, 751.1083, 1137.4817, 1287.9742)
+region_rect = Rect2(241.907, 375.554, 568.741, 643.987)
 
 [node name="Sprite3D front" type="Sprite3D" parent="sitting_monster" index="1" unique_id=1467256459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14942849, 1.2998854, 0)
 material_override = SubResource("StandardMaterial3D_2nwdf")
-pixel_size = 0.002
+pixel_size = 0.004
 double_sided = false
 texture = ExtResource("2_huw2v")
 region_enabled = true
-region_rect = Rect2(483.8125, 751.1083, 1137.4817, 1287.9742)
+region_rect = Rect2(241.907, 375.554, 568.741, 643.987)
 
 [node name="CollisionShape3D" parent="." index="4" unique_id=2079526961]
 transform = Transform3D(1.6543919, 0, 0, 0, 2.3215797, 0, 0, 0, 1.6543919, 0, 1.2921225, 0)

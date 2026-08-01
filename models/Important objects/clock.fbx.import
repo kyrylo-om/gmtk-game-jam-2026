@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "Clock_Baked": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/textures/clock/clock.tres",
+"use_external/fallback_path": "res://Materials/clock/clock.tres",
 "use_external/path": "uid://bp035po5jiaj5"
 }
 }

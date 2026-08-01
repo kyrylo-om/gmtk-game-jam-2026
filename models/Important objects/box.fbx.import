@@ -43,7 +43,7 @@ _subresources={
 "materials": {
 "Cube_Baked": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/textures/box/box.tres",
+"use_external/fallback_path": "res://Materials/box/box.tres",
 "use_external/path": "uid://bewtv0tpdqgab"
 }
 }
