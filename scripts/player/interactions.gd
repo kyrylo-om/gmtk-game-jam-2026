@@ -105,6 +105,7 @@ func throw():
 
 	if throwed:
 		throwed.freeze = false
+		throwed.process_mode = Node.PROCESS_MODE_INHERIT
 		var forward_vector: Vector3 = -global_transform.basis.z
 		
 		throwed.apply_central_impulse((forward_vector + global_transform.basis.x * 0.2) * throw_speed)

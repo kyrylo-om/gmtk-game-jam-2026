@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://x42oq4bxo5xl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2talo"]
+height = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" unique_id=1897391487]
+shape = SubResource("CylinderShape3D_2talo")

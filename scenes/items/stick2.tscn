@@ -18,4 +18,7 @@ shape = SubResource("BoxShape3D_03okf")
 [node name="Branch 4" parent="." index="1" unique_id=1445432259 instance=ExtResource("3_aeyqv")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 0, 0, 0.047884822)
 
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." index="3" unique_id=1702825950]
+aabb = AABB(-0.47, -0.045, -0.66, 0.94, 0.09, 1.32)
+
 [editable path="Branch 4"]
